@@ -3,11 +3,7 @@
   b4st_main_before();
 ?>
 
-<?php if (function_exists('dimox_breadcrumbs')) { ?>
-  <?php dimox_breadcrumbs(); ?>
-<?php } ?>
-
-<main id="site-main" class="mt-5 destacar">
+<main id="site-main" class="casos destacar">
 
   <?php //get_template_part('loops/single-post', get_post_format()); ?>
 
