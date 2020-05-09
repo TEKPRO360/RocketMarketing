@@ -1,0 +1,17 @@
+.btn-rocket{
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 3em;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none !important;
+    outline: none !important;
+    &:active, :focus, :visited {
+        outline: none !important;
+        border: none !important;
+        border-style: none !important;
+        text-decoration: none !important;
+    }
+}
