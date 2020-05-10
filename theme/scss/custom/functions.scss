@@ -20,12 +20,16 @@ html{
 }
 
 .esconde-menu{
-    margin-right: -100% !important;
-    left: 100vw !important;
-    transition: .3s ease all;
+  margin-right: -100% !important;
+  left: 100vw !important;
+  transition: .3s ease all;
 }
 
 .vh-100{
-    height: 100vh;
-    min-height: 500px;
+  height: 100vh;
+  min-height: 500px;
+}
+
+.sombra-foto{
+  box-shadow: rgba($color: #000000, $alpha: .6) 10px 10px 2px;
 }

@@ -5,7 +5,7 @@
 
 <main id="site-main" class="w-100">
   <!-- SECCIÓN PRIMERA -->
-  <section class="intro vh-100 d-flex flex-column justify-content-center align-items-center destacar">
+  <section class="intro vh-100 d-flex flex-column justify-content-center align-items-center">
     <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo.png" alt="" class="mt-auto mb-0">
     <a href="#servicios" class="mt-auto mb-5">
       <i class="fas fa-chevron-down btn-rocket"></i>
@@ -16,61 +16,102 @@
   <!-- SECCIÓN SERVICIOS -->
 
   <?php $servicios = new WP_Query( array( 
-          'post_type' => 'servicios',
-          'posts_per_page' => -1,
-          'category' => 'current'
+          'post_type'       => 'servicios',
+          'posts_per_page'  => -1,
+          'category'        => 'current',
+          'order_by'        => 'date',
+          'order'           => 'ASC'
           ) ); $numero_servicio = 0; ?>
   <?php if ($servicios->have_posts() ) :?>
   <div class="info-servicios d-none">
-    <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('imagen_home_1'); $imagen2 = get_field('imagen_home_2');?>
-    <div class="servicio-0<?php echo $numero_servicio;?> d-none" data-titulo="<?php the_title();?>" data-descripcion="<?php the_field( 'descripcion_del_servicio' ); ?>" data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>"></div>
+    <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
+    <div class="servicio-0<?php echo $numero_servicio;?> d-none" data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>" data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>"></div>
     <?php endwhile; wp_reset_postdata();?>
   </div>
                 
-  <section id="servicios" class="vh-100 text-white d-flex flex-wrap justify-content-center align-items-center destacar">
-    <div class="imagenes col-11 ml-auto mr-0 mb-0 mt-auto">
-      <img src="" alt="" class="recibe-imagen-1">
-      <img src="" alt="" class="recibe-imagen-2">
+  <section id="servicios" class="pb-5 px-0 text-white d-flex flex-wrap justify-content-center align-items-center">
+    <div class="imagenes col-12 col-md-11 ml-auto mr-0 mb-5 mt-0 d-flex flex-row justify-content-between p-0">
+      <img src="" alt="" class="recibe-imagen-1 sombra-foto d-none d-md-block">
+      <img src="" alt="" class="recibe-imagen-2 sombra-foto">
     </div>
-    <div class="col-12 col-md-10 d-flex flex-wrap p-0 mt-0 mb-auto">
+    <div class="col-12 col-md-10 d-flex flex-wrap p-0 mt-0 mb-auto bg-morado p-1">
       <div class="col-12 col-md-6 d-flex  p-0">
         <div class="contenedor-enumeracion d-flex flex-column justify-content-between align-items-center col-1 p-0">
-          <p class="enumeracion-servicio text-center" data-servicio="01" data-titulo="Campañas de Branding" data-detalle="Empoderamos tu marca a través de nuestras campañas de reconocimiento. Logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.">01</p>
-          <p class="enumeracion-servicio text-center" data-servicio="02" data-titulo="Campañas de Google Shopping" data-detalle="Sincronizamos tu catálogo de productos con google, lo que nos permite estar presentes en google shopping y activar campañas de smart shopping. Este nuevo formato ha sido muy exitoso y rentable en el objetivo de aumentar las ventas online.">02</p>
-          <p class="enumeracion-servicio text-center" data-servicio="03" data-titulo="Posicionamiento en buscadores (SEM)" data-detalle="A través de nuestras campañas de posicionamiento, damos visibilidad a tu negocio en los resultados de búsquedas de google. Empleamos la estrategia más conveniente según tus objetivos, tanto si van orientados a generar ventas online (performance) o branding.">03</p>
-          <p class="enumeracion-servicio text-center" data-servicio="04" data-titulo="Campañas de performance" data-detalle="Las campañas de performance nos permiten aumentar las ventas online de tu sitio web, al tiempo que rentabilizamos tu inversión. Te proponemos un mix de medios adecuados a esos objetivos.">04</p>
+          <p class="enumeracion-servicio text-center" data-servicio="01">01</p>
+          <p class="enumeracion-servicio text-center" data-servicio="02">02</p>
+          <p class="enumeracion-servicio text-center" data-servicio="03">03</p>
+          <p class="enumeracion-servicio text-center" data-servicio="04">04</p>
         </div>
-        <div class="detalles-servicio col-12 col-md-11">
+        <div class="detalles-servicio col-12 col-md-11 columna-1">
           <p class="numero-servicio">Servicio <span>01</span></p>
-          <p class="titulo-servicio"><?php echo esc_html( get_the_title(14) ); ?></p>
-          <p class="detalle-servicio">Empoderamos tu marca a través de nuestras campañas de reconocimiento. Logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
+          <p class="titulo-servicio mb-2"></p>
+          <p class="resumen-servicio"></p>
         </div>
       </div>
-      <div class="col-12 col-md-6 d-flex  p-0">
+      <div class="col-12 col-md-6 d-flex p-0">
         <div class="contenedor-enumeracion d-flex flex-column justify-content-between align-items-center col-1 p-0">
-          <p class="enumeracion-servicio text-center" data-servicio="05" data-titulo="Campañas de Branding" data-detalle="Empoderamos tu marca a través de nuestras campañas de reconocimiento. Logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.">05</p>
-          <p class="enumeracion-servicio text-center" data-servicio="06" data-titulo="Campañas de Google Shopping" data-detalle="Sincronizamos tu catálogo de productos con <strong>google</strong>, lo que nos permite estar presentes en google shopping y activar campañas de smart shopping. Este nuevo formato ha sido muy exitoso y rentable en el objetivo de aumentar las ventas online.">06</p>
-          <p class="enumeracion-servicio text-center" data-servicio="07" data-titulo="Posicionamiento en buscadores (SEM)" data-detalle="A través de nuestras campañas de posicionamiento, damos visibilidad a tu negocio en los resultados de búsquedas de google. Empleamos la estrategia más conveniente según tus objetivos, tanto si van orientados a generar ventas online (performance) o branding.">07</p>
-          <p class="enumeracion-servicio text-center" data-servicio="08" data-titulo="Campañas de performance" data-detalle="Las campañas de performance nos permiten aumentar las ventas online de tu sitio web, al tiempo que rentabilizamos tu inversión. Te proponemos un mix de medios adecuados a esos objetivos.">08</p>
+          <p class="enumeracion-servicio text-center" data-servicio="05">05</p>
+          <p class="enumeracion-servicio text-center" data-servicio="06">06</p>
+          <p class="enumeracion-servicio text-center" data-servicio="07">07</p>
+          <p class="enumeracion-servicio text-center" data-servicio="08">08</p>
         </div>
-        <div class="detalles-servicio col-12 col-md-11">
+        <div class="detalles-servicio col-12 col-md-11 columna-2">
           <p class="numero-servicio">Servicio <span>05</span></p>
-          <p class="titulo-servicio">Campañas de Branding</p>
-          <p class="detalle-servicio">Empoderamos tu marca a través de nuestras campañas de reconocimiento. Logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
+          <p class="titulo-servicio mb-2"></p>
+          <p class="resumen-servicio"></p>
         </div>
       </div>
     </div>
-    <div class="btn-ver-mas container d-flex my-0">
-      <button class="btn-rocket col-3 m-auto d-flex text-center"><p>Ver más</p><i class="fas fa-chevron-right"></i></button>
+    <div class="btn-ver-mas container d-flex mt-5 w-100">
+      <button class="btn-rocket col-12 col-md-3 m-auto d-flex text-center"><p>Ver más</p><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
-  <?php endif;?>
+  <?php endif;wp_reset_postdata();?>
   <!-- FIN SECCIÓN SERVICIOS -->
 
   <!-- SECCIÓN CASOS DE ÉXITO -->
-  <section id="casos-de-exito" class="vh-100">
-    aaaaaaaaaa
+  <?php $casos = new WP_Query( array( 
+          'post_type'       => 'casos',
+          'posts_per_page'  => -1,
+          'category'        => 'current',
+          'order_by'        => 'date',
+          'order'           => 'ASC'
+          ) ); ?>
+  <?php if ($casos->have_posts() ) :?>
+  <section id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">
+    <div class="w-100 d-flex flex-wrap px-5">
+      <div class="titulo-casos col-12 col-md-3  d-flex">
+        <p class="">Casos de éxito</p>
+      </div>
+      <div class="col-12 col-md-6 d-flex align-items-center justify-content-center computador ">
+        <div class="pantalla owl-theme owl-carousel owl-foto-caso">
+        <?php while ($casos->have_posts() ) : $casos->the_post(); $imagenCaso = get_field('imagen_del_caso_de_exito');?>
+        <img src="<?php echo $imagenCaso; ?>" alt="" data-hash="<?php the_title();?>">
+        <?php endwhile; wp_reset_postdata();?>
+      </div>
+    </div>
+    <div class="col-12 col-md-3 d-flex">
+      <div class="owl-theme owl-carousel owl-detalle-caso d-flex align-items-center">
+        <?php while ($casos->have_posts() ) : $casos->the_post(); $servicios_involucrados = get_field( 'servicios_involucrados' );?>
+        <?php if ( $servicios_involucrados ) : ?>
+        <div class="detalles-casos p-2">
+          <h3 class="nombre-caso text-center text-md-right" data-hash="<?php the_title();?>"><?php the_title();?></h3>
+          <?php foreach ( $servicios_involucrados as $post ) : ?>
+            <?php setup_postdata ( $post ); ?>
+            <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>
+          <?php endforeach; ?>
+          <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
+          </div>
+          <?php endwhile; wp_reset_postdata();?>
+        </div>
+      </div>
+    </div>
+    <div class="w-100">
+      <p class="col-12 col-md-8 text-center m-auto">Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
+    </div>
   </section>
+  <?php endif;wp_reset_postdata();?>
   <!-- FIN SECCIÓN CASOS DE ÉXITO -->
 </main>
 

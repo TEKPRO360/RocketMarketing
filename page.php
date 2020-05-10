@@ -7,8 +7,7 @@
   <?php dimox_breadcrumbs(); ?>
 <?php } */ ?>
 
-<main id="site-main"
- class="mt-5">
+<main id="site-main" class="mt-5">
 
   <?php get_template_part('loops/page-content'); ?>
 

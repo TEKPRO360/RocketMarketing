@@ -23,6 +23,55 @@
 		$('.pagination .dots').addClass('page-link').parent().addClass('disabled');
 
 		// CUSTOM CODE
+		
+
+		// OWL CAROUSEL'S
+	
+		// CASOS DE ÉXITO
+
+		$('.owl-foto-caso').owlCarousel({
+			loop:true,
+			margin:0,
+			nav:false,
+			dots:false,
+			URLhashListener:true,
+			autoplayHoverPause:true,
+			animateOut: 'slideOutDown',
+			animateIn: 'flipInX',
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:3
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+
+		$('.owl-detalle-caso').owlCarousel({
+			loop:true,
+			margin:0,
+			nav:false,
+			dots:false,
+			URLhashListener:true,
+			autoplayHoverPause:true,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:3
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+
+		// ACCIONES MENÚ
 
 		$('.accion-menu').click(function(){
 			$('.menu-custom').toggleClass('esconde-menu');
@@ -38,7 +87,30 @@
 			detalleServicio,
 			fotoUnoServicio,
 			fotoDosServicio,
-			contenedorEnumeracion = $('.contenedor-enumeracion');
+			contenedorEnumeracion = $('.contenedor-enumeracion'),
+			columna1 = $('.columna-1'),
+			columna2 = $('.columna-2'),
+			primerServicioColUno = $('.servicio-01'),
+			primerServicioColDos = $('.servicio-05'),
+			tituloPrimerServicio = primerServicioColUno.data('titulo'),
+			resumenPrimerServicio = primerServicioColUno.data('resumen'),
+			tituloQuintoServicio = primerServicioColDos.data('titulo'),
+			resumenQuintoServicio = primerServicioColDos.data('resumen'),
+			fotoUno = primerServicioColUno.data('imagen1'),
+			fotoDos = primerServicioColUno.data('imagen2'),
+			recibeTituloPrimero = columna1.find('.titulo-servicio'),
+			recibeResumenPrimero = columna1.find('.resumen-servicio'),
+			recibeTituloSegundo = columna2.find('.titulo-servicio'),
+			recibeResumenSegundo = columna2.find('.resumen-servicio'),
+			recibeFotoUno = $('.recibe-imagen-1'),
+			recibeFotoDos = $('.recibe-imagen-2');
+		
+		recibeTituloPrimero.html(tituloPrimerServicio);
+		recibeResumenPrimero.html(resumenPrimerServicio);
+		recibeTituloSegundo.html(tituloQuintoServicio);
+		recibeResumenSegundo.html(resumenQuintoServicio);
+		recibeFotoUno.attr('src', fotoUno);
+		recibeFotoDos.attr('src', fotoDos);
 
 		contenedorEnumeracion.find('>:first-child').addClass('active');
 
@@ -48,26 +120,33 @@
 			var numeroServicio = $(this).data('servicio'),
 				servicio = $('.servicio-'+numeroServicio),
 				tituloServicio = servicio.data('titulo'),
-				detalleServicio = servicio.data('descripcion'),
+				resumenServicio = servicio.data('descripcion'),
+				fotoUno = servicio.data('imagen1'),
+				fotoDos = servicio.data('imagen2'),
 				recibeNumero = $(this).parent().parent().find('.numero-servicio'),
 				recibeTitulo = $(this).parent().parent().find('.titulo-servicio'),
-				recibeDetalleServicio = $(this).parent().parent().find('.detalle-servicio');
-
-			console.log(detalleServicio)
+				recibeResumenServicio = $(this).parent().parent().find('.resumen-servicio');
 
 			recibeNumero.fadeOut();
 			recibeTitulo.fadeOut();
-			recibeDetalleServicio.fadeOut();
+			recibeResumenServicio.fadeOut();
+			recibeFotoUno.fadeOut();
+			recibeFotoDos.fadeOut();
 			setTimeout(function(){
 				recibeNumero.html(`Servicio ${numeroServicio}`)
 				recibeTitulo.html(tituloServicio);
-				recibeDetalleServicio.html(detalleServicio);
+				recibeResumenServicio.html(resumenServicio);
+				recibeFotoUno.attr('src', fotoUno);
+				recibeFotoDos.attr('src', fotoDos);
 			},400);
 			recibeNumero.fadeIn();
 			recibeTitulo.fadeIn();
-			recibeDetalleServicio.fadeIn();
+			recibeResumenServicio.fadeIn();
+			recibeFotoUno.fadeIn();
+			recibeFotoDos.fadeIn();
 		});
-
+	
 	});
+
 
 }(jQuery));

@@ -1,11 +1,31 @@
 #site-main{
-    background: fn-url('bg-sitio.png')fixed center / cover no-repeat;
+    background: fn-url('bg-sitio.png')fixed top / cover no-repeat;
     .intro{
         img{
             width: 10vw;
+            min-width: 200px;
         }
     }
     #servicios{
+        .imagenes{
+            img{
+                object-fit: cover;
+                min-height: 400px;
+                max-height: 60vh;
+            }
+            .recibe-imagen-1{
+                width: 28%;
+            }
+            .recibe-imagen-2{
+                width: 90%;
+                margin: auto;
+                @include MQ(M){
+                    width: 68%;
+                }
+            }
+        }.bg-morado{
+            background: $color-morado;
+        }
         .contenedor-enumeracion{
             .enumeracion-servicio{
                 border: 1px solid #ffffff;
@@ -31,24 +51,59 @@
             }
         }
         .detalles-servicio{
+            p{
+                margin: 0;
+            }
             .titulo-servicio{
                 font-size: 2em;
                 text-transform: uppercase;
                 font-weight: bolder;
             }
         }
-    }
-    .btn-ver-mas{
-        button{
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: 1s ease all;
-            p{
-                margin: 0 0 0 auto;
+        .btn-ver-mas{
+            .btn-rocket{
+                text-transform: uppercase;
+                font-weight: bold;
+                transition: .8s ease all;
+                &:hover{
+                    background-position: right;
+                    transition: .3s ease all;
+                }
+                p{
+                    margin: 0 0 0 auto;
+                }
+                i{
+                    margin: 0 auto 0 10px;
+                    line-height: inherit;
+                }
             }
-            i{
-                margin: 0 auto 0 10px;
-                line-height: inherit;
+        }
+    }
+    #casos-de-exito{
+        background: #ffffff;
+        .titulo-casos{
+            p{
+                width: 100%;
+                margin: 0;
+                font-size: 2em;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 5px;
+                @include MQ(M){
+                    text-align: left;
+                    width: 80%;
+                    margin: auto 0 auto auto;
+                }
+            }
+        }
+        .computador{
+            background: fn-url('computador.png')center center / 90% no-repeat;
+            height: 31vw;
+            min-height: 250px;
+            .pantalla{
+                margin-top: -2%;
+                height: 56.5%;
+                width: 73%;
             }
         }
     }

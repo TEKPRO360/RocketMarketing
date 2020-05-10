@@ -26,16 +26,25 @@ html {
   height: 100vh;
   min-height: 500px; }
 
+.sombra-foto {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 10px 10px 2px;
+  box-shadow: rgba(0, 0, 0, 0.6) 10px 10px 2px; }
+
 .btn-rocket {
-  background: #000;
-  color: #fff;
+  background: url("../img/fondo-btn.jpg");
+  background-position: left;
+  background-size: 200% 100%;
+  color: #ffffff;
   border: none;
   border-radius: 3em;
   padding: 10px;
   cursor: pointer;
   outline: none;
   text-decoration: none !important;
-  outline: none !important; }
+  outline: none !important;
+  -webkit-transition: .3s ease all;
+  -o-transition: .3s ease all;
+  transition: .3s ease all; }
   .btn-rocket:active, .btn-rocket :focus, .btn-rocket :visited {
     outline: none !important;
     border: none !important;
@@ -124,9 +133,25 @@ html {
         background: rgba(255, 255, 255, 0.3); }
 
 #site-main {
-  background: url("../img/bg-sitio.png") fixed center/cover no-repeat; }
+  background: url("../img/bg-sitio.png") fixed top/cover no-repeat; }
   #site-main .intro img {
-    width: 10vw; }
+    width: 10vw;
+    min-width: 200px; }
+  #site-main #servicios .imagenes img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    min-height: 400px;
+    max-height: 60vh; }
+  #site-main #servicios .imagenes .recibe-imagen-1 {
+    width: 28%; }
+  #site-main #servicios .imagenes .recibe-imagen-2 {
+    width: 90%;
+    margin: auto; }
+    @media screen and (min-width: 768px) {
+      #site-main #servicios .imagenes .recibe-imagen-2 {
+        width: 68%; } }
+  #site-main #servicios .bg-morado {
+    background: #161652; }
   #site-main #servicios .contenedor-enumeracion .enumeracion-servicio {
     border: 1px solid #ffffff;
     border-radius: 33.333em;
@@ -155,21 +180,50 @@ html {
       animation-iteration-count: initial;
       -webkit-animation-fill-mode: both;
       animation-fill-mode: both; }
+  #site-main #servicios .detalles-servicio p {
+    margin: 0; }
   #site-main #servicios .detalles-servicio .titulo-servicio {
     font-size: 2em;
     text-transform: uppercase;
     font-weight: bolder; }
-  #site-main .btn-ver-mas button {
+  #site-main #servicios .btn-ver-mas .btn-rocket {
     text-transform: uppercase;
     font-weight: bold;
-    -webkit-transition: 1s ease all;
-    -o-transition: 1s ease all;
-    transition: 1s ease all; }
-    #site-main .btn-ver-mas button p {
+    -webkit-transition: .8s ease all;
+    -o-transition: .8s ease all;
+    transition: .8s ease all; }
+    #site-main #servicios .btn-ver-mas .btn-rocket:hover {
+      background-position: right;
+      -webkit-transition: .3s ease all;
+      -o-transition: .3s ease all;
+      transition: .3s ease all; }
+    #site-main #servicios .btn-ver-mas .btn-rocket p {
       margin: 0 0 0 auto; }
-    #site-main .btn-ver-mas button i {
+    #site-main #servicios .btn-ver-mas .btn-rocket i {
       margin: 0 auto 0 10px;
       line-height: inherit; }
+  #site-main #casos-de-exito {
+    background: #ffffff; }
+    #site-main #casos-de-exito .titulo-casos p {
+      width: 100%;
+      margin: 0;
+      font-size: 2em;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 5px; }
+      @media screen and (min-width: 768px) {
+        #site-main #casos-de-exito .titulo-casos p {
+          text-align: left;
+          width: 80%;
+          margin: auto 0 auto auto; } }
+    #site-main #casos-de-exito .computador {
+      background: url("../img/computador.png") center center/90% no-repeat;
+      height: 31vw;
+      min-height: 250px; }
+      #site-main #casos-de-exito .computador .pantalla {
+        margin-top: -2%;
+        height: 56.5%;
+        width: 73%; }
 
 @-webkit-keyframes levantar {
   0% {
