@@ -1,4 +1,5 @@
 #site-main{
+    font-family: $fuente-primaria;
     background: fn-url('bg-sitio.png')fixed top / cover no-repeat;
     .intro{
         img{
@@ -91,19 +92,106 @@
                 letter-spacing: 5px;
                 @include MQ(M){
                     text-align: left;
-                    width: 80%;
-                    margin: auto 0 auto auto;
+                    width: 60%;
+                    margin: auto auto auto 0;
                 }
             }
         }
         .computador{
             background: fn-url('computador.png')center center / 90% no-repeat;
-            height: 31vw;
-            min-height: 250px;
+            @include MQ(M){
+                height: 31vw;
+                min-height: 250px;
+            }
+            min-height: 220px;
             .pantalla{
-                margin-top: -2%;
-                height: 56.5%;
+                overflow: hidden;
+                @include MQ(M){
+                    margin-top: -3%;
+                    height: 56.5%;
+                    width: 71%;
+                }
+                height: 68%;
                 width: 73%;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .owl-detalle-caso{
+            .detalles-casos{
+                .nombre-caso{
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+                .servicio-caso{
+                    width: 100%;
+                    margin: auto auto 0px auto;
+                }
+                a{
+                    padding: 0;
+                    margin: 10px auto auto;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: #000;
+                }
+            }
+        }
+    }
+    #clientes{
+        background: $color-morado;
+        .titulo{
+            color: #ffffff;
+            font-weight: bolder;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .owl-theme{
+            @include MQ(M){
+                margin: 100px auto;
+            }
+            margin: 20px auto;
+            img{
+                height: 43px;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+    #contacto{
+        background: $color-morado;
+        .titulo{
+            color: #ffffff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #formulario-contacto{
+            input, textarea{
+                background: #cecedc;
+                margin: auto auto 20px auto;
+                border: none;
+                color: $color-morado;
+                font-weight: bold;
+                text-transform: uppercase;
+                &::placeholder{
+                    color: $color-morado;
+                    opacity: .6;
+                }
+            }
+            input{
+                border-radius: 33.333rem;
+            }
+            textarea{
+                border-radius: 1rem;
+                resize: none;
+            }
+            .enviar-contacto{
+                text-transform: uppercase;
+                font-weight: bolder;
             }
         }
     }

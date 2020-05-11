@@ -2,6 +2,7 @@
  * b4st v3.0 | Unicence
  * http://simonpadbury.github.io/Codebase/
  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap");
 html {
   scroll-behavior: smooth; }
 
@@ -133,6 +134,7 @@ html {
         background: rgba(255, 255, 255, 0.3); }
 
 #site-main {
+  font-family: "Open Sans", sans-serif;
   background: url("../img/bg-sitio.png") fixed top/cover no-repeat; }
   #site-main .intro img {
     width: 10vw;
@@ -214,16 +216,93 @@ html {
       @media screen and (min-width: 768px) {
         #site-main #casos-de-exito .titulo-casos p {
           text-align: left;
-          width: 80%;
-          margin: auto 0 auto auto; } }
+          width: 60%;
+          margin: auto auto auto 0; } }
     #site-main #casos-de-exito .computador {
       background: url("../img/computador.png") center center/90% no-repeat;
-      height: 31vw;
-      min-height: 250px; }
+      min-height: 220px; }
+      @media screen and (min-width: 768px) {
+        #site-main #casos-de-exito .computador {
+          height: 31vw;
+          min-height: 250px; } }
       #site-main #casos-de-exito .computador .pantalla {
-        margin-top: -2%;
-        height: 56.5%;
+        overflow: hidden;
+        height: 68%;
         width: 73%; }
+        @media screen and (min-width: 768px) {
+          #site-main #casos-de-exito .computador .pantalla {
+            margin-top: -3%;
+            height: 56.5%;
+            width: 71%; } }
+        #site-main #casos-de-exito .computador .pantalla img {
+          height: 100%;
+          width: 100%;
+          -o-object-fit: cover;
+          object-fit: cover; }
+    #site-main #casos-de-exito .owl-detalle-caso .detalles-casos .nombre-caso {
+      font-weight: bold;
+      text-transform: uppercase; }
+    #site-main #casos-de-exito .owl-detalle-caso .detalles-casos .servicio-caso {
+      width: 100%;
+      margin: auto auto 0px auto; }
+    #site-main #casos-de-exito .owl-detalle-caso .detalles-casos a {
+      padding: 0;
+      margin: 10px auto auto;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #000; }
+  #site-main #clientes {
+    background: #161652; }
+    #site-main #clientes .titulo {
+      color: #ffffff;
+      font-weight: bolder;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 80px; }
+    #site-main #clientes .owl-theme {
+      margin: 20px auto; }
+      @media screen and (min-width: 768px) {
+        #site-main #clientes .owl-theme {
+          margin: 100px auto; } }
+      #site-main #clientes .owl-theme img {
+        height: 43px;
+        width: 100%;
+        -o-object-fit: contain;
+        object-fit: contain; }
+  #site-main #contacto {
+    background: #161652; }
+    #site-main #contacto .titulo {
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 50px; }
+    #site-main #contacto #formulario-contacto input, #site-main #contacto #formulario-contacto textarea {
+      background: #cecedc;
+      margin: auto auto 20px auto;
+      border: none;
+      color: #161652;
+      font-weight: bold;
+      text-transform: uppercase; }
+      #site-main #contacto #formulario-contacto input::-webkit-input-placeholder, #site-main #contacto #formulario-contacto textarea::-webkit-input-placeholder {
+        color: #161652;
+        opacity: .6; }
+      #site-main #contacto #formulario-contacto input:-ms-input-placeholder, #site-main #contacto #formulario-contacto textarea:-ms-input-placeholder {
+        color: #161652;
+        opacity: .6; }
+      #site-main #contacto #formulario-contacto input::-ms-input-placeholder, #site-main #contacto #formulario-contacto textarea::-ms-input-placeholder {
+        color: #161652;
+        opacity: .6; }
+      #site-main #contacto #formulario-contacto input::placeholder, #site-main #contacto #formulario-contacto textarea::placeholder {
+        color: #161652;
+        opacity: .6; }
+    #site-main #contacto #formulario-contacto input {
+      border-radius: 33.333rem; }
+    #site-main #contacto #formulario-contacto textarea {
+      border-radius: 1rem;
+      resize: none; }
+    #site-main #contacto #formulario-contacto .enviar-contacto {
+      text-transform: uppercase;
+      font-weight: bolder; }
 
 @-webkit-keyframes levantar {
   0% {
@@ -240,6 +319,60 @@ html {
   100% {
     -webkit-transform: scale(1.3) rotateX(0deg);
     transform: scale(1.3) rotateX(0deg); } }
+
+.servicios .full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw; }
+
+.servicios .contenedor-menu .menu {
+  z-index: 1;
+  color: #ffffff; }
+  .servicios .contenedor-menu .menu a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all; }
+    .servicios .contenedor-menu .menu a:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+      margin-left: 5%; }
+      .servicios .contenedor-menu .menu a:hover .numero-menu {
+        background: #ffffff;
+        color: #161652; }
+    .servicios .contenedor-menu .menu a > p {
+      margin: 0; }
+    .servicios .contenedor-menu .menu a .numero-menu {
+      width: 40px;
+      height: 40px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border: 1px solid white;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-radius: 33.333rem;
+      -webkit-transition: .3s ease all;
+      -o-transition: .3s ease all;
+      transition: .3s ease all; }
+
+.servicios .contenedor-secciones .seccion-1 .titulo-detalle h1 {
+  font-size: 3em;
+  line-height: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bolder; }
 
 .author-bio,
 .comments-wrap {
@@ -549,6 +682,23 @@ main {
   flex: 1 0 auto; }
 
 #site-footer {
-  background-color: #f3f4f5; }
+  background-color: #302F87;
+  color: #ffffff; }
+  #site-footer a, #site-footer p {
+    margin: .6em auto;
+    line-height: 1.3em;
+    color: inherit;
+    text-decoration: none; }
+  #site-footer .site-map {
+    font-weight: bolder;
+    text-transform: uppercase; }
+  #site-footer img {
+    -o-object-fit: contain;
+    object-fit: contain; }
+  #site-footer .titulo-footer {
+    font-weight: bolder;
+    text-transform: uppercase;
+    opacity: .47;
+    font-size: 1.2em; }
 
 /*# sourceMappingURL=b4st.css.map */

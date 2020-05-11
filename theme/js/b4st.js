@@ -35,7 +35,7 @@
 			nav:false,
 			dots:false,
 			URLhashListener:true,
-			autoplayHoverPause:true,
+			autoplayHoverPause:false,
 			animateOut: 'slideOutDown',
 			animateIn: 'flipInX',
 			responsive:{
@@ -57,6 +57,8 @@
 			nav:false,
 			dots:false,
 			URLhashListener:true,
+			autoplay:true,
+			autoplayTimeout:5000,
 			autoplayHoverPause:true,
 			responsive:{
 				0:{
@@ -67,6 +69,81 @@
 				},
 				1000:{
 					items:1
+				}
+			}
+		});
+
+		$('.owl-logos-1').owlCarousel({
+			loop:true,
+			nav:false,
+			dots:false,
+			autoplay : true,
+			slideTransition: 'linear',
+			autoplayTimeout : 4000,
+			autoplayHoverPause : false,
+			autoplaySpeed : 4000,
+			responsive:{
+				0:{
+					margin:30,
+					items:4
+				},
+				600:{
+					margin:100,
+					items:5
+				},
+				1000:{
+					margin:100,
+					items:7
+				}
+			}
+		});
+
+		$('.owl-logos-2').owlCarousel({
+			loop:true,
+			nav:false,
+			dots:false,
+			autoplay : true,
+			slideTransition: 'linear',
+			autoplayTimeout : 2000,
+			autoplayHoverPause : false,
+			autoplaySpeed : 2000,
+			responsive:{
+				0:{
+					margin:30,
+					items:4
+				},
+				600:{
+					margin:100,
+					items:5
+				},
+				1000:{
+					margin:100,
+					items:7
+				}
+			}
+		});
+
+		$('.owl-logos-3').owlCarousel({
+			loop:true,
+			nav:false,
+			dots:false,
+			autoplay : true,
+			slideTransition: 'linear',
+			autoplayTimeout : 6000,
+			autoplayHoverPause : false,
+			autoplaySpeed : 6000,
+			responsive:{
+				0:{
+					margin:30,
+					items:4
+				},
+				600:{
+					margin:100,
+					items:5
+				},
+				1000:{
+					margin:100,
+					items:7
 				}
 			}
 		});

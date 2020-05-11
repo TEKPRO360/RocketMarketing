@@ -79,14 +79,15 @@
           ) ); ?>
   <?php if ($casos->have_posts() ) :?>
   <section id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">
-    <div class="w-100 d-flex flex-wrap px-5">
+    <div class="w-100 d-flex flex-wrap px-1 px-md-5">
       <div class="titulo-casos col-12 col-md-3  d-flex">
-        <p class="">Casos de éxito</p>
+        <p class="d-none d-md-block">Casos<br>de éxito</p>
+        <p class="d-block d-md-none">Casos de éxito</p>
       </div>
       <div class="col-12 col-md-6 d-flex align-items-center justify-content-center computador ">
         <div class="pantalla owl-theme owl-carousel owl-foto-caso">
         <?php while ($casos->have_posts() ) : $casos->the_post(); $imagenCaso = get_field('imagen_del_caso_de_exito');?>
-        <img src="<?php echo $imagenCaso; ?>" alt="" data-hash="<?php the_title();?>">
+        <img src="<?php echo $imagenCaso; ?>" alt="<?php the_title();?> en Tekpro" data-hash="<?php the_title();?>" class="">
         <?php endwhile; wp_reset_postdata();?>
       </div>
     </div>
@@ -94,25 +95,71 @@
       <div class="owl-theme owl-carousel owl-detalle-caso d-flex align-items-center">
         <?php while ($casos->have_posts() ) : $casos->the_post(); $servicios_involucrados = get_field( 'servicios_involucrados' );?>
         <?php if ( $servicios_involucrados ) : ?>
-        <div class="detalles-casos p-2">
-          <h3 class="nombre-caso text-center text-md-right" data-hash="<?php the_title();?>"><?php the_title();?></h3>
+        <div class="detalles-casos p-2 d-flex flex-column">
+          <h3 class="nombre-caso text-center text-md-right" data-hash="<?php the_title();?>" data-link="<?php the_permalink();?>"><?php the_title();?></h3>
           <?php foreach ( $servicios_involucrados as $post ) : ?>
-            <?php setup_postdata ( $post ); ?>
-            <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>
+          <?php setup_postdata ( $post ); ?>
+          <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>
           <?php endforeach; ?>
           <?php wp_reset_postdata(); ?>
+          <a href="" class="col-12 text-center text-md-right">Ver más</a>
         <?php endif; ?>
-          </div>
-          <?php endwhile; wp_reset_postdata();?>
+        </div>
+        <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
     </div>
     <div class="w-100">
-      <p class="col-12 col-md-8 text-center m-auto">Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
+      <p class="col-12 col-md-8 text-center mt-2 mt-md-auto mx-auto">Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
     </div>
   </section>
   <?php endif;wp_reset_postdata();?>
   <!-- FIN SECCIÓN CASOS DE ÉXITO -->
+
+  <!-- SECCIÓN CLIENTES -->
+  <?php $clientes = new WP_Query( array( 
+          'post_type'       => 'clientes',
+          'posts_per_page'  => -1,
+          'category'        => 'current',
+          'order_by'        => 'date',
+          'order'           => 'ASC'
+          ) ); ?>
+  <?php if ($clientes->have_posts() ) :?>
+  <section id="clientes" class="py-5">
+    <h2 class="titulo">Clientes</h2>
+    <div class="owl-theme owl-carousel owl-logos-1">
+      <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
+      <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
+      <?php endwhile; wp_reset_postdata();?>
+    </div>
+    <div class="owl-theme owl-carousel owl-logos-2">
+      <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
+      <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
+      <?php endwhile; wp_reset_postdata();?>
+    </div>
+    <div class="owl-theme owl-carousel owl-logos-3">
+      <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
+      <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
+      <?php endwhile; wp_reset_postdata();?>
+    </div>
+  </section>
+  <?php endif;wp_reset_postdata();?>
+  <!-- FIN SECCIÓN CLIENTES -->
+
+  <!-- SECCIÓN CONTACTO -->
+  <section id="contacto" class="pb-5">
+    <h2 class="titulo">Contacto</h2>
+    <div id="formulario-contacto" class="col-12 col-md-8 m-auto d-flex flex-wrap">
+      <input type="text" name="nombre" placeholder="Nombre" id="nombre" class="nombre col-12 col-md-5">
+      <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="apellido col-12 col-md-5">
+      <input type="text" name="empresa" placeholder="Empresa" id="empresa" class="empresa col-12 col-md-5">
+      <input type="text" name="fono" placeholder="Fono" id="fono" class="fono col-12 col-md-5">
+      <input type="email" name="correo" placeholder="Correo" id="correo" class="correo col-12 col-md-11">
+      <textarea name="mensaje-contacto" placeholder="Mensaje" id="mensaje-contacto" cols="30" rows="10" class="mensaje-contacto col-12 col-md-11"></textarea>
+      <button class="enviar-contacto btn-rocket col-10 col-md-3 mx-auto mt-3">Enviar <i class="fas fa-chevron-right ml-1"></i></button>
+    </div>
+  </section>
+  <!-- FIN SECCIÓN CONTACTO -->
 </main>
 
 <?php 

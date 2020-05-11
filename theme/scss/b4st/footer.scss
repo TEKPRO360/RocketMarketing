@@ -10,5 +10,25 @@ main {
 }
 
 #site-footer {
-  background-color: #f3f4f5;
+  background-color: $color-primario;
+  color: #ffffff;
+  a, p{
+    margin: .6em auto;
+    line-height: 1.3em;
+    color: inherit;
+    text-decoration: none;
+  }
+  .site-map{
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  img{
+    object-fit: contain;
+  }
+  .titulo-footer{
+    font-weight: bolder;
+    text-transform: uppercase;
+    opacity: .47;
+    font-size: 1.2em;
+  }
 }
