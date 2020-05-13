@@ -12,11 +12,11 @@
           'order'           => 'ASC'
           ) ); $numero_servicio = 0; ?>
   <?php if ($servicios->have_posts() ) :?>
-  <div class="contenedor-menu col-md-4 pt-5 px-3 destacar">
+  <div class="contenedor-menu col-md-4 pt-5 px-3">
     <div class="menu my-5">
       <p>Servicios</p>
       <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
-      <a href="<?php the_permalink();?>" class="w-100 d-flex flex-row align-items-center justify-content-between my-2 destacar">
+      <a href="<?php the_permalink();?>" class="w-100 d-flex flex-row align-items-center justify-content-between my-2">
         <p class="numero-menu text-center">0<?php echo $numero_servicio;?></p>
         <p class="titulo-menu ml-0 col-md"><?php the_title();?></p>
       </a>
@@ -78,13 +78,13 @@
       </div>
       <div class="detalles-4 col-12 col-md-8 d-flex flex-wrap ml-auto px-0 d-flex flex-wrap align-items-center justify-content-center">
         <img src="<?php echo $imagenCuatro;?>" alt="">
+        <?php if ( have_rows( 'slide_detalles_servicios_3' ) ) : ?>
         <div class="owl-theme owl-carousel owl-servicios text-center col-12 col-md-6 p-3">
-          <?php if ( have_rows( 'slide_detalles_servicios_3' ) ) : ?>
           <?php while ( have_rows( 'slide_detalles_servicios_3' ) ) : the_row();?>
             <?php the_sub_field('detalle_servicio_interior_1');?>
           <?php endwhile; ?>  
-          <?php endif; ?>
         </div>
+        <?php endif; ?>
       </div>
     </section>
     <?php endwhile; wp_reset_postdata();?>

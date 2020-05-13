@@ -32,7 +32,7 @@
   <section id="servicios" class="pb-5 px-0 text-white d-flex flex-wrap justify-content-center align-items-center">
     <div class="imagenes col-12 col-md-11 ml-auto mr-0 mb-5 mt-0 d-flex flex-row justify-content-between p-0">
       <img src="" alt="" class="recibe-imagen-1 sombra-foto d-none d-md-block">
-      <img src="" alt="" class="recibe-imagen-2 sombra-foto">
+      <img src="" alt="" class="recibe-imagen-2 sombra-foto mr-0">
     </div>
     <div class="col-12 col-md-10 d-flex flex-wrap p-0 mt-0 mb-auto bg-morado p-1">
       <div class="col-12 col-md-6 d-flex  p-0">
@@ -110,7 +110,7 @@
       </div>
     </div>
     <div class="w-100">
-      <p class="col-12 col-md-8 text-center mt-2 mt-md-auto mx-auto">Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
+      <p class="col-12 col-md-6 text-center mt-2 mt-md-auto mx-auto">Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
     </div>
   </section>
   <?php endif;wp_reset_postdata();?>

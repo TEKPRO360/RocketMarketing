@@ -9,7 +9,8 @@
   'order'           => 'ASC'
   ) ); ?>
 <main id="site-main" class="casos align-items-center">
-  <section class="cabecera col-12 col-md-8 d-flex flex-column align-items-center justify-content-center text-center">
+<p class="titulo col-12 text-center text-md-left">Casos de éxito</p>
+  <section class="cabecera col-12 col-md-8 d-flex flex-column align-items-center justify-content-center text-center des">
     <img src="<?php echo get_template_directory_uri(); ?>/theme/img/cabecera-casos.png" alt="" class="pantalla m-auto col-12">
     <h1 class="mt-2 mt-md-5">Casos de éxito</h1>
     <p>Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>

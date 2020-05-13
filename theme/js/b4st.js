@@ -23,6 +23,18 @@
 		$('.pagination .dots').addClass('page-link').parent().addClass('disabled');
 
 		// CUSTOM CODE
+
+		// CAMBIO LOGO EN MENU
+		var btnHome = $('.navbar-brand').attr('href'),
+			logo = $('.navbar-brand').find('img'),
+			home = window.location.origin + /rocketmarketing/,
+			url = window.location.href;
+
+		console.log(home)
+		console.log(url)
+		if(url != home){ 
+			logo.attr('src', `${home}wp-content/themes/Rocket-Marketing/theme/img/icono-blanco.png`)
+		}
 		
 
 		// OWL CAROUSEL'S

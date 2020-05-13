@@ -53,11 +53,15 @@ html {
     text-decoration: none !important; }
 
 #site-navbar {
-  position: absolute; }
+  position: absolute;
+  z-index: 10; }
   #site-navbar .container-fluid .navbar-brand img {
-    height: 80px; }
+    height: 80px;
+    max-width: 100px;
+    -o-object-fit: contain;
+    object-fit: contain; }
 
-.accion-menu {
+.text-white.accion-menu {
   position: absolute;
   top: 0;
   right: 0;
@@ -67,7 +71,7 @@ html {
   z-index: 2; }
 
 .menu-custom {
-  z-index: 10;
+  z-index: 11;
   width: 100vw;
   max-width: 100%;
   height: 100vh;
@@ -398,7 +402,7 @@ html {
     .servicios .contenedor-secciones .seccion-2 p {
       margin: 0; }
     .servicios .contenedor-secciones .seccion-3 .detalles-3 {
-      margin: 0 0 -15%; }
+      margin: 0 0 -10%; }
     .servicios .contenedor-secciones .owl-servicios .owl-nav {
       position: absolute;
       margin: -10px 0 auto auto;
@@ -418,6 +422,10 @@ html {
 .casos {
   min-height: 100vh;
   background: url("../img/estrellas.png") fixed top/cover no-repeat #EAEAEA; }
+  .casos .titulo {
+    margin-top: 100px;
+    text-transform: uppercase;
+    text-decoration: underline; }
   .casos .cabecera {
     margin: 100px auto auto auto; }
     @media screen and (min-width: 768px) {

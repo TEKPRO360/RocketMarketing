@@ -1,6 +1,11 @@
 .casos{
     min-height: 100vh;
     background: fn-url('estrellas.png')fixed top / cover no-repeat #EAEAEA;
+    .titulo{
+        margin-top: 100px;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
     .cabecera{
         margin: 100px auto auto auto;
         @include MQ(M){

@@ -11,9 +11,8 @@
 
 <?php b4st_navbar_before();?>
 <nav id="site-navbar" class="w-100">
-  <div class="container-fluid">
+  <div class="container-fluid px-5">
     <?php b4st_navbar_brand();?>
-
     <i class="fas fa-bars text-white accion-menu"></i>
   </div>
 </nav>
@@ -32,11 +31,11 @@
     <div class="seccion-redes"></div>
   </div>
   <div class="opciones-menu col-md-9 m-auto d-flex flex-column justify-content-around align-items-start">
-      <a href="">Home</a>
-      <a href="">Servicios</a>
-      <a href="">Clientes</a>
-      <a href="">Casos de éxito</a>
-      <a href="">Contacto</a>
+      <a href="<?php echo esc_url( home_url('/') ); ?>" class="accion-menu">Home</a>
+      <a href="<?php echo esc_url( home_url('/#servicios') ); ?>" class="accion-menu">Servicios</a>
+      <a href="<?php echo esc_url( home_url('/#clientes') ); ?>" class="accion-menu">Clientes</a>
+      <a href="<?php echo esc_url( home_url('/casos') ); ?>" class="accion-menu">Casos de éxito</a>
+      <a href="<?php echo esc_url( home_url('/#contacto') ); ?>" class="accion-menu">Contacto</a>
   </div>
 </div>
 <?php b4st_navbar_after();?>
