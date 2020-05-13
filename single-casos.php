@@ -3,7 +3,7 @@
   b4st_main_before();
 ?>
 
-<main id="site-main" class="casos destacar">
+<main id="site-main" class="casos">
 
   <?php //get_template_part('loops/single-post', get_post_format()); ?>
 

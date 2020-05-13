@@ -148,6 +148,31 @@
 			}
 		});
 
+		// OWL SERVICIOS
+		$('.owl-servicios').owlCarousel({
+			loop:true,
+			margin:0,
+			nav:true,
+			dots:false,
+			autoplay:true,
+			autoplayTimeout:5000,
+			autoplayHoverPause:true,
+			responsive:{
+				0:{
+					margin:30,
+					items:1
+				},
+				600:{
+					margin:100,
+					items:1
+				},
+				1000:{
+					margin:100,
+					items:1
+				}
+			}
+		});
+
 		// ACCIONES MENÚ
 
 		$('.accion-menu').click(function(){
@@ -162,6 +187,7 @@
 			servicio,
 			tituloServicio,
 			detalleServicio,
+			linkServicio,
 			fotoUnoServicio,
 			fotoDosServicio,
 			contenedorEnumeracion = $('.contenedor-enumeracion'),
@@ -171,19 +197,24 @@
 			primerServicioColDos = $('.servicio-05'),
 			tituloPrimerServicio = primerServicioColUno.data('titulo'),
 			resumenPrimerServicio = primerServicioColUno.data('resumen'),
+			linkPrimerServicio = primerServicioColUno.data('link'),
 			tituloQuintoServicio = primerServicioColDos.data('titulo'),
 			resumenQuintoServicio = primerServicioColDos.data('resumen'),
+			linkQuintoServicio = primerServicioColDos.data('link'),
 			fotoUno = primerServicioColUno.data('imagen1'),
 			fotoDos = primerServicioColUno.data('imagen2'),
 			recibeTituloPrimero = columna1.find('.titulo-servicio'),
 			recibeResumenPrimero = columna1.find('.resumen-servicio'),
+			recibeLinkPrimero = columna1.find('a'),
 			recibeTituloSegundo = columna2.find('.titulo-servicio'),
 			recibeResumenSegundo = columna2.find('.resumen-servicio'),
+			recibeLinkSegundo = columna2.find('a'),
 			recibeFotoUno = $('.recibe-imagen-1'),
 			recibeFotoDos = $('.recibe-imagen-2');
 		
 		recibeTituloPrimero.html(tituloPrimerServicio);
 		recibeResumenPrimero.html(resumenPrimerServicio);
+		recibeLinkPrimero.attr('href', linkPrimerServicio);
 		recibeTituloSegundo.html(tituloQuintoServicio);
 		recibeResumenSegundo.html(resumenQuintoServicio);
 		recibeFotoUno.attr('src', fotoUno);
@@ -198,27 +229,32 @@
 				servicio = $('.servicio-'+numeroServicio),
 				tituloServicio = servicio.data('titulo'),
 				resumenServicio = servicio.data('descripcion'),
+				linkServicio = servicio.data('link'),
 				fotoUno = servicio.data('imagen1'),
 				fotoDos = servicio.data('imagen2'),
 				recibeNumero = $(this).parent().parent().find('.numero-servicio'),
 				recibeTitulo = $(this).parent().parent().find('.titulo-servicio'),
-				recibeResumenServicio = $(this).parent().parent().find('.resumen-servicio');
+				recibeResumenServicio = $(this).parent().parent().find('.resumen-servicio'),
+				recibeLink = $(this).parent().parent().find('a');
 
 			recibeNumero.fadeOut();
 			recibeTitulo.fadeOut();
 			recibeResumenServicio.fadeOut();
+			recibeLink.fadeOut();
 			recibeFotoUno.fadeOut();
 			recibeFotoDos.fadeOut();
 			setTimeout(function(){
 				recibeNumero.html(`Servicio ${numeroServicio}`)
 				recibeTitulo.html(tituloServicio);
 				recibeResumenServicio.html(resumenServicio);
+				recibeLink.attr('href', linkServicio);
 				recibeFotoUno.attr('src', fotoUno);
 				recibeFotoDos.attr('src', fotoDos);
 			},400);
 			recibeNumero.fadeIn();
 			recibeTitulo.fadeIn();
 			recibeResumenServicio.fadeIn();
+			recibeLink.fadeIn();
 			recibeFotoUno.fadeIn();
 			recibeFotoDos.fadeIn();
 		});

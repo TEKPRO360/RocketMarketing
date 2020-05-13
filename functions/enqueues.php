@@ -64,13 +64,25 @@ if ( ! function_exists('b4st_enqueues') ) {
 		wp_enqueue_script('bootstrap4');
 
 		wp_register_script('theme', get_template_directory_uri() . '/theme/js/b4st.js', false, null, true);
+		$postId = get_the_id();
+		$colorServicio = get_field('color_background', $postId );
+		$colorTextoServicio = get_field('color_texto', $postId);
+		$script_data = array(
+			'color_servicio'	=> $colorServicio,
+			'texto_servicio'	=> $colorTextoServicio,
+		);
+		wp_localize_script(
+			'theme',
+			'my_data',
+			$script_data
+		);
 		wp_enqueue_script('theme');
-
-		wp_register_script('main', get_template_directory_uri() . '/theme/js/main.js', false, null, false);
-		wp_enqueue_script('main');
 
 		wp_register_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', true, '2.3.4');
 		wp_enqueue_script('owl-carousel-js');
+
+		wp_register_script('main-js', get_template_directory_uri() . '/theme/js/main.js', false, null, true);
+		wp_enqueue_script('main-js');
 
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');

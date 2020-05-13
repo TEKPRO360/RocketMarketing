@@ -1,4 +1,5 @@
 .servicios{
+    overflow: hidden;
     .full-width {
         width: 100vw;
         position: relative;
@@ -8,6 +9,8 @@
         margin-right: -50vw;
     }
     .contenedor-menu{
+        position: fixed;
+        height: 100vh;
         .menu{
             z-index: 1;
             color: #ffffff;
@@ -41,6 +44,7 @@
         }
     }
     .contenedor-secciones{
+        margin-top: 10%;
         .seccion-1{
             .titulo-detalle{
                 h1{
@@ -49,6 +53,50 @@
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     font-weight: bolder;
+                }
+            }
+            .contenedor-fotos{
+                overflow: hidden;
+                img{
+                    object-fit: contain;
+                }
+                .img-horizontal{
+                    width: 63%;
+                    z-index: 2;
+                    max-width: inherit;
+                }
+                .img-vertical{
+                    position: absolute;
+                    width: 50%;
+                    right: -20px;
+                    bottom: 10%;
+                    max-height: 850px;
+                }
+            }
+        }
+        .seccion-2{
+            p{
+                margin: 0;
+            }
+        }
+        .seccion-3{
+            .detalles-3{
+                margin: 0 0 -15%;
+            }
+        }
+        .owl-servicios{
+            .owl-nav{
+                position: absolute;
+                margin: -10px 0 auto auto;
+                right: 0;
+                width: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                button{
+                    &:hover{
+                        background: transparent;
+                    }
                 }
             }
         }

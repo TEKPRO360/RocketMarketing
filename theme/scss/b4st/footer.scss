@@ -12,6 +12,7 @@ main {
 #site-footer {
   background-color: $color-primario;
   color: #ffffff;
+  z-index: 2;
   a, p{
     margin: .6em auto;
     line-height: 1.3em;

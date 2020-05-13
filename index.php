@@ -3,7 +3,7 @@
   b4st_main_before();
 ?>
 
-<main id="site-main" class="w-100">
+<main id="site-main" class="w-100 index">
   <!-- SECCIÓN PRIMERA -->
   <section class="intro vh-100 d-flex flex-column justify-content-center align-items-center">
     <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo.png" alt="" class="mt-auto mb-0">
@@ -25,7 +25,7 @@
   <?php if ($servicios->have_posts() ) :?>
   <div class="info-servicios d-none">
     <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
-    <div class="servicio-0<?php echo $numero_servicio;?> d-none" data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>" data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>"></div>
+    <div class="servicio-0<?php echo $numero_servicio;?> d-none" data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>" data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>" data-link="<?php the_permalink();?>"></div>
     <?php endwhile; wp_reset_postdata();?>
   </div>
                 
@@ -44,7 +44,7 @@
         </div>
         <div class="detalles-servicio col-12 col-md-11 columna-1">
           <p class="numero-servicio">Servicio <span>01</span></p>
-          <p class="titulo-servicio mb-2"></p>
+          <a href="" class="titulo-servicio mb-2"></a>
           <p class="resumen-servicio"></p>
         </div>
       </div>
@@ -57,7 +57,7 @@
         </div>
         <div class="detalles-servicio col-12 col-md-11 columna-2">
           <p class="numero-servicio">Servicio <span>05</span></p>
-          <p class="titulo-servicio mb-2"></p>
+          <a href="" class="titulo-servicio mb-2"></a>
           <p class="resumen-servicio"></p>
         </div>
       </div>

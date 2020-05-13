@@ -1,0 +1,45 @@
+.casos{
+    min-height: 100vh;
+    background: fn-url('estrellas.png')fixed top / cover no-repeat #EAEAEA;
+    .cabecera{
+        margin: 100px auto auto auto;
+        @include MQ(M){
+            margin: 100px auto;
+        }
+        img{
+            max-width: 870px;
+        }
+        h1{
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+    }
+    .columnas{
+        display: flex;
+        flex-flow: wrap;
+        .caso{
+            transition: .3s ease all;
+            &:hover{
+                translate: 0 -20px;
+                transition: .6s ease all;
+                transform: scale(1.1);
+            }
+        }
+        .caso{
+            &:nth-child(even){
+                margin-bottom: 80px;
+            }
+        }
+        .nombre-caso, .servicio-caso{
+            color: rgba($color: #000000, $alpha: .47);
+            text-transform: uppercase;
+        }
+        .nombre-caso{
+            font-size: 1.5em;
+        }
+        .servicio-caso{
+            line-height: 1em;
+        }
+    }
+}
