@@ -19,7 +19,7 @@
       <a href="#site-footer" class="site-map w-100">Site Map</a>
     </div>
     <?php if ($servicios->have_posts() ) :?>
-    <div class="col-12 col-md columna-2">
+    <div class="col-12 col-md columna-2 d-flex flex-column">
       <h3 class="titulo-footer">Servicios</h3>
       <?php while ($servicios->have_posts() ) : $servicios->the_post();?>
       <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
