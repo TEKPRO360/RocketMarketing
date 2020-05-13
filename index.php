@@ -102,7 +102,7 @@
           <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>
           <?php endforeach; ?>
           <?php wp_reset_postdata(); ?>
-          <a href="" class="col-12 text-center text-md-right">Ver más</a>
+          <a href="<?php echo get_site_url(); ?>/casos" class="col-12 text-center text-md-right">Ver más</a>
         <?php endif; ?>
         </div>
         <?php endwhile; wp_reset_postdata();?>
