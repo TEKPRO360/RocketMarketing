@@ -13,11 +13,11 @@
           ) ); $numero_servicio = 0; ?>
   <?php if ($servicios->have_posts() ) :?>
   <div class="contenedor-menu col-md-4 pt-5 px-3">
-    <div class="menu my-5">
+    <div class="menu my-5 text-servicio">
       <p>Servicios</p>
       <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
       <a href="<?php the_permalink();?>" class="w-100 d-flex flex-row align-items-center justify-content-between my-2">
-        <p class="numero-menu text-center">0<?php echo $numero_servicio;?></p>
+        <p class="numero-menu text-center"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></p>
         <p class="titulo-menu ml-0 col-md"><?php the_title();?></p>
       </a>
       <?php endwhile; wp_reset_postdata();?>
@@ -37,8 +37,8 @@
           <p><?php the_sub_field( 'detalles_de_servicio' ); ?></p>
         </div>
         <div class="contenedor-fotos w-100 d-flex flex-wrap">
-          <img src="<?php echo $imagenHorizontal; ?>" alt="" class="img-horizontal sombra-foto">
-          <img src="<?php echo $imagenVertical; ?>" alt="" class="img-vertical sombra-foto">
+          <img src="<?php echo $imagenHorizontal; ?>" alt="" class="img-horizontal">
+          <img src="<?php echo $imagenVertical; ?>" alt="" class="img-vertical">
         </div>
       </div>
     </section>
