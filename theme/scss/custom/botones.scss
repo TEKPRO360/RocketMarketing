@@ -2,7 +2,7 @@
     background: fn-url('fondo-btn.jpg');
     background-position: left;
     background-size: 200% 100%;
-    color: #ffffff;
+    color: #ffffff !important;
     border: none;
     border-radius: 3em;
     padding: 10px;
@@ -16,5 +16,8 @@
         border: none !important;
         border-style: none !important;
         text-decoration: none !important;
+    }
+    &:hover{
+        color: #ffffff;
     }
 }

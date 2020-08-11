@@ -17,7 +17,11 @@ function b4st_navbar_brand() {
   if ( ! has_action('navbar_brand') ) {
     ?>
     <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">
+    <?php if (is_front_page()):?>
       <img src="<?php echo get_template_directory_uri();?>/theme/img/logo.png" alt="<?php bloginfo('name'); ?>">
+    <?php else :?>
+      <img src="<?php echo get_template_directory_uri();?>/theme/img/icono-blanco.png" alt="<?php bloginfo('name'); ?>">
+    <?php endif;?>
     </a>
     <?php
   } else {

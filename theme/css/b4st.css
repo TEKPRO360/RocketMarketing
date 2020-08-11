@@ -35,7 +35,7 @@ html {
   background: url("../img/fondo-btn.jpg");
   background-position: left;
   background-size: 200% 100%;
-  color: #ffffff;
+  color: #ffffff !important;
   border: none;
   border-radius: 3em;
   padding: 10px;
@@ -51,6 +51,8 @@ html {
     border: none !important;
     border-style: none !important;
     text-decoration: none !important; }
+  .btn-rocket:hover {
+    color: #ffffff; }
 
 #site-navbar {
   position: absolute;
@@ -193,7 +195,11 @@ html {
     text-transform: uppercase;
     font-weight: bolder;
     color: inherit;
-    text-decoration: none; }
+    text-decoration: none;
+    letter-spacing: .2em; }
+  .index #servicios .detalles-servicio .resumen-servicio {
+    font-weight: lighter;
+    letter-spacing: .1em; }
   .index #servicios .btn-ver-mas .btn-rocket {
     text-transform: uppercase;
     font-weight: bold;
@@ -215,10 +221,12 @@ html {
     .index #casos-de-exito .titulo-casos p {
       width: 100%;
       margin: 0;
-      font-size: 2em;
+      font-size: 3em;
+      font-weight: 800;
       text-transform: uppercase;
       text-align: center;
-      letter-spacing: 5px; }
+      letter-spacing: normal;
+      line-height: 1em; }
       @media screen and (min-width: 768px) {
         .index #casos-de-exito .titulo-casos p {
           text-align: left;
@@ -246,11 +254,11 @@ html {
           -o-object-fit: cover;
           object-fit: cover; }
     .index #casos-de-exito .owl-detalle-caso .detalles-casos .nombre-caso {
-      font-weight: bold;
-      text-transform: uppercase; }
+      font-weight: bold; }
     .index #casos-de-exito .owl-detalle-caso .detalles-casos .servicio-caso {
       width: 100%;
-      margin: auto auto 0px auto; }
+      margin: auto auto 0px auto;
+      text-transform: uppercase; }
     .index #casos-de-exito .owl-detalle-caso .detalles-casos a {
       padding: 0;
       margin: 10px auto auto;
@@ -455,8 +463,15 @@ html {
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1); }
-    .casos .columnas .caso:nth-child(even) {
-      margin-bottom: 80px; }
+    @media screen and (min-width: 768px) {
+      .casos .columnas .caso:nth-child(even) {
+        margin-bottom: 40px;
+        margin-top: -40px; }
+      .casos .columnas .caso img {
+        height: 100%;
+        width: 100%; } }
+    .casos .columnas .caso img {
+      height: auto; }
     .casos .columnas .nombre-caso, .casos .columnas .servicio-caso {
       color: rgba(0, 0, 0, 0.47);
       text-transform: uppercase; }
@@ -815,7 +830,6 @@ main {
   color: #ffffff;
   z-index: 2; }
   #site-footer a, #site-footer p {
-    margin: .6em auto;
     line-height: 1.3em;
     color: inherit;
     text-decoration: none; }

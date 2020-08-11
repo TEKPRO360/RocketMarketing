@@ -9,7 +9,7 @@
   'order'           => 'ASC'
   ) ); ?>
 <main id="site-main" class="casos align-items-center">
-<p class="titulo col-12 text-center text-md-left">Casos de éxito</p>
+<p class="titulo col-12 text-center text-md-left d-none d-md-block">Casos de éxito</p>
   <section class="cabecera col-12 col-md-8 d-flex flex-column align-items-center justify-content-center text-center des">
     <img src="<?php echo get_template_directory_uri(); ?>/theme/img/cabecera-casos.png" alt="" class="pantalla m-auto col-12">
     <h1 class="mt-2 mt-md-5">Casos de éxito</h1>
@@ -21,7 +21,7 @@
     <?php while ($casos->have_posts() ) : $casos->the_post(); $servicios_involucrados = get_field( 'servicios_involucrados' ); $capturaCaso = get_field('captura_caso');?>
     <?php if ( $servicios_involucrados ) : ?>
       <div class="caso d-flex flex-column justify-content-center p-4 col-12 col-md-3">
-      <img src="<?php echo $capturaCaso; ?>" alt="" class="shadow mb-5">
+      <img src="<?php echo $capturaCaso; ?>" alt="" class="shadow mb-md-5">
       <h3 class="nombre-caso text-center text-md-left" data-hash="<?php the_title();?>" data-link="<?php the_permalink();?>"><?php the_title();?></h3>
       <?php foreach ( $servicios_involucrados as $post ) : ?>
       <?php setup_postdata ( $post ); ?>

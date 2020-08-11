@@ -25,14 +25,14 @@
   <?php if ($servicios->have_posts() ) :?>
   <div class="info-servicios d-none">
     <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
-    <div class="servicio-0<?php echo $numero_servicio;?> d-none" data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>" data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>" data-link="<?php the_permalink();?>"></div>
+    <div class="servicio-<?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?> d-none" data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>" data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>" data-link="<?php the_permalink();?>"></div>
     <?php endwhile; wp_reset_postdata();?>
   </div>
                 
   <section id="servicios" class="pb-5 px-0 text-white d-flex flex-wrap justify-content-center align-items-center">
     <div class="imagenes col-12 col-md-11 ml-auto mr-0 mb-5 mt-0 d-flex flex-row justify-content-between p-0">
-      <img src="" alt="" class="recibe-imagen-1 sombra-foto d-none d-md-block">
-      <img src="" alt="" class="recibe-imagen-2 sombra-foto mr-0">
+      <img src="" alt="" class="recibe-imagen-1 d-none d-md-block">
+      <img src="" alt="" class="recibe-imagen-2 mr-0">
     </div>
     <div class="col-12 col-md-10 d-flex flex-wrap p-0 mt-0 mb-auto bg-morado p-1">
       <div class="col-12 col-md-6 d-flex  p-0">
@@ -41,8 +41,9 @@
           <p class="enumeracion-servicio text-center" data-servicio="02">02</p>
           <p class="enumeracion-servicio text-center" data-servicio="03">03</p>
           <p class="enumeracion-servicio text-center" data-servicio="04">04</p>
+          <p class="enumeracion-servicio text-center" data-servicio="05">05</p>
         </div>
-        <div class="detalles-servicio col-12 col-md-11 columna-1">
+        <div class="detalles-servicio col-10 col-md-11 columna-1">
           <p class="numero-servicio">Servicio <span>01</span></p>
           <a href="" class="titulo-servicio mb-2"></a>
           <p class="resumen-servicio"></p>
@@ -50,12 +51,13 @@
       </div>
       <div class="col-12 col-md-6 d-flex p-0">
         <div class="contenedor-enumeracion d-flex flex-column justify-content-between align-items-center col-1 p-0">
-          <p class="enumeracion-servicio text-center" data-servicio="05">05</p>
           <p class="enumeracion-servicio text-center" data-servicio="06">06</p>
           <p class="enumeracion-servicio text-center" data-servicio="07">07</p>
           <p class="enumeracion-servicio text-center" data-servicio="08">08</p>
+          <p class="enumeracion-servicio text-center" data-servicio="09">09</p>
+          <p class="enumeracion-servicio text-center" data-servicio="10">10</p>
         </div>
-        <div class="detalles-servicio col-12 col-md-11 columna-2">
+        <div class="detalles-servicio col-10 col-md-11 columna-2">
           <p class="numero-servicio">Servicio <span>05</span></p>
           <a href="" class="titulo-servicio mb-2"></a>
           <p class="resumen-servicio"></p>
@@ -63,7 +65,7 @@
       </div>
     </div>
     <div class="btn-ver-mas container d-flex mt-5 w-100">
-      <button class="btn-rocket col-12 col-md-3 m-auto d-flex text-center"><p>Ver más</p><i class="fas fa-chevron-right"></i></button>
+      <a href="" class="btn-rocket col-12 col-md-3 m-auto d-flex text-center link-cambia"><p>Ver más</p><i class="fas fa-chevron-right"></i></a>
     </div>
   </section>
   <?php endif;wp_reset_postdata();?>

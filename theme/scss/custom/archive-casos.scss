@@ -32,8 +32,18 @@
             }
         }
         .caso{
-            &:nth-child(even){
-                margin-bottom: 80px;
+            @include MQ(M){
+                &:nth-child(even){
+                    margin-bottom: 40px;
+                    margin-top: -40px;
+                }
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            img{
+                height: auto;
             }
         }
         .nombre-caso, .servicio-caso{

@@ -1,5 +1,24 @@
 .btn-rocket {
-  background: #000;
-  color: #fff; }
+  background: fn-url("fondo-btn.jpg");
+  background-position: left;
+  background-size: 200% 100%;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 3em;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-transition: .3s ease all;
+  -o-transition: .3s ease all;
+  transition: .3s ease all; }
+  .btn-rocket:active, .btn-rocket :focus, .btn-rocket :visited {
+    outline: none !important;
+    border: none !important;
+    border-style: none !important;
+    text-decoration: none !important; }
+  .btn-rocket:hover {
+    color: #ffffff; }
 
 /*# sourceMappingURL=botones.css.map */

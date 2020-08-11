@@ -27,14 +27,14 @@
 		// CAMBIO LOGO EN MENU
 		var btnHome = $('.navbar-brand').attr('href'),
 			logo = $('.navbar-brand').find('img'),
-			home = window.location.origin + /rocketmarketing/,
+			home = window.location.origin,
 			url = window.location.href;
 
 		console.log(home)
 		console.log(url)
-		if(url != home){ 
-			logo.attr('src', `${home}wp-content/themes/Rocket-Marketing/theme/img/icono-blanco.png`)
-		}
+		//if(url != home){ 
+		//	logo.attr('src', `${home}wp-content/themes/Rocket-Marketing/theme/img/icono-blanco.png`)
+		//}
 		
 
 		// OWL CAROUSEL'S
@@ -55,7 +55,7 @@
 					items:1
 				},
 				600:{
-					items:3
+					items:1
 				},
 				1000:{
 					items:1
@@ -77,7 +77,7 @@
 					items:1
 				},
 				600:{
-					items:3
+					items:1
 				},
 				1000:{
 					items:1
@@ -215,6 +215,7 @@
 			linkQuintoServicio = primerServicioColDos.data('link'),
 			fotoUno = primerServicioColUno.data('imagen1'),
 			fotoDos = primerServicioColUno.data('imagen2'),
+			btnCambia = $('.link-cambia'),
 			recibeTituloPrimero = columna1.find('.titulo-servicio'),
 			recibeResumenPrimero = columna1.find('.resumen-servicio'),
 			recibeLinkPrimero = columna1.find('a'),
@@ -231,6 +232,7 @@
 		recibeResumenSegundo.html(resumenQuintoServicio);
 		recibeFotoUno.attr('src', fotoUno);
 		recibeFotoDos.attr('src', fotoDos);
+		btnCambia.attr('href', linkPrimerServicio);
 
 		contenedorEnumeracion.find('>:first-child').addClass('active');
 
@@ -249,6 +251,7 @@
 				recibeResumenServicio = $(this).parent().parent().find('.resumen-servicio'),
 				recibeLink = $(this).parent().parent().find('a');
 
+			btnCambia.attr('href', linkServicio);
 			recibeNumero.fadeOut();
 			recibeTitulo.fadeOut();
 			recibeResumenServicio.fadeOut();
