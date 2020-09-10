@@ -14,9 +14,9 @@
   <!-- FIN SECCIÓN PRIMERA -->
 
   <!-- SECCIÓN SERVICIOS -->
-
+  <?php if (! wp_is_mobile() ): ?>
   <?php $servicios = new WP_Query( array( 
-          'post_type'       => 'servicios',
+    'post_type'       => 'servicios',
           'posts_per_page'  => -1,
           'category'        => 'current',
           'order_by'        => 'date',
@@ -25,10 +25,13 @@
   <?php if ($servicios->have_posts() ) :?>
   <div class="info-servicios d-none">
     <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
-    <div class="servicio-<?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?> d-none" data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>" data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>" data-link="<?php the_permalink();?>"></div>
+    <div class="servicio-<?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?> d-none"
+      data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>"
+      data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>"
+      data-link="<?php the_permalink();?>"></div>
     <?php endwhile; wp_reset_postdata();?>
   </div>
-                
+
   <section id="servicios" class="pb-5 px-0 text-white d-flex flex-wrap justify-content-center align-items-center">
     <div class="imagenes col-12 col-md-11 ml-auto mr-0 mb-5 mt-0 d-flex flex-row justify-content-between p-0">
       <img src="" alt="" class="recibe-imagen-1 d-none d-md-block">
@@ -65,10 +68,42 @@
       </div>
     </div>
     <div class="btn-ver-mas container d-flex mt-5 w-100">
-      <a href="" class="btn-rocket col-12 col-md-3 m-auto d-flex text-center link-cambia"><p>Ver más</p><i class="fas fa-chevron-right"></i></a>
+      <a href="" class="btn-rocket col-12 col-md-3 m-auto d-flex text-center link-cambia">
+        <p>Ver más</p><i class="fas fa-chevron-right"></i>
+      </a>
     </div>
   </section>
   <?php endif;wp_reset_postdata();?>
+  <!-- SERVICIOS MOBILE -->
+  <?php else:?>
+  <?php $servicios = new WP_Query( array(
+    'post_type'       => 'servicios',
+    'post_per_page'   => -1,
+    'category'        => 'current',
+    'order_by'        => 'date',
+    'order'           => 'ASC'
+  )); ?>
+  <?php if ($servicios->have_posts() ) :?>
+  <section id="servicios" class="text-white d-flex flex-column p-4">
+    <h2 class="text-center titulo">Servicios</h2>
+    <div class="owl-theme owl carousel owl-servicios-mobile">
+      <?php while ($servicios->have_posts() ) : $servicios->the_post() ;?>
+      <div class="card-servicio">
+        <div class="foto">
+          <img src="<?php echo (get_field('foto_home_2'));?>" alt="<?php echo(the_title());?>">
+        </div>
+        <div class="titulo text-center">
+          <?php echo(the_title());?>
+        </div>
+        <p class="resumen">
+          <?php echo(the_field('resumen_servicio'));?>
+        </p>
+      </div>
+      <?php endwhile; wp_reset_postdata();?>
+    </div>
+  </section>
+  <?php endif;wp_reset_postdata();?>
+  <?php endif ?>
   <!-- FIN SECCIÓN SERVICIOS -->
 
   <!-- SECCIÓN CASOS DE ÉXITO -->
@@ -88,31 +123,37 @@
       </div>
       <div class="col-12 col-md-6 d-flex align-items-center justify-content-center computador ">
         <div class="pantalla owl-theme owl-carousel owl-foto-caso">
-        <?php while ($casos->have_posts() ) : $casos->the_post(); $imagenCaso = get_field('imagen_del_caso_de_exito');?>
-        <img src="<?php echo $imagenCaso; ?>" alt="<?php the_title();?> en Tekpro" data-hash="<?php the_title();?>" class="">
-        <?php endwhile; wp_reset_postdata();?>
-      </div>
-    </div>
-    <div class="col-12 col-md-3 d-flex">
-      <div class="owl-theme owl-carousel owl-detalle-caso d-flex align-items-center">
-        <?php while ($casos->have_posts() ) : $casos->the_post(); $servicios_involucrados = get_field( 'servicios_involucrados' );?>
-        <?php if ( $servicios_involucrados ) : ?>
-        <div class="detalles-casos p-2 d-flex flex-column">
-          <h3 class="nombre-caso text-center text-md-right" data-hash="<?php the_title();?>" data-link="<?php the_permalink();?>"><?php the_title();?></h3>
-          <?php foreach ( $servicios_involucrados as $post ) : ?>
-          <?php setup_postdata ( $post ); ?>
-          <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>
-          <?php endforeach; ?>
-          <?php wp_reset_postdata(); ?>
-          <a href="<?php echo get_site_url(); ?>/casos" class="col-12 text-center text-md-right">Ver más</a>
-        <?php endif; ?>
+          <?php while ($casos->have_posts() ) : $casos->the_post(); $imagenCaso = get_field('imagen_del_caso_de_exito');?>
+          <img src="<?php echo $imagenCaso; ?>" alt="<?php the_title();?> en Tekpro" data-hash="<?php the_title();?>"
+            class="">
+          <?php endwhile; wp_reset_postdata();?>
         </div>
-        <?php endwhile; wp_reset_postdata();?>
+      </div>
+      <div class="col-12 col-md-3 d-flex">
+        <div class="owl-theme owl-carousel owl-detalle-caso d-flex align-items-center">
+          <?php while ($casos->have_posts() ) : $casos->the_post(); $servicios_involucrados = get_field( 'servicios_involucrados' );?>
+          <?php if ( $servicios_involucrados ) : ?>
+          <div class="detalles-casos p-2 d-flex flex-column">
+            <h3 class="nombre-caso text-center text-md-right" data-hash="<?php the_title();?>"
+              data-link="<?php the_permalink();?>"><?php the_title();?></h3>
+            <?php foreach ( $servicios_involucrados as $post ) : ?>
+            <?php setup_postdata ( $post ); ?>
+            <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>
+            <?php endforeach; ?>
+            <?php wp_reset_postdata(); ?>
+            <a href="<?php echo get_site_url(); ?>/casos" class="col-12 text-center text-md-right">Ver más</a>
+            <?php endif; ?>
+          </div>
+          <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
     </div>
     <div class="w-100">
-      <p class="col-12 col-md-6 text-center mt-2 mt-md-auto mx-auto">Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
+      <p class="col-12 col-md-6 text-center mt-2 mt-md-auto mx-auto">Empoderamos tu marca a través de nuestras campañas
+        de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor
+        alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el
+        posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.
+      </p>
     </div>
   </section>
   <?php endif;wp_reset_postdata();?>
@@ -157,8 +198,10 @@
       <input type="text" name="empresa" placeholder="Empresa" id="empresa" class="empresa col-12 col-md-5">
       <input type="text" name="fono" placeholder="Fono" id="fono" class="fono col-12 col-md-5">
       <input type="email" name="correo" placeholder="Correo" id="correo" class="correo col-12 col-md-11">
-      <textarea name="mensaje-contacto" placeholder="Mensaje" id="mensaje-contacto" cols="30" rows="10" class="mensaje-contacto col-12 col-md-11"></textarea>
-      <button class="enviar-contacto btn-rocket col-10 col-md-3 mx-auto mt-3">Enviar <i class="fas fa-chevron-right ml-1"></i></button>
+      <textarea name="mensaje-contacto" placeholder="Mensaje" id="mensaje-contacto" cols="30" rows="10"
+        class="mensaje-contacto col-12 col-md-11"></textarea>
+      <button class="enviar-contacto btn-rocket col-10 col-md-3 mx-auto mt-3">Enviar <i
+          class="fas fa-chevron-right ml-1"></i></button>
     </div>
   </section>
   <!-- FIN SECCIÓN CONTACTO -->

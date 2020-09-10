@@ -7,19 +7,21 @@
             min-width: 200px;
         }
     }
+    .titulo{
+        text-transform: uppercase;
+    }
     #servicios{
         .imagenes{
             img{
-                object-fit: cover;
-                min-height: 400px;
-                max-height: 60vh;
+                object-fit: contain;
+                height: 540px;
             }
             .recibe-imagen-1{
                 width: 28%;
             }
             .recibe-imagen-2{
                 width: 90%;
-                margin: auto;
+                margin: auto 0 auto auto;
                 @include MQ(M){
                     width: 68%;
                 }

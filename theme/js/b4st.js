@@ -185,6 +185,31 @@
 			}
 		});
 
+		// OWL SERVICIOS-MOBILE
+		$('.owl-servicios-mobile').owlCarousel({
+			loop:false,
+			margin:10,
+			nav:false,
+			dots:false,
+			autoplay:true,
+			autoplayTimeout:5000,
+			autoplayHoverPause:true,
+			responsive:{
+				0:{
+					margin:30,
+					items:1
+				},
+				600:{
+					margin:100,
+					items:1
+				},
+				1000:{
+					margin:100,
+					items:1
+				}
+			}
+		});
+
 		// ACCIONES MENÚ
 
 		$('.accion-menu').click(function(){
