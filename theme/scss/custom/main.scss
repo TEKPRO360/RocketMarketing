@@ -11,80 +11,121 @@
         text-transform: uppercase;
     }
     #servicios{
-        .imagenes{
-            img{
-                object-fit: contain;
-                height: 540px;
-            }
-            .recibe-imagen-1{
-                width: 28%;
-            }
-            .recibe-imagen-2{
-                width: 90%;
-                margin: auto 0 auto auto;
-                @include MQ(M){
-                    width: 68%;
-                }
-            }
-        }.bg-morado{
-            background: $color-morado;
-        }
-        .contenedor-enumeracion{
-            .enumeracion-servicio{
-                border: 1px solid #ffffff;
-                border-radius: 33.333em;
-                height: 30px;
-                width: 30px;
-                cursor: pointer;
-                transition: .3s ease-in all;
-                margin: 10px auto;
-                transition: .3s ease all;
-                &:hover{
-                    color: $color-primario;
-                    background: #ffffff !important;
-                }
-                &.active{
-                    background: $color-primario;
-                    box-shadow: rgba($color: #000000, $alpha: .6) 0px 5px 10px;
-                    animation-name: levantar;
-                    animation-duration: .8s;
-                    animation-iteration-count: initial;
-                    animation-fill-mode: both;
-                }
-            }
-        }
-        .detalles-servicio{
-            p{
-                margin: 0;
-            }
-            .titulo-servicio{
-                font-size: 2em;
-                text-transform: uppercase;
-                font-weight: bolder;
-                color: inherit;
-                text-decoration: none;
-                letter-spacing: .2em;
-            }
-            .resumen-servicio{
-                font-weight: lighter;
-                letter-spacing: .1em;
-            }
-        }
-        .btn-ver-mas{
-            .btn-rocket{
-                text-transform: uppercase;
-                font-weight: bold;
-                transition: .8s ease all;
-                &:hover{
-                    background-position: right;
+        .owl-stage-outer{
+            overflow: visible;
+            .owl-stage{
+                .active{
+                    transform: scale(1.2);
+                    box-shadow: rgba($color: #000000, $alpha: .6) 0px 0px 10px 0px;
+                    z-index: 100;
                     transition: .3s ease all;
+                    border-radius: 15px;
                 }
+            }
+        }
+        .card-servicios{
+            background: $color-morado;
+            border-radius: 15px;
+            overflow: hidden;
+            img{
+                height: 200px;
+                object-fit: cover;
+            }
+            h3, p{
+                padding: 0 20px;
+                text-align: center;
+            }
+            .titulo{
+                font-size: 1em;
+                font-weight: bolder;
+                letter-spacing: .1rem;
+            }
+            p{
+                font-weight: lighter;
+                letter-spacing: .1rem;
+                line-height: normal;
+            }
+            a{
+                background: $blanco;
+                color: $color-morado;
+            }
+        }
+        @include MQ(M){
+            .imagenes{
+                img{
+                    object-fit: contain;
+                    height: 540px;
+                }
+                .recibe-imagen-1{
+                    width: 28%;
+                }
+                .recibe-imagen-2{
+                    width: 90%;
+                    margin: auto 0 auto auto;
+                    @include MQ(M){
+                        width: 68%;
+                    }
+                }
+            }.bg-morado{
+                background: $color-morado;
+            }
+            .contenedor-enumeracion{
+                .enumeracion-servicio{
+                    border: 1px solid #ffffff;
+                    border-radius: 33.333em;
+                    height: 30px;
+                    width: 30px;
+                    cursor: pointer;
+                    transition: .3s ease-in all;
+                    margin: 10px auto;
+                    transition: .3s ease all;
+                    &:hover{
+                        color: $color-primario;
+                        background: #ffffff !important;
+                    }
+                    &.active{
+                        background: $color-primario;
+                        box-shadow: rgba($color: #000000, $alpha: .6) 0px 5px 10px;
+                        animation-name: levantar;
+                        animation-duration: .8s;
+                        animation-iteration-count: initial;
+                        animation-fill-mode: both;
+                    }
+                }
+            }
+            .detalles-servicio{
                 p{
-                    margin: 0 0 0 auto;
+                    margin: 0;
                 }
-                i{
-                    margin: 0 auto 0 10px;
-                    line-height: inherit;
+                .titulo-servicio{
+                    font-size: 2em;
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    color: inherit;
+                    text-decoration: none;
+                    letter-spacing: .2em;
+                }
+                .resumen-servicio{
+                    font-weight: lighter;
+                    letter-spacing: .1em;
+                }
+            }
+            .btn-ver-mas{
+                .btn-rocket{
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    transition: .8s ease all;
+                    &:hover{
+                        background-position: right;
+                        transition: .3s ease all;
+                    }
+                    p{
+                        margin: 0 0 0 auto;
+                    }
+                    i{
+                        margin: 0 auto 0 10px;
+                        line-height: inherit;
+                    }
                 }
             }
         }

@@ -84,20 +84,19 @@
     'order'           => 'ASC'
   )); ?>
   <?php if ($servicios->have_posts() ) :?>
-  <section id="servicios" class="text-white d-flex flex-column p-4">
-    <h2 class="text-center titulo">Servicios</h2>
-    <div class="owl-theme owl carousel owl-servicios-mobile">
-      <?php while ($servicios->have_posts() ) : $servicios->the_post() ;?>
-      <div class="card-servicio">
-        <div class="foto">
-          <img src="<?php echo (get_field('foto_home_2'));?>" alt="<?php echo(the_title());?>">
-        </div>
-        <div class="titulo text-center">
-          <?php echo(the_title());?>
-        </div>
-        <p class="resumen">
-          <?php echo(the_field('resumen_servicio'));?>
-        </p>
+  <section id="servicios" class="text-white py-4">
+    <h2 class="text-white text-center titulo">
+      Servicios
+    </h2>
+    <div class="owl-theme owl-carousel owl-servicios-mobile py-5">
+      <?php while ($servicios->have_posts() ) : $servicios->the_post();?>
+      <div class="card-servicios d-flex flex-column justify-content-center">
+        <img src="<?php echo(get_field('foto_home_1'));?>" alt="<?php the_title();?>">
+        <h3 class="titulo text-center mt-3">
+          <?php the_title();?>
+        </h3>
+        <?php echo wp_trim_words(the_field('resumen_servicio'), 10, '...');?>
+        <a href="<?php the_permalink();?>" class="col-12 text-center">Ver más</a>
       </div>
       <?php endwhile; wp_reset_postdata();?>
     </div>
