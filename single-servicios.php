@@ -4,7 +4,7 @@
 ?>
 
 <main id="site-main" class="servicios d-flex flex-wrap bg-servicio text-servicio">
-  <?php if(! wp_is_mobile()) :?>
+  <?php //if(! wp_is_mobile()) :?>
   <?php $servicios = new WP_Query( array( 
           'post_type'       => 'servicios',
           'posts_per_page'  => -1,
@@ -13,7 +13,7 @@
           'order'           => 'ASC'
           ) ); $numero_servicio = 0; ?>
   <?php if ($servicios->have_posts() ) :?>
-  <div class="contenedor-menu col-md-4 pt-5 px-3">
+  <div class="contenedor-menu col-md-4 pt-5 px-3 d-none d-md-block">
     <div class="menu my-5 text-servicio">
       <p>Servicios</p>
       <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <?php endif; wp_reset_postdata();?>
-  <?php endif ?>
+  <?php //endif ?>
 
   <!-- CONTENEDOR SECCIONES -->
   <div class="contenedor-secciones w-100">
@@ -40,17 +40,17 @@
         </div>
         <div class="contenedor-fotos w-100 d-flex flex-wrap">
           <img src="<?php echo $imagenHorizontal; ?>" alt="" class="img-horizontal">
-          <img src="<?php echo $imagenVertical; ?>" alt="" class="img-vertical">
+          <img src="<?php echo $imagenVertical; ?>" alt="" class="img-vertical d-none d-md-block">
         </div>
       </div>
     </section>
     <?php endwhile; wp_reset_postdata();?>
     <?php endif; ?>
     <!-- FIN SECCIÓN 1 -->
-    <!-- SECCIÓN 2 -->
     <?php if ( have_rows( 'seccion_2' ) ) : ?>
+    <!-- SECCIÓN 2 -->
     <?php while ( have_rows( 'seccion_2' ) ) : the_row();?>
-    <section class="seccion-2 w-100 pr-0 py-5" style="background:<?php the_sub_field( 'color_background' ); ?>;color:<?php the_sub_field( 'color_texto' ); ?>;">
+    <section class="seccion-2 w-100 pr-0 py-md-5" style="background:<?php the_sub_field( 'color_background' ); ?>;color:<?php the_sub_field( 'color_texto' ); ?>;">
       <div class="col-12 col-md-8 d-flex flex-wrap ml-auto px-0">
         <div class="owl-theme owl-carousel owl-servicios text-center p-3">
           <?php if ( have_rows( 'slide_detalles_servicios_1' ) ) : ?>
@@ -62,10 +62,10 @@
       </div>
     </section>
     <?php endwhile; wp_reset_postdata();?>
-    <?php endif; ?>
     <!-- FIN SECCIÓN 2 -->
-    <!-- SECCIÓN 3 -->
+    <?php endif; ?>
     <?php if ( have_rows( 'seccion_3' ) ) : ?>
+      <!-- SECCIÓN 3 -->
     <?php while ( have_rows( 'seccion_3' ) ) : the_row(); $imagenTres = get_sub_field('imagen_slide_detalles_servicios_3'); $imagenCuatro = get_sub_field('imagen_slide_detalles_servicios_4');?>
     <section class="seccion-3 w-100 pr-0" style="background:<?php the_sub_field( 'color_background' ); ?>;color:<?php the_sub_field( 'color_texto' ); ?>;">
       <div class="detalles-3 col-12 col-md-8 d-flex flex-wrap ml-auto px-0 d-flex flex-wrap align-items-center justify-content-center">
@@ -90,8 +90,15 @@
       </div>
     </section>
     <?php endwhile; wp_reset_postdata();?>
-    <?php endif; ?>
     <!-- FIN SECCIÓN 3 -->
+    <?php endif; ?>
+    <?php if(wp_is_mobile()): ?>
+    <section class="links-servicios boton-servicio">
+      <p>Otros servicios</p>
+      <?php previous_post_link('%link', '< %title'); ?>
+      <?php next_post_link('%link', '%title >'); ?>
+    </section>
+    <?php endif ?>
   </div>
   <!-- FIN CONTENEDOR SECCIONES -->
 </main>

@@ -44,6 +44,7 @@
     }
     .contenedor-secciones{
         margin-top: 10%;
+        letter-spacing: .1rem;
         .seccion-1{
             .titulo-detalle{
                 h1{
@@ -59,10 +60,12 @@
                 img{
                     object-fit: contain;
                 }
-                .img-horizontal{
-                    width: 63%;
-                    z-index: 2;
-                    max-width: inherit;
+                @include MQ(M){
+                    .img-horizontal{
+                        width: 63%;
+                        z-index: 2;
+                        max-width: inherit;
+                    }
                 }
                 .img-vertical{
                     position: absolute;
@@ -83,13 +86,45 @@
                 margin: 0 0 -10%;
             }
         }
+        .links-servicios{
+            padding: 20px 10px;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px auto auto auto;
+            p{
+                width: 100%;
+                text-align: center;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            a{
+                color: inherit;
+                flex-grow: 1;
+                box-sizing: border-box;
+                border-radius: 5px;
+                margin: 10px;
+                text-transform: uppercase;
+                padding: 10px 30px;
+                &:first-child{
+                }
+                &:last-child{
+                    text-align: end;
+                    padding: 10px 30px;
+                }
+            }
+        }
         .owl-servicios{
+            .owl-item{
+                text-align: left;
+            }
             .owl-nav{
                 position: absolute;
                 margin: -10px 0 auto auto;
                 right: 0;
                 width: 100px;
-                display: flex;
+                // display: flex;
                 align-items: center;
                 justify-content: space-around;
                 button{

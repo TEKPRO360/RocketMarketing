@@ -85,8 +85,8 @@
   )); ?>
   <?php if ($servicios->have_posts() ) :?>
   <section id="servicios" class="text-white py-4">
-    <h2 class="text-white text-center titulo">
-      Servicios
+    <h2 class="text-white text-center titulo mb-5">
+      Nuestros Servicios
     </h2>
     <div class="owl-theme owl-carousel owl-servicios-mobile py-5">
       <?php while ($servicios->have_posts() ) : $servicios->the_post();?>
