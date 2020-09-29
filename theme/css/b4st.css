@@ -150,7 +150,9 @@ html {
     width: 10vw;
     min-width: 200px; }
   .index .titulo {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1rem; }
   .index #servicios .owl-stage-outer {
     overflow: visible; }
     .index #servicios .owl-stage-outer .owl-stage .active {
