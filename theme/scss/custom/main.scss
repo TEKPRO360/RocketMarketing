@@ -1,6 +1,31 @@
 .owl-theme .owl-dots .owl-dot{
     outline: none;
 }
+.bg-morado{
+    background: $color-morado;
+}
+.bg-primario{
+    background: $color-primario;
+}
+body{
+    letter-spacing: .1rem;
+    .btn-rocket{
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: .8s ease all;
+        &:hover{
+            background-position: right;
+            transition: .3s ease all;
+        }
+        p{
+            margin: 0 0 0 auto;
+        }
+        i{
+            margin: 0 auto 0 10px;
+            line-height: inherit;
+        }
+    }
+}
 .index{
     overflow-x:hidden;
     font-family: $fuente-primaria;
@@ -17,14 +42,17 @@
         letter-spacing: .1rem;
     }
     #servicios{
+        min-height: 100vh;
         .owl-stage-outer{
             overflow: visible;
             .owl-stage{
+                .owl-item{
+                    transition: .6s ease all;
+                }
                 .active{
                     transform: scale(1.2);
                     box-shadow: rgba($color: #000000, $alpha: .6) 0px 0px 10px 0px;
                     z-index: 100;
-                    transition: .6s ease all;
                     border-radius: 15px;
                     .card-servicios{
                         overflow: visible;
@@ -88,6 +116,28 @@
             }
         }
         @include MQ(M){
+            .owl-stage-outer{
+                overflow: hidden;
+                // pointer-events: none;
+                height: 100% !important;
+                .owl-stage{
+                    height: 100%;
+                    .owl-item{
+                        height: 100%;
+                    }
+                    .active{
+                        transform: scale(1);
+                        box-shadow: inherit;
+                        z-index: inherit;
+                        border-radius: inherit;
+                    }
+                }
+            }
+            .owl-dots{
+                top: 50%;
+                transform: rotate(90deg);
+                right: -46%;
+            }
             .imagenes{
                 img{
                     object-fit: contain;
@@ -103,65 +153,92 @@
                         width: 68%;
                     }
                 }
-            }.bg-morado{
-                background: $color-morado;
             }
-            .contenedor-enumeracion{
-                .enumeracion-servicio{
-                    border: 1px solid #ffffff;
-                    border-radius: 33.333em;
-                    height: 30px;
-                    width: 30px;
-                    cursor: pointer;
-                    transition: .3s ease-in all;
-                    margin: 10px auto;
+            .numeros-servicios{
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                    .titulo{
+                        font-size: 1rem;
+                        line-height: normal;
+                        text-align: left;
+                    }
+                }
+                .servicio{
+                    opacity: .4;
+                    filter: blur(.6px);
                     transition: .3s ease all;
+                    .numero{
+                        border: 1px solid #ffffff;
+                        border-radius: 50%;
+                        height: 30px;
+                        max-width: 30px;
+                        transition: .3s ease-in all;
+                        margin: 10px auto;
+                        transition: .3s ease all;
+                        padding: 4px;
+                        box-sizing: border-box;
+                        vertical-align: center;
+                    }
                     &:hover{
-                        color: $color-primario;
-                        background: #ffffff !important;
+                        opacity: 1;
+                        cursor: pointer;
+                        filter: blur(0px);
+                        .numero{
+                            color: $color-primario;
+                            background: #ffffff !important;
+                        }
                     }
                     &.active{
-                        background: $color-primario;
-                        box-shadow: rgba($color: #000000, $alpha: .6) 0px 5px 10px;
-                        animation-name: levantar;
-                        animation-duration: .8s;
                         animation-iteration-count: initial;
                         animation-fill-mode: both;
+                        opacity: 1;
+                        filter: blur(0px);
                     }
                 }
             }
-            .detalles-servicio{
-                p{
-                    margin: 0;
-                }
-                .titulo-servicio{
-                    font-size: 2em;
-                    text-transform: uppercase;
-                    font-weight: bolder;
-                    color: inherit;
-                    text-decoration: none;
-                    letter-spacing: .2rem;
-                }
-                .resumen-servicio{
-                    font-weight: lighter;
-                    letter-spacing: .1em;
-                }
-            }
-            .btn-ver-mas{
-                .btn-rocket{
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    transition: .8s ease all;
-                    &:hover{
-                        background-position: right;
-                        transition: .3s ease all;
+            .detalles-servicios{
+                .servicio{
+                    height: 100%;
+                    display: flex;
+                    flex-flow: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        height: 100%;
+                        object-fit: contain;
                     }
-                    p{
-                        margin: 0 0 0 auto;
-                    }
-                    i{
-                        margin: 0 auto 0 10px;
-                        line-height: inherit;
+                    .textos{
+                        p{
+                            margin: 0;
+                        }
+                        .titulo{
+                            width: 100%;
+                            text-align: left;
+                            font-size: 2rem;
+                            text-transform: uppercase;
+                            font-weight: bolder;
+                            color: inherit;
+                            text-decoration: none;
+                            margin: 0px auto 10px;
+                            padding: 0px;
+                            line-height: 2rem;
+                        }
+                        .btn-ver-mas{
+                            background: #fff;
+                            margin: 10px auto;
+                            pointer-events: all;
+                            text-align: center;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            padding: 5px;
+                            border-radius: 33.333rem;
+                            a{
+                                color: $color-primario;
+                                text-align: center;
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }
@@ -292,6 +369,6 @@
         transform: scale(1) rotateX(60deg);
     }
     100%{
-        transform: scale(1.3) rotateX(0deg);
+        transform: scale(1.04) rotateX(0deg);
     }
 }

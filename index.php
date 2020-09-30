@@ -15,62 +15,38 @@
 
   <!-- SECCIÓN SERVICIOS -->
   <?php if (! wp_is_mobile() ): ?>
-  <?php $servicios = new WP_Query( array( 
-    'post_type'       => 'servicios',
-          'posts_per_page'  => -1,
-          'category'        => 'current',
-          'order_by'        => 'date',
-          'order'           => 'ASC'
-          ) ); $numero_servicio = 0; ?>
-  <?php if ($servicios->have_posts() ) :?>
-  <div class="info-servicios d-none">
-    <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
-    <div class="servicio-<?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?> d-none"
-      data-titulo="<?php the_title();?>" data-resumen="<?php the_field( 'resumen_servicio' ); ?>"
-      data-imagen1="<?php echo $imagen1; ?>" data-imagen2="<?php echo $imagen2; ?>"
-      data-link="<?php the_permalink();?>"></div>
-    <?php endwhile; wp_reset_postdata();?>
-  </div>
 
-  <section id="servicios" class="pb-5 px-0 text-white d-flex flex-wrap justify-content-center align-items-center">
-    <div class="imagenes col-12 col-md-11 ml-auto mr-0 mb-5 mt-0 d-flex flex-row justify-content-between p-0">
-      <img src="" alt="" class="recibe-imagen-1 d-none d-md-block">
-      <img src="" alt="" class="recibe-imagen-2 mr-0">
-    </div>
-    <div class="col-12 col-md-10 d-flex flex-wrap p-0 mt-0 mb-auto bg-morado p-1">
-      <div class="col-12 col-md-6 d-flex  p-0">
-        <div class="contenedor-enumeracion d-flex flex-column justify-content-between align-items-center col-1 p-0">
-          <p class="enumeracion-servicio text-center" data-servicio="01">01</p>
-          <p class="enumeracion-servicio text-center" data-servicio="02">02</p>
-          <p class="enumeracion-servicio text-center" data-servicio="03">03</p>
-          <p class="enumeracion-servicio text-center" data-servicio="04">04</p>
-          <p class="enumeracion-servicio text-center" data-servicio="05">05</p>
-        </div>
-        <div class="detalles-servicio col-10 col-md-11 columna-1">
-          <p class="numero-servicio">Servicio <span>01</span></p>
-          <a href="" class="titulo-servicio mb-2"></a>
-          <p class="resumen-servicio"></p>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 d-flex p-0">
-        <div class="contenedor-enumeracion d-flex flex-column justify-content-between align-items-center col-1 p-0">
-          <p class="enumeracion-servicio text-center" data-servicio="06">06</p>
-          <p class="enumeracion-servicio text-center" data-servicio="07">07</p>
-          <p class="enumeracion-servicio text-center" data-servicio="08">08</p>
-          <p class="enumeracion-servicio text-center" data-servicio="09">09</p>
-          <p class="enumeracion-servicio text-center" data-servicio="10">10</p>
-        </div>
-        <div class="detalles-servicio col-10 col-md-11 columna-2">
-          <p class="numero-servicio">Servicio <span>05</span></p>
-          <a href="" class="titulo-servicio mb-2"></a>
-          <p class="resumen-servicio"></p>
+  <section id="servicios" class="py-5 px-0 text-white d-flex align-items-center justify-content-center">
+    <?php $servicios = new WP_Query( array( 
+      'post_type'       => 'servicios',
+            'posts_per_page'  => -1,
+            'category'        => 'current',
+            'order_by'        => 'date',
+            'order'           => 'ASC'
+            ) ); $numero_servicio = 0; ?>
+    <?php if ($servicios->have_posts() ) :?>
+    <div class="d-flex flex-wrap container shadow bg-primario p-0">
+      <div class="contenedor-lista col-4 align-items-center p-2">
+        <div class="numeros-servicios position-sticky">
+          <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
+          <a class="servicio d-flex flex-wrap align-items-center <?php echo $numero_servicio;?>" href="#<?php echo $numero_servicio;?>">
+            <span class="numero col-2 text-center d-flex align-items-center" data-servicio="<?php the_title();?>"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></span> <p class="col-10 m-0 titulo"><?php echo the_title();?></p>
+          </a>
+          <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
-    </div>
-    <div class="btn-ver-mas container d-flex mt-5 w-100">
-      <a href="" class="btn-rocket col-12 col-md-3 m-auto d-flex text-center link-cambia">
-        <p>Ver más</p><i class="fas fa-chevron-right"></i>
-      </a>
+      <div class="detalles-servicios col-8 owl-carousel owl-theme owl-servicios pr-5">
+        <?php $numero_servicio = 0; while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
+        <div data-hash="<?php echo $numero_servicio?>" class="servicio servicio-<?php the_title();?> d-flex flex-wrap">
+          <img class="col-6" src="<?php echo(get_field('foto_home_1'));?>" alt="<?php the_title();?>">
+          <div class="textos col-6">
+            <h3 class="titulo"><?php the_title();?></h3>
+            <?php the_field( 'resumen_servicio' ); ?>
+            <a href="<?php the_permalink();?>" class="btn-ver-mas w-100 col-12 text-center">Ver más</a>
+          </div>
+        </div>
+        <?php endwhile; wp_reset_postdata();?>
+      </div>
     </div>
   </section>
   <?php endif;wp_reset_postdata();?>
@@ -91,7 +67,7 @@
     <div class="owl-theme owl-carousel owl-servicios-mobile py-5">
       <?php while ($servicios->have_posts() ) : $servicios->the_post();?>
       <div class="card-servicios d-flex flex-column justify-content-center">
-        <img src="<?php echo(get_field('foto_home_1'));?>" alt="<?php the_title();?>">
+        <img src="<?php echo(get_field('foto_home_2'));?>" alt="<?php the_title();?>">
         <h3 class="titulo text-center mt-3">
           <?php the_title();?>
         </h3>
@@ -109,7 +85,7 @@
   <?php $casos = new WP_Query( array( 
           'post_type'       => 'casos',
           'posts_per_page'  => -1,
-          'category'        => 'current',
+          'cat'             => 2,
           'order_by'        => 'date',
           'order'           => 'ASC'
           ) ); ?>
@@ -122,19 +98,23 @@
       </div>
       <div class="col-12 col-md-6 d-flex align-items-center justify-content-center computador ">
         <div class="pantalla owl-theme owl-carousel owl-foto-caso">
-          <?php while ($casos->have_posts() ) : $casos->the_post(); $imagenCaso = get_field('imagen_del_caso_de_exito');?>
-          <img src="<?php echo $imagenCaso; ?>" alt="<?php the_title();?> en Tekpro" data-hash="<?php the_title();?>"
-            class="">
+          <?php while ($casos->have_posts() ) : $casos->the_post();
+            $imagenCaso = get_field('imagen_del_caso_de_exito');
+            $titulo = get_the_title();
+            $titulo = str_replace(' ', '_', $titulo);?>
+          <img src="<?php echo $imagenCaso; ?>" alt="<?php the_title();?> en Tekpro" data-hash="<?php echo($titulo);?>">
           <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
       <div class="col-12 col-md-3 d-flex">
         <div class="owl-theme owl-carousel owl-detalle-caso d-flex align-items-center">
-          <?php while ($casos->have_posts() ) : $casos->the_post(); $servicios_involucrados = get_field( 'servicios_involucrados' );?>
+          <?php while ($casos->have_posts() ) : $casos->the_post();
+            $servicios_involucrados = get_field( 'servicios_involucrados' );
+            $titulo = get_the_title();
+            $titulo = str_replace(' ', '_', $titulo); ?>
           <?php if ( $servicios_involucrados ) : ?>
           <div class="detalles-casos p-2 d-flex flex-column">
-            <h3 class="nombre-caso text-center text-md-right" data-hash="<?php the_title();?>"
-              data-link="<?php the_permalink();?>"><?php the_title();?></h3>
+            <h3 class="nombre-caso text-center text-md-right" data-hash="<?php echo($titulo);?>" data-link="<?php the_permalink();?>"><?php the_title();?></h3>
             <?php foreach ( $servicios_involucrados as $post ) : ?>
             <?php setup_postdata ( $post ); ?>
             <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>

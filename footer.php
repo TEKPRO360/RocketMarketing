@@ -53,7 +53,7 @@ Viewport width indicator
 Just delete this if or when you don't need it.
 -->
 
-<div id="vp" style="position: fixed; bottom: 0.5rem; right: 0.5rem; z-index: 999; display: inline-block; background: #555; color: #ffffff; padding: 0 0.5rem 0.125rem; border-radius: 0.25rem;"></div>
+<!-- <div id="vp" style="position: fixed; bottom: 0.5rem; right: 0.5rem; z-index: 999; display: inline-block; background: #555; color: #ffffff; padding: 0 0.5rem 0.125rem; border-radius: 0.25rem;"></div>
 
 <script>
   var vp = document.body.querySelector('#vp');
@@ -63,7 +63,7 @@ Just delete this if or when you don't need it.
     viewportWidth = window.innerWidth + 'px';
     vp.innerHTML = viewportWidth;
   });
-</script>
+</script> -->
 
 <?php wp_footer(); ?>
 </body>

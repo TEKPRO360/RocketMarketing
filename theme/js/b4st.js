@@ -38,6 +38,54 @@
 		
 
 		// OWL CAROUSEL'S
+		
+
+		// OWL SERVICIOS
+		$('.owl-servicios').owlCarousel({
+			loop:false,
+			margin:0,
+			nav:false,
+			dots:true,
+			autoplay:false,
+			URLhashListener:true,
+			autoplayHoverPause:false,
+			animateOut: 'slideOutDown',
+			animateIn: 'slideInDown',
+			//autoHeight: true,
+			responsive:{
+				0:{
+					margin:30,
+					items:1
+				},
+				600:{
+					margin:100,
+					items:1
+				},
+				1000:{
+					margin:100,
+					items:1
+				}
+			}
+		});
+
+		// OWL SERVICIOS-MOBILE
+		$('.owl-servicios-mobile').owlCarousel({
+			stagePadding: 50,
+			loop:true,
+			margin:10,
+			nav:false,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
 	
 		// CASOS DE ÉXITO
 
@@ -160,50 +208,6 @@
 			}
 		});
 
-		// OWL SERVICIOS
-		$('.owl-servicios').owlCarousel({
-			loop:false,
-			margin:0,
-			nav:true,
-			dots:false,
-			autoplay:true,
-			autoplayTimeout:5000,
-			autoplayHoverPause:true,
-			responsive:{
-				0:{
-					margin:30,
-					items:1
-				},
-				600:{
-					margin:100,
-					items:1
-				},
-				1000:{
-					margin:100,
-					items:1
-				}
-			}
-		});
-
-		// OWL SERVICIOS-MOBILE
-		$('.owl-servicios-mobile').owlCarousel({
-			stagePadding: 50,
-			loop:true,
-			margin:10,
-			nav:false,
-			responsive:{
-				0:{
-					items:1
-				},
-				600:{
-					items:3
-				},
-				1000:{
-					items:5
-				}
-			}
-		});
-
 		// ACCIONES MENÚ
 
 		$('.accion-menu').click(function(){
@@ -213,85 +217,26 @@
 
 		// SERVICIOS Y ENUMERACIÓN
 
-		var contenedorServiciosInfo = $('#servicios-info'),
-			numeroServicio,
-			servicio,
-			tituloServicio,
-			detalleServicio,
-			linkServicio,
-			fotoUnoServicio,
-			fotoDosServicio,
-			contenedorEnumeracion = $('.contenedor-enumeracion'),
-			columna1 = $('.columna-1'),
-			columna2 = $('.columna-2'),
-			primerServicioColUno = $('.servicio-01'),
-			primerServicioColDos = $('.servicio-05'),
-			tituloPrimerServicio = primerServicioColUno.data('titulo'),
-			resumenPrimerServicio = primerServicioColUno.data('resumen'),
-			linkPrimerServicio = primerServicioColUno.data('link'),
-			tituloQuintoServicio = primerServicioColDos.data('titulo'),
-			resumenQuintoServicio = primerServicioColDos.data('resumen'),
-			linkQuintoServicio = primerServicioColDos.data('link'),
-			fotoUno = primerServicioColUno.data('imagen1'),
-			fotoDos = primerServicioColUno.data('imagen2'),
-			btnCambia = $('.link-cambia'),
-			recibeTituloPrimero = columna1.find('.titulo-servicio'),
-			recibeResumenPrimero = columna1.find('.resumen-servicio'),
-			recibeLinkPrimero = columna1.find('a'),
-			recibeTituloSegundo = columna2.find('.titulo-servicio'),
-			recibeResumenSegundo = columna2.find('.resumen-servicio'),
-			recibeLinkSegundo = columna2.find('a'),
-			recibeFotoUno = $('.recibe-imagen-1'),
-			recibeFotoDos = $('.recibe-imagen-2');
-		
-		recibeTituloPrimero.html(tituloPrimerServicio);
-		recibeResumenPrimero.html(resumenPrimerServicio);
-		recibeLinkPrimero.attr('href', linkPrimerServicio);
-		recibeTituloSegundo.html(tituloQuintoServicio);
-		recibeResumenSegundo.html(resumenQuintoServicio);
-		recibeFotoUno.attr('src', fotoUno);
-		recibeFotoDos.attr('src', fotoDos);
-		btnCambia.attr('href', linkPrimerServicio);
+		let servicios = $('#servicios').find('.contenedor-lista > .numeros-servicios'),
+			servicio = servicios.find('.servicio');
 
-		contenedorEnumeracion.find('>:first-child').addClass('active');
-
-		$('.enumeracion-servicio').click(function(){
-			$(this).parent().find('.enumeracion-servicio').removeClass('active');
+		servicios.find('a:first-child').addClass('active');
+		servicio.click(function(){
+			servicio.removeClass('active');
 			$(this).addClass('active');
-			var numeroServicio = $(this).data('servicio'),
-				servicio = $('.servicio-'+numeroServicio),
-				tituloServicio = servicio.data('titulo'),
-				resumenServicio = servicio.data('descripcion'),
-				linkServicio = servicio.data('link'),
-				fotoUno = servicio.data('imagen1'),
-				fotoDos = servicio.data('imagen2'),
-				recibeNumero = $(this).parent().parent().find('.numero-servicio'),
-				recibeTitulo = $(this).parent().parent().find('.titulo-servicio'),
-				recibeResumenServicio = $(this).parent().parent().find('.resumen-servicio'),
-				recibeLink = $(this).parent().parent().find('a');
-
-			btnCambia.attr('href', linkServicio);
-			recibeNumero.fadeOut();
-			recibeTitulo.fadeOut();
-			recibeResumenServicio.fadeOut();
-			recibeLink.fadeOut();
-			recibeFotoUno.fadeOut();
-			recibeFotoDos.fadeOut();
-			setTimeout(function(){
-				recibeNumero.html(`Servicio ${numeroServicio}`)
-				recibeTitulo.html(tituloServicio);
-				recibeResumenServicio.html(resumenServicio);
-				recibeLink.attr('href', linkServicio);
-				recibeFotoUno.attr('src', fotoUno);
-				recibeFotoDos.attr('src', fotoDos);
-			},400);
-			recibeNumero.fadeIn();
-			recibeTitulo.fadeIn();
-			recibeResumenServicio.fadeIn();
-			recibeLink.fadeIn();
-			recibeFotoUno.fadeIn();
-			recibeFotoDos.fadeIn();
 		});
+
+		let puntosServicios = $('#servicios').find('.owl-dots'),
+			puntoEspecifico = puntosServicios.find('span');
+
+		puntoEspecifico.each(function(index){
+			$(this).parent().click(function(){
+				let indexPunto = index + 1;
+				servicio.removeClass('active');
+				servicios.find($('.' + indexPunto).addClass('active'));
+			});
+		});
+
 	
 	});
 
