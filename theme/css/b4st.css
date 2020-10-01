@@ -139,16 +139,8 @@ html {
       .menu-custom .opciones-menu a:hover {
         background: rgba(255, 255, 255, 0.3); }
 
-.owl-theme .owl-dots .owl-dot {
-  outline: none; }
-
-.bg-morado {
-  background: #161652; }
-
-.bg-primario {
-  background: #302F87; }
-
 body {
+  font-family: "Open Sans", sans-serif;
   letter-spacing: .1rem; }
   body .btn-rocket {
     text-transform: uppercase;
@@ -166,10 +158,17 @@ body {
     body .btn-rocket i {
       margin: 0 auto 0 10px;
       line-height: inherit; }
+  body .owl-theme .owl-dots .owl-dot {
+    outline: none; }
+  body .owl-theme .owl-nav button {
+    outline: none; }
+  body .bg-morado {
+    background: #161652; }
+  body .bg-primario {
+    background: #302F87; }
 
 .index {
   overflow-x: hidden;
-  font-family: "Open Sans", sans-serif;
   background: url("../img/bg-sitio.png") fixed top/cover no-repeat; }
   .index .intro img {
     width: 10vw;
@@ -294,7 +293,8 @@ body {
         filter: blur(0.6px);
         -webkit-transition: .3s ease all;
         -o-transition: .3s ease all;
-        transition: .3s ease all; }
+        transition: .3s ease all;
+        margin: 5px auto; }
         .index #servicios .numeros-servicios .servicio .numero {
           border: 1px solid #ffffff;
           border-radius: 50%;
@@ -342,36 +342,36 @@ body {
         align-items: center; }
         .index #servicios .detalles-servicios .servicio img {
           height: 100%;
+          max-height: 600px;
           -o-object-fit: contain;
           object-fit: contain; }
-        .index #servicios .detalles-servicios .servicio .textos p {
-          margin: 0; }
         .index #servicios .detalles-servicios .servicio .textos .titulo {
           width: 100%;
           text-align: left;
-          font-size: 2rem;
+          font-size: 1.4rem;
           text-transform: uppercase;
           font-weight: bolder;
           color: inherit;
           text-decoration: none;
-          margin: 0px auto 10px;
           padding: 0px;
-          line-height: 2rem; }
+          line-height: 1.5rem;
+          margin: 0; }
+        .index #servicios .detalles-servicios .servicio .textos p {
+          margin: 20px auto; }
         .index #servicios .detalles-servicios .servicio .textos .btn-ver-mas {
           background: #fff;
-          margin: 10px auto;
           pointer-events: all;
           text-align: center;
           text-transform: uppercase;
           font-weight: bold;
-          padding: 5px;
-          border-radius: 33.333rem; }
-          .index #servicios .detalles-servicios .servicio .textos .btn-ver-mas a {
-            color: #302F87;
-            text-align: center;
-            width: 100%; } }
+          padding: 5px 20px;
+          margin: 0 auto 0 0;
+          border-radius: 33.333rem;
+          color: #302F87;
+          text-align: center; } }
   .index #casos-de-exito {
-    background: #ffffff; }
+    background: #ffffff;
+    pointer-events: none; }
     .index #casos-de-exito .titulo-casos p {
       width: 100%;
       margin: 0;
@@ -389,24 +389,45 @@ body {
     .index #casos-de-exito .computador {
       background: url("../img/computador.png") center center/90% no-repeat;
       min-height: 220px; }
-      @media screen and (min-width: 768px) {
-        .index #casos-de-exito .computador {
-          height: 31vw;
-          min-height: 250px; } }
       .index #casos-de-exito .computador .pantalla {
-        overflow: hidden;
         height: 68%;
         width: 73%; }
-        @media screen and (min-width: 768px) {
-          .index #casos-de-exito .computador .pantalla {
-            margin-top: -3%;
-            height: 56.5%;
-            width: 71%; } }
+        .index #casos-de-exito .computador .pantalla .owl-nav {
+          position: absolute;
+          pointer-events: all;
+          top: 40%;
+          width: 100%; }
+          .index #casos-de-exito .computador .pantalla .owl-nav button {
+            height: 20px;
+            width: 20px;
+            background: #e3e3e3;
+            color: #000;
+            border-radius: 0;
+            padding: 5px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            position: absolute; }
+            .index #casos-de-exito .computador .pantalla .owl-nav button span {
+              text-align: center;
+              line-height: .1rem;
+              font-size: 1.7rem; }
+          .index #casos-de-exito .computador .pantalla .owl-nav .owl-prev {
+            left: -50px; }
+          .index #casos-de-exito .computador .pantalla .owl-nav .owl-next {
+            right: -50px; }
         .index #casos-de-exito .computador .pantalla img {
           height: 100%;
           width: 100%;
           -o-object-fit: cover;
           object-fit: cover; }
+      @media screen and (min-width: 768px) {
+        .index #casos-de-exito .computador {
+          height: 31vw;
+          min-height: 250px; }
+          .index #casos-de-exito .computador .pantalla {
+            margin-top: -3%;
+            height: 56.5%;
+            width: 71%; } }
     .index #casos-de-exito .owl-detalle-caso .detalles-casos .nombre-caso {
       font-weight: bold; }
     .index #casos-de-exito .owl-detalle-caso .detalles-casos .servicio-caso {
@@ -418,7 +439,12 @@ body {
       margin: 10px auto auto;
       text-transform: uppercase;
       font-weight: bold;
-      color: #000; }
+      color: #000;
+      pointer-events: all; }
+    .index #casos-de-exito .owl-detalle-texto {
+      pointer-events: none; }
+      .index #casos-de-exito .owl-detalle-texto .contenedor-detalle {
+        text-align: center; }
   .index #clientes {
     background: #161652;
     pointer-events: none; }
@@ -472,6 +498,19 @@ body {
     .index #contacto #formulario-contacto .enviar-contacto {
       text-transform: uppercase;
       font-weight: bolder; }
+    .index #contacto .wpcf7 {
+      width: 100%; }
+      .index #contacto .wpcf7 form .wpcf7-response-output {
+        border: 5px solid #302F87;
+        background: rgba(22, 22, 82, 0.3);
+        -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px -5px;
+        box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px -5px;
+        color: #fff;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 1em; }
 
 @-webkit-keyframes levantar {
   0% {
@@ -488,6 +527,10 @@ body {
   100% {
     -webkit-transform: scale(1.04) rotateX(0deg);
     transform: scale(1.04) rotateX(0deg); } }
+
+.single-servicios #site-navbar {
+  -webkit-filter: contrast(0) hue-rotate(180deg);
+  filter: contrast(0) hue-rotate(180deg); }
 
 .servicios {
   overflow: hidden; }
@@ -509,12 +552,14 @@ body {
         text-decoration: none;
         -webkit-transition: .3s ease all;
         -o-transition: .3s ease all;
-        transition: .3s ease all; }
+        transition: .3s ease all;
+        opacity: .5; }
         .servicios .contenedor-menu .menu a:hover {
           -webkit-transform: scale(1.1);
           -ms-transform: scale(1.1);
           transform: scale(1.1);
-          margin-left: 5%; }
+          margin-left: 5%;
+          opacity: 1; }
           .servicios .contenedor-menu .menu a:hover .numero-menu {
             background: #ffffff;
             color: #161652; }
@@ -538,9 +583,13 @@ body {
           -webkit-transition: .3s ease all;
           -o-transition: .3s ease all;
           transition: .3s ease all; }
+      .servicios .contenedor-menu .menu .active {
+        opacity: 1; }
   .servicios .contenedor-secciones {
     margin-top: 10%;
     letter-spacing: .1rem; }
+    .servicios .contenedor-secciones section {
+      min-height: 260px; }
     .servicios .contenedor-secciones .seccion-1 .titulo-detalle h1 {
       font-size: 3em;
       line-height: 1em;

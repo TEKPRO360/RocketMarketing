@@ -16,7 +16,7 @@
   <!-- SECCIÓN SERVICIOS -->
   <?php if (! wp_is_mobile() ): ?>
 
-  <section id="servicios" class="py-5 px-0 text-white d-flex align-items-center justify-content-center">
+  <section id="servicios" class="p-5 text-white d-flex align-items-center justify-content-center">
     <?php $servicios = new WP_Query( array( 
       'post_type'       => 'servicios',
             'posts_per_page'  => -1,
@@ -25,9 +25,9 @@
             'order'           => 'ASC'
             ) ); $numero_servicio = 0; ?>
     <?php if ($servicios->have_posts() ) :?>
-    <div class="d-flex flex-wrap container shadow bg-primario p-0">
-      <div class="contenedor-lista col-4 align-items-center p-2">
-        <div class="numeros-servicios position-sticky">
+    <div class="d-flex flex-wrap w-100 shadow bg-primario p-0">
+      <div class="contenedor-lista col-3 align-items-center p-2">
+        <div class="numeros-servicios">
           <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
           <a class="servicio d-flex flex-wrap align-items-center <?php echo $numero_servicio;?>" href="#<?php echo $numero_servicio;?>">
             <span class="numero col-2 text-center d-flex align-items-center" data-servicio="<?php the_title();?>"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></span> <p class="col-10 m-0 titulo"><?php echo the_title();?></p>
@@ -35,14 +35,14 @@
           <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
-      <div class="detalles-servicios col-8 owl-carousel owl-theme owl-servicios pr-5">
+      <div class="detalles-servicios col-9 owl-carousel owl-theme owl-servicios pr-5">
         <?php $numero_servicio = 0; while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
-        <div data-hash="<?php echo $numero_servicio?>" class="servicio servicio-<?php the_title();?> d-flex flex-wrap">
+        <div data-hash="<?php echo $numero_servicio?>" class="servicio d-flex flex-wrap pr-5">
           <img class="col-6" src="<?php echo(get_field('foto_home_1'));?>" alt="<?php the_title();?>">
-          <div class="textos col-6">
+          <div class="textos col-6 d-flex flex-column align-items-center">
             <h3 class="titulo"><?php the_title();?></h3>
             <?php the_field( 'resumen_servicio' ); ?>
-            <a href="<?php the_permalink();?>" class="btn-ver-mas w-100 col-12 text-center">Ver más</a>
+            <a href="<?php the_permalink();?>" class="btn-ver-mas text-center">Ver más</a>
           </div>
         </div>
         <?php endwhile; wp_reset_postdata();?>
@@ -120,19 +120,22 @@
             <p class="servicio-caso text-center text-md-right"><?php the_title(); ?></p>
             <?php endforeach; ?>
             <?php wp_reset_postdata(); ?>
-            <a href="<?php echo get_site_url(); ?>/casos" class="col-12 text-center text-md-right">Ver más</a>
             <?php endif; ?>
           </div>
           <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
     </div>
-    <div class="w-100">
-      <p class="col-12 col-md-6 text-center mt-2 mt-md-auto mx-auto">Empoderamos tu marca a través de nuestras campañas
-        de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor
-        alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el
-        posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.
-      </p>
+    <div class="container owl-theme owl-carousel owl-detalle-texto">
+    <?php while ($casos->have_posts() ) : $casos->the_post();
+          $detalles_caso = get_field('detalles_del_caso');
+          $titulo = get_the_title();
+          $titulo = str_replace(' ', '_', $titulo); ?>
+    <div class="contenedor-detalle" data-hash="<?php echo($titulo);?>">
+      <?php echo $detalles_caso; ?>
+      <a href="<?php echo get_site_url(); ?>/casos" class="col-12 text-center text-md-right">Ver más</a>
+    </div>
+    <?php endwhile; wp_reset_postdata();?>
     </div>
   </section>
   <?php endif;wp_reset_postdata();?>
@@ -177,10 +180,10 @@
       <input type="text" name="empresa" placeholder="Empresa" id="empresa" class="empresa col-12 col-md-5">
       <input type="text" name="fono" placeholder="Fono" id="fono" class="fono col-12 col-md-5">
       <input type="email" name="correo" placeholder="Correo" id="correo" class="correo col-12 col-md-11">
-      <textarea name="mensaje-contacto" placeholder="Mensaje" id="mensaje-contacto" cols="30" rows="10"
-        class="mensaje-contacto col-12 col-md-11"></textarea>
-      <button class="enviar-contacto btn-rocket col-10 col-md-3 mx-auto mt-3">Enviar <i
-          class="fas fa-chevron-right ml-1"></i></button>
+      <textarea name="mensaje-contacto" placeholder="Mensaje" id="mensaje-contacto" cols="30" rows="10" class="mensaje-contacto col-12 col-md-11">
+      </textarea>
+      <button class="enviar-contacto btn-rocket col-10 col-md-3 mx-auto mt-3">Enviar <i class="fas fa-chevron-right ml-1"></i></button>
+      <?php echo do_shortcode('[contact-form-7 id="60" title="Formulario Contacto"]') ?>
     </div>
   </section>
   <!-- FIN SECCIÓN CONTACTO -->

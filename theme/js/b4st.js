@@ -31,17 +31,33 @@
 			url = window.location.href;
 
 		console.log(home)
-		console.log(url)
-		//if(url != home){ 
-		//	logo.attr('src', `${home}wp-content/themes/Rocket-Marketing/theme/img/icono-blanco.png`)
-		//}
-		
+		console.log(url);
 
-		// OWL CAROUSEL'S
-		
+		// SERVICIOS Y ENUMERACIÓN
+
+		let servicios = $('#servicios').find('.contenedor-lista > .numeros-servicios'),
+			servicio = servicios.find('.servicio');
+
+		servicios.find('a:first-child').addClass('active');
+		servicio.click(function(){
+			servicio.removeClass('active');
+			$(this).addClass('active');
+		});
+
+		let puntosServicios = $('#servicios').find('.owl-dots'),
+			puntoEspecifico = puntosServicios.find('span');
+
+		puntoEspecifico.each(function(index){
+			$(this).parent().click(function(){
+				let indexPunto = index + 1;
+				servicio.removeClass('active');
+				servicios.find($('.' + indexPunto).addClass('active'));
+			});
+		});
 
 		// OWL SERVICIOS
-		$('.owl-servicios').owlCarousel({
+		var slideServicios = $('.owl-servicios');
+		slideServicios.owlCarousel({
 			loop:false,
 			margin:0,
 			nav:false,
@@ -51,7 +67,6 @@
 			autoplayHoverPause:false,
 			animateOut: 'slideOutDown',
 			animateIn: 'slideInDown',
-			//autoHeight: true,
 			responsive:{
 				0:{
 					margin:30,
@@ -66,6 +81,17 @@
 					items:1
 				}
 			}
+		});
+
+		slideServicios.on('mousewheel', '.owl-stage', function (e) {
+			if (e.deltaY<0) {
+				slideServicios.trigger('next.owl');
+				servicios.find('.active').next().addClass('active').prev().removeClass('active');
+			} else {
+				slideServicios.trigger('prev.owl');
+				servicios.find('.active').prev().addClass('active').next().removeClass('active');
+			}
+			e.preventDefault();
 		});
 
 		// OWL SERVICIOS-MOBILE
@@ -87,52 +113,7 @@
 			}
 		});
 	
-		// CASOS DE ÉXITO
-
-		$('.owl-foto-caso').owlCarousel({
-			loop:true,
-			margin:0,
-			nav:false,
-			dots:false,
-			URLhashListener:true,
-			autoplayHoverPause:false,
-			animateOut: 'slideOutDown',
-			animateIn: 'flipInX',
-			responsive:{
-				0:{
-					items:1
-				},
-				600:{
-					items:1
-				},
-				1000:{
-					items:1
-				}
-			}
-		});
-
-		$('.owl-detalle-caso').owlCarousel({
-			loop:true,
-			margin:0,
-			nav:false,
-			dots:false,
-			URLhashListener:true,
-			autoplay:true,
-			autoplayTimeout:5000,
-			autoplayHoverPause:true,
-			responsive:{
-				0:{
-					items:1
-				},
-				600:{
-					items:1
-				},
-				1000:{
-					items:1
-				}
-			}
-		});
-
+		
 		$('.owl-logos-1').owlCarousel({
 			loop:true,
 			nav:false,
@@ -157,7 +138,7 @@
 				}
 			}
 		});
-
+		
 		$('.owl-logos-2').owlCarousel({
 			loop:true,
 			nav:false,
@@ -182,7 +163,7 @@
 				}
 			}
 		});
-
+		
 		$('.owl-logos-3').owlCarousel({
 			loop:true,
 			nav:false,
@@ -207,37 +188,107 @@
 				}
 			}
 		});
+		
+		// CASOS DE ÉXITO
 
+		$('.owl-foto-caso').owlCarousel({
+			loop:true,
+			margin:10,
+			nav:true,
+			dots:false,
+			URLhashListener:true,
+			autoplayHoverPause:true,
+			autoplayTimeout:5000,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+
+		$('.owl-detalle-caso').owlCarousel({
+			loop:true,
+			margin:0,
+			nav:false,
+			dots:false,
+			URLhashListener:true,
+			animateIn: 'fadeIn',
+			animateOut: 'fadeOut',
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+
+		$('.owl-detalle-texto').owlCarousel({
+			loop:true,
+			margin:0,
+			nav:false,
+			dots:false,
+			URLhashListener:true,
+			autoplayHoverPause:true,
+			animateIn: 'fadeIn',
+			animateOut: 'fadeOut',
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
 		// ACCIONES MENÚ
-
+		
 		$('.accion-menu').click(function(){
 			$('.menu-custom').toggleClass('esconde-menu');
 			$('body').toggleClass('no-scroll');
 		});
 
-		// SERVICIOS Y ENUMERACIÓN
+		// FUNCIONES FORMULARIO
+		let formularioFront = $('#formulario-contacto'),
+			inputsFront = formularioFront.children(),
+			formularioBack = $('.wpcf7'),
+			inputsBack = formularioBack.find('span').children(),
+			enviarFront = formularioFront.find('.enviar-contacto'),
+			enviarBack = formularioBack.find('.wpcf7-submit');
 
-		let servicios = $('#servicios').find('.contenedor-lista > .numeros-servicios'),
-			servicio = servicios.find('.servicio');
-
-		servicios.find('a:first-child').addClass('active');
-		servicio.click(function(){
-			servicio.removeClass('active');
-			$(this).addClass('active');
-		});
-
-		let puntosServicios = $('#servicios').find('.owl-dots'),
-			puntoEspecifico = puntosServicios.find('span');
-
-		puntoEspecifico.each(function(index){
-			$(this).parent().click(function(){
-				let indexPunto = index + 1;
-				servicio.removeClass('active');
-				servicios.find($('.' + indexPunto).addClass('active'));
+		inputsFront.each(function(index){
+			$(this).keyup(function(){
+				let indexInputFront = index,
+					contenidoFront = $(this).val();
+				$(inputsBack[`${indexInputFront}`]).val(contenidoFront)				
 			});
 		});
 
-	
+		enviarFront.click(function(){
+			$(enviarBack).trigger('click');
+			formularioBack.find('.ajax-loader').clone().appendTo(formularioFront);
+		});
+
+		//FUNCIÓN PARA DESTACAR SERVICIO ACTUAL DENTRO DE PÁGINAS DE SERVICIOS
+		let servicioActual = window.location.pathname,
+			menu = $('.menu');
+
+		menu.find('[data-servicio="' + servicioActual + '"]').addClass('active');
+		console.log(servicioActual);
+
 	});
 
 

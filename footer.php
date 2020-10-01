@@ -10,13 +10,8 @@
 
 <footer id="site-footer" class="py-5">
   <div class="col-12 col-md-11 d-flex flex-wrap m-auto">
-    <div class="w-100">
+    <div class="col-12 col-md">
       <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo-blanco.png" alt="" class="mb-2 p-3">
-    </div>
-    <div class="col-12 col-md-4 d-flex flex-column justify-content-start columna-1">
-      <p>Reaching the right people, in the right place, at the right time.®</p>
-      <p>© 2020 Rocket Marketing. Creado y operado por Tekpro Ecommerce.</p>
-      <a href="#site-footer" class="site-map w-100">Site Map</a>
     </div>
     <?php if ($servicios->have_posts() ) :?>
     <div class="col-12 col-md columna-2 d-flex flex-column">
@@ -26,14 +21,13 @@
       <?php endwhile;wp_reset_postdata();?>
     </div>
     <?php endif; wp_reset_postdata();?>
-    <div class="col-12 col-md columna-3">
+    <div class="col-12 col-md columna-3 mt-4 mt-md-0">
       <h3 class="titulo-footer">Contacto</h3>
-      <p>JOAQUÍN Montero 3000, Oficina 302, Vitacura.</p>
-      <p>SANTIAGO CHILE.</p>
+      <p>Joaquín Montero 3000, Oficina 302, Vitacura. Santiago, Chile.</p>
       <p>+8939473984</p>
       <a href="mailto:rocket.mkt@tekpro.cl">rocket.mkt@tekpro.cl</a>
     </div>
-    <div class="col-12 col-md columna-4">
+    <div class="col-12 col-md columna-4 mt-4 mt-md-0">
       <h3 class="titulo-footer w-100">Social</h3>
       <a href="#facebook" class="fab fa-facebook-f mr-3"></a>
       <a href="#instagram" class="fab fa-instagram mr-3"></a>

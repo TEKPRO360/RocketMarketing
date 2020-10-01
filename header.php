@@ -32,7 +32,7 @@
   </div>
   <div class="opciones-menu col-md-9 m-auto d-flex flex-column justify-content-around align-items-start">
       <a href="<?php echo esc_url( home_url('/') ); ?>" class="accion-menu">Home</a>
-      <a href="<?php echo esc_url( home_url('/#servicios') ); ?>" class="accion-menu">Servicios</a>
+      <a href="<?php echo esc_url( home_url('/servicios/posicionamiento-en-buscadores/') ); ?>" class="accion-menu">Servicios</a>
       <a href="<?php echo esc_url( home_url('/#clientes') ); ?>" class="accion-menu">Clientes</a>
       <a href="<?php echo esc_url( home_url('/casos') ); ?>" class="accion-menu">Casos de éxito</a>
       <a href="<?php echo esc_url( home_url('/#contacto') ); ?>" class="accion-menu">Contacto</a>
