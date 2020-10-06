@@ -1,6 +1,13 @@
 body{
     font-family: $fuente-primaria;
     letter-spacing: .1rem;
+    color: #fff;
+    background: $color-morado;
+    .subtitulo{
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 0;
+    }
     .btn-rocket{
         text-transform: uppercase;
         font-weight: bold;
@@ -33,15 +40,26 @@ body{
     .bg-primario{
         background: $color-primario;
     }
+    .btn-ver-mas{
+        background: #000;
+        color: #fff;
+        border-radius: 33.333rem;
+        padding: 1rem 3rem;
+        text-transform: uppercase;
+        font-weight: bolder;
+        letter-spacing: .2rem;
+        margin: 0 auto auto 0;
+        &:hover{
+            text-decoration: none;
+        }
+    }
 }
 .index{
     overflow-x:hidden;
-    background: fn-url('bg-sitio.png')fixed top / cover no-repeat;
+    // background: fn-url('bg-sitio.png')fixed top / cover no-repeat;
     .intro{
-        img{
-            width: 10vw;
-            min-width: 200px;
-        }
+        background: url('../img/logo-animado.gif')center center/cover no-repeat, fn-url('estrellas.png')fixed top / cover no-repeat;
+        background-blend-mode: hard-light;
     }
     .titulo{
         text-transform: uppercase;
@@ -50,6 +68,7 @@ body{
     }
     #servicios{
         min-height: 100vh;
+        background: $color-morado;
         .owl-stage-outer{
             overflow: visible;
             .owl-stage{
@@ -103,7 +122,7 @@ body{
                 text-align: center;
             }
             .titulo{
-                font-size: 1.3em;
+                font-size: 1em;
                 font-weight: bolder;
                 letter-spacing: .1rem;
                 line-height: normal;
@@ -125,7 +144,6 @@ body{
         @include MQ(M){
             .owl-stage-outer{
                 overflow: hidden;
-                // pointer-events: none;
                 height: 100% !important;
                 .owl-stage{
                     height: 100%;
@@ -172,21 +190,28 @@ body{
                     }
                 }
                 .servicio{
-                    opacity: .4;
-                    filter: blur(.6px);
+                    opacity: 1;
                     transition: .3s ease all;
-                    margin: 5px auto;
+                    margin: 10px auto;
                     .numero{
                         border: 1px solid #ffffff;
                         border-radius: 50%;
-                        height: 30px;
-                        max-width: 30px;
+                        height: 40px;
+                        width: 40px;
                         transition: .3s ease-in all;
-                        margin: 10px auto;
-                        transition: .3s ease all;
                         padding: 4px;
                         box-sizing: border-box;
                         vertical-align: center;
+                        font-size: .7rem;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .titulo-numero{
+                        text-transform: uppercase;
+                        line-height: normal;
+                        font-size: .8rem;
+                        letter-spacing: 0.2em;
                     }
                     &:hover{
                         opacity: 1;
@@ -196,12 +221,23 @@ body{
                             color: $color-primario;
                             background: #ffffff !important;
                         }
+                        .titulo-numero{
+                            font-weight: 700;
+                        }
                     }
                     &.active{
-                        animation-iteration-count: initial;
-                        animation-fill-mode: both;
                         opacity: 1;
                         filter: blur(0px);
+                        .numero{
+                            color: $color-primario;
+                            font-weight: 800;
+                            font-size: .8rem;
+                            background: #ffffff !important;
+                            box-shadow: rgba($color: #000000, $alpha: .6) 0px 10px 10px -5px;
+                        }
+                        .titulo-numero{
+                            font-weight: 700;
+                        }
                     }
                 }
             }
@@ -228,22 +264,32 @@ body{
                             text-decoration: none;
                             padding: 0px;
                             line-height: 1.5rem;
+                            letter-spacing: 0.2em;
                             margin: 0;
                         }
                         p{
                             margin: 20px auto;
+                            font-weight: lighter;
+                            strong{
+                                font-weight: bold;
+                            }
                         }
-                        .btn-ver-mas{
+                    }
+                }
+                .owl-dots{
+                    .owl-dot{
+                        span{
+                            background: transparent;
+                            border: 1px solid #fff;
+                            box-sizing: border-box;
+                            transition: .8s ease all;
+                            transition-delay: .3s;
+                        }
+                    }
+                    & .active{
+                        span{
+                            transition: .8s ease all;
                             background: #fff;
-                            pointer-events: all;
-                            text-align: center;
-                            text-transform: uppercase;
-                            font-weight: bold;
-                            padding: 5px 20px;
-                            margin: 0 auto 0 0;
-                            border-radius: 33.333rem;
-                            color: $color-primario;
-                            text-align: center;
                         }
                     }
                 }
@@ -252,6 +298,7 @@ body{
     }
     #casos-de-exito{
         background: #ffffff;
+        color: #000;
         pointer-events: none;
         .titulo-casos{
             p{
@@ -271,12 +318,12 @@ body{
             }
         }
         .computador{
-            background: fn-url('computador.png')center center / 90% no-repeat;
-            min-height: 220px;
+            background: fn-url('mac-pro.png')center center / 90% no-repeat;
+            min-height: 340px;
             .pantalla{
-                // overflow: hidden;
-                height: 68%;
-                width: 73%;
+                height: 55%;
+                width: 91%;
+                top: -1.9rem;
                 .owl-nav{
                     position: absolute;
                     pointer-events: all;
@@ -298,25 +345,25 @@ body{
                         }
                     }
                     .owl-prev{
-                        left: -50px;
+                        left: -10%;
                     }
                     .owl-next{
-                        right: -50px;
+                        right: -10%;
                     }
                 }
                 img{
-                    height: 100%;
+                    height: 187px;
                     width: 100%;
                     object-fit: cover;
                 }
             }
             @include MQ(M){
-                height: 31vw;
-                min-height: 250px;
+                min-height: 27rem;
                 .pantalla{
-                    margin-top: -3%;
-                    height: 56.5%;
-                    width: 71%;
+                    position: absolute;
+                    top: 6%;
+                    height: 65.5%;
+                    width: 83%;
                 }
             }
         }
@@ -327,7 +374,8 @@ body{
                 }
                 .servicio-caso{
                     width: 100%;
-                    margin: auto auto 0px auto;
+                    margin: 5px auto auto auto;
+                    line-height: 1.3rem;
                     text-transform: uppercase;
                 }
                 a{
@@ -344,6 +392,12 @@ body{
             pointer-events: none;
             .contenedor-detalle{
                 text-align: center;
+                p{
+                    margin: 10px auto 40px;
+                }
+                a{
+                    pointer-events: all;
+                }
             }
         }
     }
@@ -375,45 +429,97 @@ body{
             color: #ffffff;
             text-transform: uppercase;
             text-align: center;
-            margin-bottom: 50px;
         }
         #formulario-contacto{
-            input, textarea{
-                background: #cecedc;
-                margin: auto auto 20px auto;
-                border: none;
-                color: $color-morado;
-                font-weight: bold;
-                text-transform: uppercase;
-                &::placeholder{
-                    color: $color-morado;
-                    opacity: .6;
+            // padding: 0 20px;
+            box-sizing: border-box;
+            .wpcf7{
+                width: 100%;
+                input, textarea{
+                    background: transparent;
+                    border-radius: 0;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    margin: 20px auto auto auto;
+                    max-width: 100%;
+                    padding: 5px 10px;
+                    resize: none;
+                    color: #fff;
+                    transition: .3s ease all;
+                    &::placeholder{
+                        color: #fff;
+                        opacity: .6;
+                        position: absolute;
+                        top: -40px;
+                    }
+                    &:focus{
+                        background: rgba($color-morado, .4);
+                        outline: none;
+                        box-shadow: none;
+                        color: $color-morado;
+                        background: rgba(#fff, .1);
+                        ::placeholder{
+                            position: absolute;
+                            top: -30px;
+                        }
+                    }
+                    &:hover{
+                        background: rgba(#fff, .1);
+                    }
+                }
+                p, span{
+                    margin: 0;
+                    text-align: center;
+                }
+                textarea{
+                    height: 35px;
+                    &:focus{
+                        height: 200px;
+                    }
+                }
+                form{
+                    .wpcf7-response-output{
+                        border: 5px solid $color-primario;
+                        background: rgba($color-morado, .3);
+                        box-shadow: rgba(#000, .8) 0px 5px 15px -5px;
+                        color: #fff;
+                        padding: 10px;
+                        box-sizing: border-box;
+                        text-align: center;
+                        font-size: 1em;
+                    }
+                    .wpcf7-not-valid-tip{
+                        color:#fff;
+                    }
+                    .btn{
+                        background: #000;
+                        color: #fff;
+                        width: 80%;
+                        border: none;
+                        border-radius: 33.333rem;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
                 }
             }
-            input{
-                border-radius: 33.333rem;
-            }
-            textarea{
-                border-radius: 1rem;
-                resize: none;
-            }
-            .enviar-contacto{
-                text-transform: uppercase;
-                font-weight: bolder;
-            }
-        }
-        .wpcf7{
-            width: 100%;
-            form{
-                .wpcf7-response-output{
-                    border: 5px solid $color-primario;
-                    background: rgba($color-morado, .3);
-                    box-shadow: rgba(#000, .8) 0px 5px 15px -5px;
-                    color: #fff;
-                    padding: 10px;
-                    box-sizing: border-box;
-                    text-align: center;
-                    font-size: 1em;
+            @include MQ(M){
+                padding: 0;
+                .formulario-contacto{
+                    display: flex;
+                    flex-flow: wrap;
+                    justify-content: space-between;
+                    p, span{
+                        width: 100%;
+                    }
+                    .wpcf7-not-valid-tip{
+                        width: 100%;
+                    }
+                    p{
+                        &:first-of-type{
+                            display: none;
+                        }
+                    }
+                    
                 }
             }
         }

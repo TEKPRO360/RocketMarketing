@@ -33,28 +33,7 @@
 		console.log(home)
 		console.log(url);
 
-		// SERVICIOS Y ENUMERACIÓN
-
-		let servicios = $('#servicios').find('.contenedor-lista > .numeros-servicios'),
-			servicio = servicios.find('.servicio');
-
-		servicios.find('a:first-child').addClass('active');
-		servicio.click(function(){
-			servicio.removeClass('active');
-			$(this).addClass('active');
-		});
-
-		let puntosServicios = $('#servicios').find('.owl-dots'),
-			puntoEspecifico = puntosServicios.find('span');
-
-		puntoEspecifico.each(function(index){
-			$(this).parent().click(function(){
-				let indexPunto = index + 1;
-				servicio.removeClass('active');
-				servicios.find($('.' + indexPunto).addClass('active'));
-			});
-		});
-
+		
 		// OWL SERVICIOS
 		var slideServicios = $('.owl-servicios');
 		slideServicios.owlCarousel({
@@ -66,7 +45,7 @@
 			URLhashListener:true,
 			autoplayHoverPause:false,
 			animateOut: 'slideOutDown',
-			animateIn: 'slideInDown',
+			animateIn: 'slideInUp',
 			responsive:{
 				0:{
 					margin:30,
@@ -82,6 +61,28 @@
 				}
 			}
 		});
+		
+		// SERVICIOS Y ENUMERACIÓN
+
+		let servicios = $('#servicios').find('.contenedor-lista > .numeros-servicios'),
+			servicio = servicios.find('.servicio'),
+			puntosServicios = $('#servicios').find('.owl-dots'),
+			puntoEspecifico = puntosServicios.find('span'),
+			detalleServicioActivo = $('#servicios').find('.owl-stage').find('.active');
+
+		servicios.find('a:first-child').addClass('active');
+		servicio.click(function(){
+			servicio.removeClass('active');
+			$(this).addClass('active');
+		});
+
+		puntoEspecifico.each(function(index){
+			$(this).parent().click(function(){
+				let indexPunto = index + 1;
+				servicio.removeClass('active');
+				servicios.find($(`.servicio-${indexPunto}`).addClass('active'));
+			});
+		});
 
 		slideServicios.on('mousewheel', '.owl-stage', function (e) {
 			if (e.deltaY<0) {
@@ -93,6 +94,7 @@
 			}
 			e.preventDefault();
 		});
+
 
 		// OWL SERVICIOS-MOBILE
 		$('.owl-servicios-mobile').owlCarousel({
@@ -261,32 +263,11 @@
 			$('body').toggleClass('no-scroll');
 		});
 
-		// FUNCIONES FORMULARIO
-		let formularioFront = $('#formulario-contacto'),
-			inputsFront = formularioFront.children(),
-			formularioBack = $('.wpcf7'),
-			inputsBack = formularioBack.find('span').children(),
-			enviarFront = formularioFront.find('.enviar-contacto'),
-			enviarBack = formularioBack.find('.wpcf7-submit');
-
-		inputsFront.each(function(index){
-			$(this).keyup(function(){
-				let indexInputFront = index,
-					contenidoFront = $(this).val();
-				$(inputsBack[`${indexInputFront}`]).val(contenidoFront)				
-			});
-		});
-
-		enviarFront.click(function(){
-			$(enviarBack).trigger('click');
-			formularioBack.find('.ajax-loader').clone().appendTo(formularioFront);
-		});
-
 		//FUNCIÓN PARA DESTACAR SERVICIO ACTUAL DENTRO DE PÁGINAS DE SERVICIOS
 		let servicioActual = window.location.pathname,
 			menu = $('.menu');
 
-		menu.find('[data-servicio="' + servicioActual + '"]').addClass('active');
+		menu.find(`[data-servicio="${servicioActual}"]`).addClass('active');
 		console.log(servicioActual);
 
 	});

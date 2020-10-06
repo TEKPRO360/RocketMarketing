@@ -6,7 +6,7 @@
 <main id="site-main" class="w-100 index">
   <!-- SECCIÓN PRIMERA -->
   <section class="intro vh-100 d-flex flex-column justify-content-center align-items-center">
-    <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo.png" alt="" class="mt-auto mb-0">
+    <!-- <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo-animado.gif" alt="" class="mt-auto mb-0"> -->
     <a href="#servicios" class="mt-auto mb-5">
       <i class="fas fa-chevron-down btn-rocket"></i>
     </a>
@@ -25,24 +25,25 @@
             'order'           => 'ASC'
             ) ); $numero_servicio = 0; ?>
     <?php if ($servicios->have_posts() ) :?>
-    <div class="d-flex flex-wrap w-100 shadow bg-primario p-0">
-      <div class="contenedor-lista col-3 align-items-center p-2">
+    <div class="d-flex flex-wrap w-100 p-0">
+      <div class="contenedor-lista col-4 align-items-center p-2">
         <div class="numeros-servicios">
           <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
-          <a class="servicio d-flex flex-wrap align-items-center <?php echo $numero_servicio;?>" href="#<?php echo $numero_servicio;?>">
-            <span class="numero col-2 text-center d-flex align-items-center" data-servicio="<?php the_title();?>"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></span> <p class="col-10 m-0 titulo"><?php echo the_title();?></p>
+          <a class="servicio servicio-<?php echo $numero_servicio;?> d-flex flex-wrap align-items-center " href="#<?php echo $numero_servicio;?>">
+            <span class="numero text-center d-flex align-items-center" data-servicio="<?php the_title();?>"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></span>
+            <p class="col m-0 titulo-numero"><?php echo the_title();?></p>
           </a>
           <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
-      <div class="detalles-servicios col-9 owl-carousel owl-theme owl-servicios pr-5">
+      <div class="detalles-servicios col-8 owl-carousel owl-theme owl-servicios pr-5">
         <?php $numero_servicio = 0; while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
         <div data-hash="<?php echo $numero_servicio?>" class="servicio d-flex flex-wrap pr-5">
-          <img class="col-6" src="<?php echo(get_field('foto_home_1'));?>" alt="<?php the_title();?>">
-          <div class="textos col-6 d-flex flex-column align-items-center">
+          <img class="col-5" src="<?php echo(get_field('foto_home_1'));?>" alt="<?php the_title();?>">
+          <div class="textos col-7 d-flex flex-column align-items-center">
             <h3 class="titulo"><?php the_title();?></h3>
             <?php the_field( 'resumen_servicio' ); ?>
-            <a href="<?php the_permalink();?>" class="btn-ver-mas text-center">Ver más</a>
+            <a href="<?php the_permalink();?>" class="btn-ver-mas text-center">Ver más <i class="fas fa-chevron-right"></i></a>
           </div>
         </div>
         <?php endwhile; wp_reset_postdata();?>
@@ -126,14 +127,14 @@
         </div>
       </div>
     </div>
-    <div class="container owl-theme owl-carousel owl-detalle-texto">
+    <div class="container mt-5 owl-theme owl-carousel owl-detalle-texto">
     <?php while ($casos->have_posts() ) : $casos->the_post();
           $detalles_caso = get_field('detalles_del_caso');
           $titulo = get_the_title();
           $titulo = str_replace(' ', '_', $titulo); ?>
-    <div class="contenedor-detalle" data-hash="<?php echo($titulo);?>">
+    <div class="contenedor-detalle pb-3" data-hash="<?php echo($titulo);?>">
       <?php echo $detalles_caso; ?>
-      <a href="<?php echo get_site_url(); ?>/casos" class="col-12 text-center text-md-right">Ver más</a>
+      <a href="<?php echo get_site_url(); ?>/casos" class="btn-ver-mas col-12 text-center text-md-right">Ver más <i class="fas fa-chevron-right"></i></a>
     </div>
     <?php endwhile; wp_reset_postdata();?>
     </div>
@@ -172,17 +173,19 @@
   <!-- FIN SECCIÓN CLIENTES -->
 
   <!-- SECCIÓN CONTACTO -->
-  <section id="contacto" class="pb-5">
-    <h2 class="titulo">Contacto</h2>
+  <section id="contacto" class="pb-5 d-flex flex-wrap container align-items-center">
+    <h2 class="titulo mb-3 col-12">Contacto</h2>
+    <div id="directo" class="col-12 col-md-4">
+      <div class="llamanos col-12 text-center mb-4">
+        <p class="subtitulo">Llámanos</p>
+        <span>+8939473984</span>
+      </div>
+      <div class="escribenos col-12 text-center mb-4">
+        <p class="subtitulo">Escríbenos</p>
+        <span><a href="mailto:rocket.mkt@tekpro.cl">rocket.mkt@tekpro.cl</a></span>
+      </div>
+    </div>
     <div id="formulario-contacto" class="col-12 col-md-8 m-auto d-flex flex-wrap">
-      <input type="text" name="nombre" placeholder="Nombre" id="nombre" class="nombre col-12 col-md-5">
-      <input type="text" name="apellido" placeholder="Apellido" id="apellido" class="apellido col-12 col-md-5">
-      <input type="text" name="empresa" placeholder="Empresa" id="empresa" class="empresa col-12 col-md-5">
-      <input type="text" name="fono" placeholder="Fono" id="fono" class="fono col-12 col-md-5">
-      <input type="email" name="correo" placeholder="Correo" id="correo" class="correo col-12 col-md-11">
-      <textarea name="mensaje-contacto" placeholder="Mensaje" id="mensaje-contacto" cols="30" rows="10" class="mensaje-contacto col-12 col-md-11">
-      </textarea>
-      <button class="enviar-contacto btn-rocket col-10 col-md-3 mx-auto mt-3">Enviar <i class="fas fa-chevron-right ml-1"></i></button>
       <?php echo do_shortcode('[contact-form-7 id="60" title="Formulario Contacto"]') ?>
     </div>
   </section>
