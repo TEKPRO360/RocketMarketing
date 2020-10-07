@@ -319,11 +319,13 @@ body{
         }
         .computador{
             background: fn-url('mac-pro.png')center center / 90% no-repeat;
-            min-height: 340px;
+            height: calc(100vw / 1.2);
             .pantalla{
-                height: 55%;
-                width: 91%;
-                top: -1.9rem;
+                position: absolute;
+                top: calc(110vw / 10);
+                height: calc(91.5vw / 2);
+                width: 79vw;
+                overflow: hidden;
                 .owl-nav{
                     position: absolute;
                     pointer-events: all;
@@ -352,18 +354,19 @@ body{
                     }
                 }
                 img{
-                    height: 187px;
+                    height: 100%;
                     width: 100%;
                     object-fit: cover;
+                    object-position: top;
                 }
             }
             @include MQ(M){
-                min-height: 27rem;
+                height: calc(100vw / 2.6);
                 .pantalla{
                     position: absolute;
-                    top: 6%;
-                    height: 65.5%;
-                    width: 83%;
+                    top: calc(38vw / 10.1);
+                    height: calc(48.5vw / 2.1);
+                    width: 38.5vw;
                 }
             }
         }
@@ -428,10 +431,19 @@ body{
         .titulo{
             color: #ffffff;
             text-transform: uppercase;
-            text-align: center;
+        }
+        .llamanos,
+        .escribenos{
+            .subtitulo{
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            a{
+                color: #ffffff;
+                text-decoration: underline;
+            }
         }
         #formulario-contacto{
-            // padding: 0 20px;
             box-sizing: border-box;
             .wpcf7{
                 width: 100%;
@@ -439,7 +451,9 @@ body{
                     background: transparent;
                     border-radius: 0;
                     border: none;
-                    border-bottom: 1px solid white;
+                    border-bottom: 1px solid;
+                    border-image-source: linear-gradient(90deg, rgba(0,236,255,1) 0%, rgba(255,252,0,1) 42%, rgba(255,0,0,1) 100%);
+                    border-image-slice: 1;
                     margin: 20px auto auto auto;
                     max-width: 100%;
                     padding: 5px 10px;

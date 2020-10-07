@@ -191,11 +191,11 @@
     <div class="pb-5 d-flex flex-wrap container align-items-center container">
       <h2 class="titulo mb-3 col-12">Contacto</h2>
       <div id="directo" class="col-12 col-md-4">
-        <div class="llamanos col-12 text-center mb-4">
+        <div class="llamanos p-0 col-12 mb-4">
           <p class="subtitulo">Llámanos</p>
           <span>+8939473984</span>
         </div>
-        <div class="escribenos col-12 text-center mb-4">
+        <div class="escribenos p-0 col-12 mb-4">
           <p class="subtitulo">Escríbenos</p>
           <span><a href="mailto:rocket.mkt@tekpro.cl">rocket.mkt@tekpro.cl</a></span>
         </div>
