@@ -1,26 +1,10 @@
 <?php b4st_footer_before();?>
 
-<?php $servicios = new WP_Query( array( 
-  'post_type'       => 'servicios',
-  'posts_per_page'  => 4,
-  'category'        => 'current',
-  'order_by'        => 'date',
-  'order'           => 'ASC'
-  ) ); ?>
-
-<footer id="site-footer" class="py-5">
-  <div class="col-12 col-md-11 d-flex flex-wrap m-auto">
-    <div class="col-12 col-md">
+<footer id="site-footer" class="py-4 w-100">
+  <div class="col-12 d-flex flex-wrap py-md-4 m-auto">
+    <div class="col-12 col-md text-center">
       <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo-blanco.png" alt="" class="mb-2 p-3">
     </div>
-    <?php if ($servicios->have_posts() ) :?>
-    <div class="col-12 col-md columna-2 d-flex flex-column">
-      <h3 class="titulo-footer">Servicios</h3>
-      <?php while ($servicios->have_posts() ) : $servicios->the_post();?>
-      <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
-      <?php endwhile;wp_reset_postdata();?>
-    </div>
-    <?php endif; wp_reset_postdata();?>
     <div class="col-12 col-md columna-3 mt-4 mt-md-0">
       <h3 class="titulo-footer">Contacto</h3>
       <p>Joaquín Montero 3000, Oficina 302, Vitacura. Santiago, Chile.</p>
@@ -38,26 +22,6 @@
 </footer>
 
 <?php b4st_footer_after();?>
-
-<?php //b4st_bottomline();?>
-
-<!--
-Viewport width indicator
-========================
-Just delete this if or when you don't need it.
--->
-
-<!-- <div id="vp" style="position: fixed; bottom: 0.5rem; right: 0.5rem; z-index: 999; display: inline-block; background: #555; color: #ffffff; padding: 0 0.5rem 0.125rem; border-radius: 0.25rem;"></div>
-
-<script>
-  var vp = document.body.querySelector('#vp');
-  var viewportWidth = window.innerWidth + 'px';
-  vp.innerHTML = viewportWidth;
-  window.addEventListener('resize', function () {
-    viewportWidth = window.innerWidth + 'px';
-    vp.innerHTML = viewportWidth;
-  });
-</script> -->
 
 <?php wp_footer(); ?>
 </body>

@@ -10,9 +10,11 @@ main {
 }
 
 #site-footer {
-  background-color: $color-primario;
+  background-color: $color-morado;
   color: #ffffff;
-  z-index: 2;
+  z-index: -2;
+  position: fixed;
+  bottom: 0;
   a, p{
     // margin: .6em auto;
     line-height: 1.3em;
