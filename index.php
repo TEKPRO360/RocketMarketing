@@ -146,7 +146,7 @@
   <?php $clientes = new WP_Query( array( 
           'post_type'       => 'clientes',
           'posts_per_page'  => -1,
-          'category'        => 'current',
+          'cat'             => 4,
           'order_by'        => 'date',
           'order'           => 'ASC'
           ) ); ?>
@@ -158,11 +158,25 @@
       <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
       <?php endwhile; wp_reset_postdata();?>
     </div>
+  <?php $clientes = new WP_Query( array( 
+          'post_type'       => 'clientes',
+          'posts_per_page'  => -1,
+          'cat'             => 5,
+          'order_by'        => 'date',
+          'order'           => 'ASC'
+          ) ); ?>
     <div class="owl-theme owl-carousel owl-logos-2">
       <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
       <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
       <?php endwhile; wp_reset_postdata();?>
     </div>
+  <?php $clientes = new WP_Query( array( 
+          'post_type'       => 'clientes',
+          'posts_per_page'  => -1,
+          'cat'             => 6,
+          'order_by'        => 'date',
+          'order'           => 'ASC'
+          ) ); ?>
     <div class="owl-theme owl-carousel owl-logos-3">
       <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
       <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">

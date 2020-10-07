@@ -22,8 +22,8 @@
   <div class="contacto-menu col d-flex flex-wrap justify-content-center align-items-center p-2 p-md-1">
     <div class="seccion-datos">
       <p class="titulo-contacto">Contacto</p>
-      <p class="datos">JOAQUÍN Montero 3000</p>
-      <p class="datos">oficina 302, Vitacura.</p>
+      <p class="datos">Joaquín Montero #3000</p>
+      <p class="datos">Oficina 302, Vitacura.</p>
       <p class="datos">Santiago Chile.</p>
       <p class="telefono-contacto"><a href="tel:+569123456789">+569123456789</a></p>
       <p class="mail-contacto"><a href="mailto:rocket.mkt@tekpro.cl">rocket.mkt@tekpro.cl</a></p>
