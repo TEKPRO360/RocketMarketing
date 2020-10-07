@@ -13,42 +13,74 @@
         margin-left: -50vw;
         margin-right: -50vw;
     }
+    .menu-sticky{
+        top: -90px !important;
+        transition: .3s ease all;
+    }
     .contenedor-menu{
         position: fixed;
-        height: 100vh;
+        height: auto;
+        top: 2rem;
+        transition: .3s ease all;
         .menu{
             z-index: 1;
             color: #ffffff;
             a{
-                color: inherit;
                 text-decoration: none;
+                color: inherit;
+            }
+            .servicio{
+                opacity: 1;
                 transition: .3s ease all;
-                opacity: .5;
+                margin: 10px auto;
+                .numero{
+                    border: 1px solid #ffffff;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    transition: .3s ease-in all;
+                    padding: 4px;
+                    box-sizing: border-box;
+                    vertical-align: center;
+                    font-size: .7rem;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    margin: 0;
+                    line-height: 1.8rem;
+                }
+                .titulo-numero{
+                    text-transform: uppercase;
+                    line-height: normal;
+                    font-size: .8rem;
+                    letter-spacing: 0.2em;
+                }
                 &:hover{
-                    transform: scale(1.1);
-                    margin-left: 5%;
                     opacity: 1;
-                    .numero-menu{
-                        background: #ffffff;
-                        color: $color-morado;
+                    cursor: pointer;
+                    filter: blur(0px);
+                    .numero{
+                        color: $color-primario;
+                        background: #ffffff !important;
+                    }
+                    .titulo-numero{
+                        font-weight: 700;
                     }
                 }
-                >p{
-                    margin: 0;
+                &.active{
+                    opacity: 1;
+                    filter: blur(0px);
+                    .numero{
+                        color: $color-primario;
+                        font-weight: 800;
+                        font-size: .8rem;
+                        background: #ffffff !important;
+                        box-shadow: rgba($color: #000000, $alpha: .6) 0px 10px 10px -5px;
+                    }
+                    .titulo-numero{
+                        font-weight: 700;
+                    }
                 }
-                .numero-menu{
-                    width: 40px;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    box-sizing: border-box;
-                    border-radius: 33.333rem;
-                    transition: .3s ease all;
-                }
-            }
-            .active{
-                opacity: 1;
             }
         }
     }

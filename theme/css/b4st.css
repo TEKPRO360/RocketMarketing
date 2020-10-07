@@ -590,7 +590,7 @@ body {
             outline: none;
             -webkit-box-shadow: none;
             box-shadow: none;
-            color: #2d2b8b;
+            color: #fff;
             background: rgba(255, 255, 255, 0.1); }
             .index #contacto #formulario-contacto .wpcf7 input:focus ::-webkit-input-placeholder, .index #contacto #formulario-contacto .wpcf7 textarea:focus ::-webkit-input-placeholder {
               position: absolute;
@@ -682,50 +682,80 @@ body {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw; }
+  .servicios .menu-sticky {
+    top: -90px !important;
+    -webkit-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all; }
   .servicios .contenedor-menu {
     position: fixed;
-    height: 100vh; }
+    height: auto;
+    top: 2rem;
+    -webkit-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all; }
     .servicios .contenedor-menu .menu {
       z-index: 1;
       color: #ffffff; }
       .servicios .contenedor-menu .menu a {
-        color: inherit;
         text-decoration: none;
+        color: inherit; }
+      .servicios .contenedor-menu .menu .servicio {
+        opacity: 1;
         -webkit-transition: .3s ease all;
         -o-transition: .3s ease all;
         transition: .3s ease all;
-        opacity: .5; }
-        .servicios .contenedor-menu .menu a:hover {
-          -webkit-transform: scale(1.1);
-          -ms-transform: scale(1.1);
-          transform: scale(1.1);
-          margin-left: 5%;
-          opacity: 1; }
-          .servicios .contenedor-menu .menu a:hover .numero-menu {
-            background: #ffffff;
-            color: #2d2b8b; }
-        .servicios .contenedor-menu .menu a > p {
-          margin: 0; }
-        .servicios .contenedor-menu .menu a .numero-menu {
-          width: 40px;
+        margin: 10px auto; }
+        .servicios .contenedor-menu .menu .servicio .numero {
+          border: 1px solid #ffffff;
+          border-radius: 50%;
           height: 40px;
+          width: 40px;
+          -webkit-transition: .3s ease-in all;
+          -o-transition: .3s ease-in all;
+          transition: .3s ease-in all;
+          padding: 4px;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          vertical-align: center;
+          font-size: .7rem;
+          text-align: center;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
           -webkit-box-pack: center;
           -ms-flex-pack: center;
           justify-content: center;
-          -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-          border-radius: 33.333rem;
-          -webkit-transition: .3s ease all;
-          -o-transition: .3s ease all;
-          transition: .3s ease all; }
-      .servicios .contenedor-menu .menu .active {
-        opacity: 1; }
+          margin: 0;
+          line-height: 1.8rem; }
+        .servicios .contenedor-menu .menu .servicio .titulo-numero {
+          text-transform: uppercase;
+          line-height: normal;
+          font-size: .8rem;
+          letter-spacing: 0.2em; }
+        .servicios .contenedor-menu .menu .servicio:hover {
+          opacity: 1;
+          cursor: pointer;
+          -webkit-filter: blur(0px);
+          filter: blur(0px); }
+          .servicios .contenedor-menu .menu .servicio:hover .numero {
+            color: #302F87;
+            background: #ffffff !important; }
+          .servicios .contenedor-menu .menu .servicio:hover .titulo-numero {
+            font-weight: 700; }
+        .servicios .contenedor-menu .menu .servicio.active {
+          opacity: 1;
+          -webkit-filter: blur(0px);
+          filter: blur(0px); }
+          .servicios .contenedor-menu .menu .servicio.active .numero {
+            color: #302F87;
+            font-weight: 800;
+            font-size: .8rem;
+            background: #ffffff !important;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 10px -5px;
+            box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 10px -5px; }
+          .servicios .contenedor-menu .menu .servicio.active .titulo-numero {
+            font-weight: 700; }
   .servicios .contenedor-secciones {
     margin-top: 10%;
     letter-spacing: .1rem; }

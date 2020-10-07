@@ -35,7 +35,7 @@
 
 		
 		// OWL SERVICIOS
-		var slideServicios = $('.owl-servicios');
+		var slideServicios = $('.owl-servicios-home');
 		slideServicios.owlCarousel({
 			loop:false,
 			margin:0,
@@ -61,15 +61,16 @@
 				}
 			}
 		});
+
 		
 		// SERVICIOS Y ENUMERACIÓN
 
 		let servicios = $('#servicios').find('.contenedor-lista > .numeros-servicios'),
-			servicio = servicios.find('.servicio'),
+		servicio = servicios.find('.servicio'),
 			puntosServicios = $('#servicios').find('.owl-dots'),
 			puntoEspecifico = puntosServicios.find('span'),
 			detalleServicioActivo = $('#servicios').find('.owl-stage').find('.active');
-
+			
 		servicios.find('a:first-child').addClass('active');
 		servicio.click(function(){
 			servicio.removeClass('active');
@@ -84,16 +85,16 @@
 			});
 		});
 
-		slideServicios.on('mousewheel', '.owl-stage', function (e) {
-			if (e.deltaY<0) {
-				slideServicios.trigger('next.owl');
-				servicios.find('.active').next().addClass('active').prev().removeClass('active');
-			} else {
-				slideServicios.trigger('prev.owl');
-				servicios.find('.active').prev().addClass('active').next().removeClass('active');
-			}
-			e.preventDefault();
-		});
+		// slideServicios.on('mousewheel', '.owl-stage', function (e) {
+		// 	if (e.deltaY<0) {
+		// 		slideServicios.trigger('next.owl');
+		// 		servicios.find('.active').next().addClass('active').prev().removeClass('active');
+		// 	} else {
+		// 		slideServicios.trigger('prev.owl');
+		// 		servicios.find('.active').prev().addClass('active').next().removeClass('active');
+		// 	}
+		// 	e.preventDefault();
+		// });
 
 
 		// OWL SERVICIOS-MOBILE
@@ -192,7 +193,7 @@
 		});
 		
 		// CASOS DE ÉXITO
-
+		
 		$('.owl-foto-caso').owlCarousel({
 			loop:true,
 			margin:10,
@@ -256,6 +257,26 @@
 				}
 			}
 		});
+
+		$('.owl-servicios').owlCarousel({
+			loop:false,
+			margin:0,
+			nav:false,
+			dots:true,
+			autoplay:false,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+		
 		// ACCIONES MENÚ
 		
 		$('.accion-menu').click(function(){
@@ -272,8 +293,22 @@
 
 		// CALCULO DE FOOTER PARA MARGEN DE SE SECCIÓN CONTACTO
 		let altoFooter = $('#site-footer').height(),
-			divContacto = $('#contacto');
-		divContacto.css('margin-bottom', altoFooter + 30);
+			divPrecioFooter = $('#site-footer').prev();
+		divPrecioFooter.css('margin-bottom', altoFooter + 30);
+
+		//MENU STICKY EN INTERIOR DE SERVICIOS
+		let menuInterior = $('.contenedor-menu'),
+			positionMenu = menuInterior.offset();
+		
+		
+		$(window).scroll(function(){
+			let positionWeb = $(this).scrollTop();
+			if(positionWeb > 32){
+				menuInterior.addClass('menu-sticky');
+			}else{
+				menuInterior.removeClass('menu-sticky');
+			}
+		})
 
 	});
 

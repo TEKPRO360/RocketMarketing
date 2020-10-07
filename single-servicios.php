@@ -17,9 +17,9 @@
     <div class="menu my-5 text-servicio">
       <p>Servicios</p>
       <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
-      <a href="<?php the_permalink();?>" class="w-100 d-flex flex-row align-items-center justify-content-between my-2" data-servicio="<?php the_permalink();?>">
-        <p class="numero-menu text-center"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></p>
-        <p class="titulo-menu ml-0 col-md"><?php the_title();?></p>
+      <a class="servicio servicio-<?php echo $numero_servicio;?> d-flex flex-wrap align-items-center " href="<?php the_permalink();?>" data-servicio="<?php the_permalink();?>">
+        <p class="numero text-center"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></p>
+        <p class="col m-0 titulo-numero"><?php echo the_title();?></p>
       </a>
       <?php endwhile; wp_reset_postdata();?>
     </div>
