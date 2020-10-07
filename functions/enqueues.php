@@ -2,13 +2,13 @@
 /*
  * Enqueues
 */
-$url = 'https://code.jquery.com/jquery-3.4.1.min.js';
+$url = 'https://code.jquery.com/jquery-3.5.1.min.js';
 $test_url = @fopen($url, 'r');
 if ($test_url !== false) {
     function load_external_jQuery()
     {
         wp_deregister_script('jquery');
-        wp_register_script('jquery', 'https://code.jquery.com/jquery-3.4.1.min.js');
+        wp_register_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js');
         wp_enqueue_script('jquery');
     }
     add_action('wp_enqueue_scripts', 'load_external_jQuery');
