@@ -4,28 +4,27 @@
 ?>
 
 <main id="site-main" class="servicios d-flex flex-wrap bg-servicio text-servicio">
-  <?php //if(! wp_is_mobile()) :?>
-  <?php $servicios = new WP_Query( array( 
-          'post_type'       => 'servicios',
-          'posts_per_page'  => -1,
-          'category'        => 'current',
-          'order_by'        => 'date',
-          'order'           => 'ASC'
-          ) ); $numero_servicio = 0; ?>
+<?php $servicios = new WP_Query( array( 
+        'post_type'       => 'servicios',
+        'posts_per_page'  => -1,
+        'category'        => 'current',
+        'order_by'        => 'date',
+        'order'           => 'ASC'
+        ) );
+      $numero_servicio = 0; ?>
   <?php if ($servicios->have_posts() ) :?>
   <div class="contenedor-menu col-md-4 pt-5 px-3 d-none d-md-block">
     <div class="menu my-5 text-servicio">
       <p>Servicios</p>
       <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
       <a class="servicio servicio-<?php echo $numero_servicio;?> d-flex flex-wrap align-items-center " href="<?php the_permalink();?>" data-servicio="<?php the_permalink();?>">
-        <p class="numero text-center"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></p>
+        <p class="numero text-center numero-menu"><?php if ($numero_servicio < 10):?>0<?php endif?><?php echo $numero_servicio;?></p>
         <p class="col m-0 titulo-numero"><?php echo the_title();?></p>
       </a>
       <?php endwhile; wp_reset_postdata();?>
     </div>
   </div>
   <?php endif; wp_reset_postdata();?>
-  <?php //endif ?>
 
   <!-- CONTENEDOR SECCIONES -->
   <div class="contenedor-secciones w-100">
@@ -62,12 +61,13 @@
       </div>
     </section>
     <?php endwhile; wp_reset_postdata();?>
-    <!-- FIN SECCIÓN 2 -->
     <?php endif; ?>
+    <!-- FIN SECCIÓN 2 -->
+
+    <!-- SECCIÓN 3 -->
     <?php if ( have_rows( 'seccion_3' ) ) : ?>
-      <!-- SECCIÓN 3 -->
-    <?php while ( have_rows( 'seccion_3' ) ) : the_row(); $imagenTres = get_sub_field('imagen_slide_detalles_servicios_3'); $imagenCuatro = get_sub_field('imagen_slide_detalles_servicios_4');?>
     <section class="seccion-3 w-100 pr-0" style="background:<?php the_sub_field( 'color_background' ); ?>;color:<?php the_sub_field( 'color_texto' ); ?>;">
+    <?php while ( have_rows( 'seccion_3' ) ) : the_row(); $imagenTres = get_sub_field('imagen_slide_detalles_servicios_3'); $imagenCuatro = get_sub_field('imagen_slide_detalles_servicios_4');?>
       <div class="detalles-3 col-12 col-md-8 d-flex flex-wrap ml-auto px-0 d-flex flex-wrap align-items-center justify-content-center">
         <div class="owl-theme owl-carousel owl-servicios text-center col-12 col-md-6 p-3">
           <?php if ( have_rows( 'slide_detalles_servicios_2' ) ) : ?>
@@ -88,10 +88,11 @@
         </div>
         <?php endif; ?>
       </div>
+      <?php endwhile; wp_reset_postdata();?>
     </section>
-    <?php endwhile; wp_reset_postdata();?>
-    <!-- FIN SECCIÓN 3 -->
     <?php endif; ?>
+    <!-- FIN SECCIÓN 3 -->
+
     <?php if(wp_is_mobile()): ?>
     <section class="links-servicios boton-servicio">
       <p>Otros servicios</p>

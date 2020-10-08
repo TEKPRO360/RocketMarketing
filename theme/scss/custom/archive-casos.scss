@@ -1,6 +1,12 @@
+.post-type-archive-casos{
+    #site-navbar{
+        filter: invert(1);
+    }
+}
 .casos{
     min-height: 100vh;
     background: fn-url('estrellas.png')fixed top / cover no-repeat #EAEAEA;
+    color: #000;
     .titulo{
         margin-top: 100px;
         text-transform: uppercase;
@@ -8,9 +14,6 @@
     }
     .cabecera{
         margin: 100px auto auto auto;
-        @include MQ(M){
-            margin: 100px auto;
-        }
         img{
             max-width: 870px;
         }
@@ -24,26 +27,34 @@
         display: flex;
         flex-flow: wrap;
         .caso{
-            transition: .3s ease all;
-            &:hover{
-                translate: 0 -20px;
-                transition: .6s ease all;
-                transform: scale(1.1);
-            }
-        }
-        .caso{
-            @include MQ(M){
-                &:nth-child(even){
-                    margin-bottom: 40px;
-                    margin-top: -40px;
-                }
-                img{
-                    height: 100%;
-                    width: 100%;
-                }
-            }
             img{
                 height: auto;
+                object-fit: contain;
+                object-position: top;
+                z-index: 2;
+            }
+            .detalles-caso{
+                padding: 30px 10px 10px;
+                margin: -30px auto auto;
+                background: #fff;
+                transform-origin: bottom;
+                p{
+                    margin: 0;
+                }
+            }
+            .muestra-detalles{
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: .4rem;
+                cursor: pointer;
+            }
+            i{
+                transition: .3s ease all;
+                letter-spacing: normal;
+            }
+            .rotar{
+                transform: rotate(180deg);
+                transition: .3s ease all;
             }
         }
         .nombre-caso, .servicio-caso{
@@ -55,6 +66,27 @@
         }
         .servicio-caso{
             line-height: 1em;
+        }
+    }
+    @include MQ(M){
+        .columnas{
+            .cabecera{
+                margin: 1rem auto 5rem;
+            }
+            .caso{
+                &:nth-child(even){
+                    margin-bottom: 40px;
+                    margin-top: -40px;
+                }
+                img{
+                    height: auto;
+                    width: 100%;
+                }
+                .detalles-caso{
+                    margin: -45px auto auto;
+                    text-align: start;
+                }
+            }
         }
     }
 }

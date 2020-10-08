@@ -47,6 +47,9 @@ if ( ! function_exists('b4st_enqueues') ) {
 		wp_register_style('theme', get_template_directory_uri() . '/theme/css/b4st.css', false, null);
 		wp_enqueue_style('theme');
 
+		wp_register_style('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.css', false, '2.3.1');
+		wp_enqueue_style('AOS');
+
 		// Scripts
 
 		wp_register_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', false, '2.8.3', true);
@@ -86,6 +89,9 @@ if ( ! function_exists('b4st_enqueues') ) {
 
 		wp_register_script('jQueryMousewheel', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js', false, '3.1.13', true);
 		wp_enqueue_script('jQueryMousewheel');
+
+		wp_register_script('AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', false, '2.3.1', true);
+		wp_enqueue_script('AOS');
 
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');

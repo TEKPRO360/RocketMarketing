@@ -25,7 +25,7 @@
             'order'           => 'ASC'
             ) ); $numero_servicio = 0; ?>
     <?php if ($servicios->have_posts() ) :?>
-    <div class="d-flex flex-wrap w-100 p-0">
+    <div class="d-flex flex-wrap w-100 p-0" data-aos="fade-up">
       <div class="contenedor-lista col-4 align-items-center p-2">
         <div class="numeros-servicios">
           <?php while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++;?>
@@ -62,10 +62,10 @@
   )); ?>
   <?php if ($servicios->have_posts() ) :?>
   <section id="servicios" class="text-white py-4">
-    <h2 class="text-white text-center titulo mb-5">
+    <h2 class="text-white text-center titulo mb-5" data-aos="fade-up">
       Nuestros Servicios
     </h2>
-    <div class="owl-theme owl-carousel owl-servicios-mobile py-5">
+    <div class="owl-theme owl-carousel owl-servicios-mobile py-5" data-aos="fade-up">
       <?php while ($servicios->have_posts() ) : $servicios->the_post();?>
       <div class="card-servicios d-flex flex-column justify-content-center">
         <img src="<?php echo(get_field('foto_home_2'));?>" alt="<?php the_title();?>">
@@ -92,12 +92,12 @@
           ) ); ?>
   <?php if ($casos->have_posts() ) :?>
   <section id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">
-    <div class="w-100 d-flex flex-wrap px-1 px-md-5">
+    <div class="w-100 d-flex flex-wrap px-1 px-md-5" data-aos="fade-up">
       <div class="titulo-casos col-12 col-md-3  d-flex">
         <p class="d-none d-md-block">Casos<br>de éxito</p>
         <p class="d-block d-md-none">Casos de éxito</p>
       </div>
-      <div class="col-12 col-md-6 d-flex align-items-center justify-content-center computador ">
+      <div class="col-12 col-md-6 d-flex align-items-center justify-content-center computador" data-aos="fade-up">
         <div class="pantalla owl-theme owl-carousel owl-foto-caso">
           <?php while ($casos->have_posts() ) : $casos->the_post();
             $imagenCaso = get_field('imagen_del_caso_de_exito');
@@ -107,7 +107,7 @@
           <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
-      <div class="col-12 col-md-3 d-flex">
+      <div class="col-12 col-md-3 d-flex" data-aos="fade-up">
         <div class="owl-theme owl-carousel owl-detalle-caso d-flex align-items-center">
           <?php while ($casos->have_posts() ) : $casos->the_post();
             $servicios_involucrados = get_field( 'servicios_involucrados' );
@@ -127,7 +127,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt-5 owl-theme owl-carousel owl-detalle-texto">
+    <div class="container mt-5 owl-theme owl-carousel owl-detalle-texto" data-aos="fade-up">
     <?php while ($casos->have_posts() ) : $casos->the_post();
           $detalles_caso = get_field('detalles_del_caso');
           $titulo = get_the_title();
@@ -152,7 +152,7 @@
           ) ); ?>
   <?php if ($clientes->have_posts() ) :?>
   <section id="clientes" class="py-5">
-    <h2 class="titulo">Clientes</h2>
+    <h2 class="titulo" data-aos="fade-up">Clientes</h2>
     <div class="owl-theme owl-carousel owl-logos-1">
       <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
       <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">

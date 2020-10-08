@@ -8,6 +8,8 @@
 
 	$(document).ready(function() {
 
+		AOS.init();
+
 		// Comments
 
 		$('.commentlist li').addClass('card mb-3');
@@ -261,8 +263,8 @@
 		$('.owl-servicios').owlCarousel({
 			loop:false,
 			margin:0,
-			nav:false,
-			dots:true,
+			nav:true,
+			dots:false,
 			autoplay:false,
 			responsive:{
 				0:{
@@ -297,8 +299,7 @@
 		divPrecioFooter.css('margin-bottom', altoFooter + 30);
 
 		//MENU STICKY EN INTERIOR DE SERVICIOS
-		let menuInterior = $('.contenedor-menu'),
-			positionMenu = menuInterior.offset();
+		let menuInterior = $('.contenedor-menu');
 		
 		
 		$(window).scroll(function(){
@@ -307,6 +308,19 @@
 				menuInterior.addClass('menu-sticky');
 			}else{
 				menuInterior.removeClass('menu-sticky');
+			}
+		})
+
+		// DENTRO DE CASOS DE ÉXITO
+		let mostrarDetalles = $('.muestra-detalles');
+		mostrarDetalles.click(function(){
+			if($(this).prev().hasClass('mostrando')){
+				$(this).prev().slideUp().removeClass('mostrando')
+			}else{
+				$('.mostrando').slideUp().removeClass('mostrando');
+				$('.mostrando').next().find('i').removeClass('rotar');
+				$(this).prev().slideToggle('slow').addClass('mostrando');
+				$(this).find('i').addClass('rotar');
 			}
 		})
 

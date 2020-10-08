@@ -670,8 +670,8 @@ body {
     transform: scale(1.04) rotateX(0deg); } }
 
 .single-servicios #site-navbar {
-  -webkit-filter: contrast(0) hue-rotate(180deg);
-  filter: contrast(0) hue-rotate(180deg); }
+  -webkit-filter: invert(1) hue-rotate(180deg);
+  filter: invert(1) hue-rotate(180deg); }
 
 .servicios {
   overflow: hidden; }
@@ -706,8 +706,7 @@ body {
         -o-transition: .3s ease all;
         transition: .3s ease all;
         margin: 10px auto; }
-        .servicios .contenedor-menu .menu .servicio .numero {
-          border: 1px solid #ffffff;
+        .servicios .contenedor-menu .menu .servicio .numero-menu {
           border-radius: 50%;
           height: 40px;
           width: 40px;
@@ -760,9 +759,9 @@ body {
     margin-top: 10%;
     letter-spacing: .1rem; }
     .servicios .contenedor-secciones section {
-      min-height: 260px; }
+      min-height: auto; }
     .servicios .contenedor-secciones .seccion-1 .titulo-detalle h1 {
-      font-size: 3em;
+      font-size: 2em;
       line-height: 1em;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -785,8 +784,6 @@ body {
         max-height: 850px; }
     .servicios .contenedor-secciones .seccion-2 p {
       margin: 0; }
-    .servicios .contenedor-secciones .seccion-3 .detalles-3 {
-      margin: 0 0 -10%; }
     .servicios .contenedor-secciones .links-servicios {
       padding: 20px 10px;
       display: -webkit-box;
@@ -831,22 +828,26 @@ body {
       -ms-flex-align: center;
       align-items: center;
       -ms-flex-pack: distribute;
-      justify-content: space-around; }
+      justify-content: space-around;
+      pointer-events: all;
+      font-size: 1.4em; }
       .servicios .contenedor-secciones .owl-servicios .owl-nav button:hover {
         background: transparent; }
 
+.post-type-archive-casos #site-navbar {
+  -webkit-filter: invert(1);
+  filter: invert(1); }
+
 .casos {
   min-height: 100vh;
-  background: url("../img/estrellas.png") fixed top/cover no-repeat #EAEAEA; }
+  background: url("../img/estrellas.png") fixed top/cover no-repeat #EAEAEA;
+  color: #000; }
   .casos .titulo {
     margin-top: 100px;
     text-transform: uppercase;
     text-decoration: underline; }
   .casos .cabecera {
     margin: 100px auto auto auto; }
-    @media screen and (min-width: 768px) {
-      .casos .cabecera {
-        margin: 100px auto; } }
     .casos .cabecera img {
       max-width: 870px; }
     .casos .cabecera h1 {
@@ -859,27 +860,39 @@ body {
     display: flex;
     -ms-flex-flow: wrap;
     flex-flow: wrap; }
-    .casos .columnas .caso {
+    .casos .columnas .caso img {
+      height: auto;
+      -o-object-fit: contain;
+      object-fit: contain;
+      -o-object-position: top;
+      object-position: top;
+      z-index: 2; }
+    .casos .columnas .caso .detalles-caso {
+      padding: 30px 10px 10px;
+      margin: -30px auto auto;
+      background: #fff;
+      -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+      transform-origin: bottom; }
+      .casos .columnas .caso .detalles-caso p {
+        margin: 0; }
+    .casos .columnas .caso .muestra-detalles {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: .4rem;
+      cursor: pointer; }
+    .casos .columnas .caso i {
+      -webkit-transition: .3s ease all;
+      -o-transition: .3s ease all;
+      transition: .3s ease all;
+      letter-spacing: normal; }
+    .casos .columnas .caso .rotar {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
       -webkit-transition: .3s ease all;
       -o-transition: .3s ease all;
       transition: .3s ease all; }
-      .casos .columnas .caso:hover {
-        translate: 0 -20px;
-        -webkit-transition: .6s ease all;
-        -o-transition: .6s ease all;
-        transition: .6s ease all;
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1); }
-    @media screen and (min-width: 768px) {
-      .casos .columnas .caso:nth-child(even) {
-        margin-bottom: 40px;
-        margin-top: -40px; }
-      .casos .columnas .caso img {
-        height: 100%;
-        width: 100%; } }
-    .casos .columnas .caso img {
-      height: auto; }
     .casos .columnas .nombre-caso, .casos .columnas .servicio-caso {
       color: rgba(0, 0, 0, 0.47);
       text-transform: uppercase; }
@@ -887,6 +900,18 @@ body {
       font-size: 1.5em; }
     .casos .columnas .servicio-caso {
       line-height: 1em; }
+  @media screen and (min-width: 768px) {
+    .casos .columnas .cabecera {
+      margin: 1rem auto 5rem; }
+    .casos .columnas .caso:nth-child(even) {
+      margin-bottom: 40px;
+      margin-top: -40px; }
+    .casos .columnas .caso img {
+      height: auto;
+      width: 100%; }
+    .casos .columnas .caso .detalles-caso {
+      margin: -45px auto auto;
+      text-align: start; } }
 
 .author-bio,
 .comments-wrap {
