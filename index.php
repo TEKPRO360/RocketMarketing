@@ -36,7 +36,7 @@
           <?php endwhile; wp_reset_postdata();?>
         </div>
       </div>
-      <div class="detalles-servicios col-8 owl-carousel owl-theme owl-servicios pr-5">
+      <div class="detalles-servicios col-8 owl-carousel owl-theme owl-servicios-home pr-5">
         <?php $numero_servicio = 0; while ($servicios->have_posts() ) : $servicios->the_post(); $numero_servicio++; $imagen1 = get_field('foto_home_1'); $imagen2 = get_field('foto_home_2');?>
         <div data-hash="<?php echo $numero_servicio?>" class="servicio d-flex flex-wrap pr-5">
           <img class="col-5" src="<?php echo(get_field('foto_home_1'));?>" alt="<?php the_title();?>">
@@ -85,10 +85,10 @@
   <!-- SECCIÓN CASOS DE ÉXITO -->
   <?php $casos = new WP_Query( array( 
           'post_type'       => 'casos',
-          'posts_per_page'  => -1,
+          'posts_per_page'  => 3,
           'cat'             => 2,
           'order_by'        => 'date',
-          'order'           => 'ASC'
+          'order'           => 'DESC'
           ) ); ?>
   <?php if ($casos->have_posts() ) :?>
   <section id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">

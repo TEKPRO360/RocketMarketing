@@ -36,7 +36,6 @@
             .detalles-caso{
                 padding: 30px 10px 10px;
                 margin: -30px auto auto;
-                background: #fff;
                 transform-origin: bottom;
                 p{
                     margin: 0;
@@ -62,10 +61,10 @@
             text-transform: uppercase;
         }
         .nombre-caso{
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
         .servicio-caso{
-            line-height: 1em;
+            line-height: 1.3em;
         }
     }
     @include MQ(M){

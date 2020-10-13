@@ -1,7 +1,7 @@
 <?php b4st_footer_before();?>
 
 <footer id="site-footer" class="py-4 w-100">
-  <div class="col-12 d-flex flex-wrap py-md-4 m-auto">
+  <div class="col-12 d-flex flex-wrap py-md-4 m-auto bloques-footer">
     <div class="col-12 col-md text-center">
       <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo-blanco.png" alt="" class="mb-2 p-3">
     </div>

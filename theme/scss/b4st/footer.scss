@@ -12,8 +12,8 @@ main {
 #site-footer {
   background-color: $color-morado;
   color: #ffffff;
-  z-index: -2;
-  position: fixed;
+  // z-index: -2;
+  // position: fixed;
   bottom: 0;
   a, p{
     // margin: .6em auto;
@@ -33,5 +33,15 @@ main {
     text-transform: uppercase;
     opacity: .47;
     font-size: 1.2em;
+  }
+  .bloque-footer{
+    .redes{
+      a{
+        color: red;
+        &:hover{
+          opacity: .6;
+        }
+      }
+    }
   }
 }

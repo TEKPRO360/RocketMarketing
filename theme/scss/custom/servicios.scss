@@ -1,6 +1,6 @@
 .single-servicios{
     #site-navbar{
-        filter: invert(1) hue-rotate(180deg);
+        filter: contrast(1) hue-rotate(180deg);
     }
 }
 .servicios{
@@ -69,6 +69,7 @@
                 &.active{
                     opacity: 1;
                     filter: blur(0px);
+                    font-weight: bold;
                     .numero{
                         color: $color-primario;
                         font-weight: 800;
