@@ -1,0 +1,32 @@
+.contacto{
+    min-height: 100vh;
+    label{
+        text-transform: uppercase;
+        font-weight: lighter;
+    }
+    .bloque-datos{
+        background: fn-url('fondo-menu-original.png')top left / cover no-repeat;
+    }
+    .bloque-formulario{
+        background: $color-morado;
+        input{
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid;
+            border-radius: 0;
+            resize: none;
+            margin: 10px auto;
+            &::placeholder{
+                color: #ffffff;
+                text-transform: uppercase;
+                font-weight: lighter;
+            }
+        }
+        textarea{
+            border: 1px solid;
+            background: transparent;
+            border-radius: 0;
+            resize: none;
+        }
+    }
+}

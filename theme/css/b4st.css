@@ -190,16 +190,21 @@ body {
   body .bg-primario {
     background: #302F87; }
   body .btn-ver-mas {
-    background: #000;
+    background: url("../img/fondo-btn.jpg");
+    background-position: left;
     color: #fff;
     border-radius: 33.333rem;
     padding: 1rem 3rem;
     text-transform: uppercase;
     font-weight: bolder;
     letter-spacing: .2rem;
-    margin: 0 auto auto 0; }
+    margin: 0 auto auto 0;
+    -webkit-transition: .3s ease all;
+    -o-transition: .3s ease all;
+    transition: .3s ease all; }
     body .btn-ver-mas:hover {
-      text-decoration: none; }
+      text-decoration: none;
+      background-position: right; }
 
 .index {
   overflow-x: hidden; }
@@ -451,8 +456,9 @@ body {
         position: absolute;
         top: calc(110vw / 10);
         height: calc(91.5vw / 2);
-        width: 79vw;
-        overflow: hidden; }
+        width: 79vw; }
+        .index #casos-de-exito .computador .pantalla .owl-item {
+          height: calc(92vw / 2); }
         .index #casos-de-exito .computador .pantalla .owl-nav {
           position: absolute;
           pointer-events: all;
@@ -490,7 +496,9 @@ body {
             position: absolute;
             top: calc(38vw / 10.1);
             height: calc(48.5vw / 2.1);
-            width: 38.5vw; } }
+            width: 38.5vw; }
+            .index #casos-de-exito .computador .pantalla .owl-item {
+              height: calc(45.9vw / 2); } }
     .index #casos-de-exito .owl-detalle-caso .detalles-casos .nombre-caso {
       font-weight: bold; }
     .index #casos-de-exito .owl-detalle-caso .detalles-casos .servicio-caso {
@@ -627,13 +635,21 @@ body {
         .index #contacto #formulario-contacto .wpcf7 form .wpcf7-not-valid-tip {
           color: #fff; }
         .index #contacto #formulario-contacto .wpcf7 form .btn {
-          background: #000;
+          background: url("../img/fondo-btn.jpg");
+          background-position: left;
           color: #fff;
-          width: 80%;
+          width: 15%;
+          min-width: 180px;
           border: none;
           border-radius: 33.333rem;
           font-weight: bold;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          -webkit-transition: .3s ease all;
+          -o-transition: .3s ease all;
+          transition: .3s ease all; }
+          .index #contacto #formulario-contacto .wpcf7 form .btn:hover {
+            text-decoration: none;
+            background-position: right; }
       @media screen and (min-width: 768px) {
         .index #contacto #formulario-contacto {
           padding: 0; }
@@ -668,10 +684,6 @@ body {
   100% {
     -webkit-transform: scale(1.04) rotateX(0deg);
     transform: scale(1.04) rotateX(0deg); } }
-
-.single-servicios #site-navbar {
-  -webkit-filter: invert(1) hue-rotate(180deg);
-  filter: invert(1) hue-rotate(180deg); }
 
 .servicios {
   overflow: hidden; }
@@ -745,7 +757,8 @@ body {
         .servicios .contenedor-menu .menu .servicio.active {
           opacity: 1;
           -webkit-filter: blur(0px);
-          filter: blur(0px); }
+          filter: blur(0px);
+          font-weight: bold; }
           .servicios .contenedor-menu .menu .servicio.active .numero {
             color: #302F87;
             font-weight: 800;
@@ -870,7 +883,6 @@ body {
     .casos .columnas .caso .detalles-caso {
       padding: 30px 10px 10px;
       margin: -30px auto auto;
-      background: #fff;
       -webkit-transform-origin: bottom;
       -ms-transform-origin: bottom;
       transform-origin: bottom; }
@@ -897,9 +909,9 @@ body {
       color: rgba(0, 0, 0, 0.47);
       text-transform: uppercase; }
     .casos .columnas .nombre-caso {
-      font-size: 1.5em; }
+      font-size: 1.2em; }
     .casos .columnas .servicio-caso {
-      line-height: 1em; }
+      line-height: 1.3em; }
   @media screen and (min-width: 768px) {
     .casos .columnas .cabecera {
       margin: 1rem auto 5rem; }
@@ -1223,8 +1235,6 @@ main {
 #site-footer {
   background-color: #2d2b8b;
   color: #ffffff;
-  z-index: -2;
-  position: fixed;
   bottom: 0; }
   #site-footer a, #site-footer p {
     line-height: 1.3em;
@@ -1241,5 +1251,16 @@ main {
     text-transform: uppercase;
     opacity: .47;
     font-size: 1.2em; }
+  #site-footer .bloques-footer a {
+    -webkit-transition: .4s ease all;
+    -o-transition: .4s ease all;
+    transition: .4s ease all; }
+    #site-footer .bloques-footer a:hover {
+      opacity: .6;
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1); }
+  #site-footer .bloques-footer .redes a :hover {
+    font-size: 1.1rem; }
 
 /*# sourceMappingURL=b4st.css.map */

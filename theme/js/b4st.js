@@ -201,6 +201,7 @@
 			margin:10,
 			nav:true,
 			dots:false,
+			autoplay : true,
 			URLhashListener:true,
 			autoplayHoverPause:true,
 			autoplayTimeout:5000,
@@ -294,13 +295,14 @@
 		console.log(servicioActual);
 
 		// CALCULO DE FOOTER PARA MARGEN DE SE SECCIÓN CONTACTO
-		let altoFooter = $('#site-footer').height(),
-			divPrecioFooter = $('#site-footer').prev();
-		divPrecioFooter.css('margin-bottom', altoFooter + 30);
+		// let altoFooter = $('#site-footer').height(),
+		// 	divPrecioFooter = $('#site-footer').prev();
+		// divPrecioFooter.css('margin-bottom', altoFooter + 30);
 
 		//MENU STICKY EN INTERIOR DE SERVICIOS
-		let menuInterior = $('.contenedor-menu');
-		
+		let menuInterior = $('.contenedor-menu'),
+			altoSitio,
+			positionWeb;
 		
 		$(window).scroll(function(){
 			let positionWeb = $(this).scrollTop();
@@ -309,7 +311,8 @@
 			}else{
 				menuInterior.removeClass('menu-sticky');
 			}
-		})
+			console.log(positionWeb)
+		});
 
 		// DENTRO DE CASOS DE ÉXITO
 		let mostrarDetalles = $('.muestra-detalles');
@@ -322,8 +325,23 @@
 				$(this).prev().slideToggle('slow').addClass('mostrando');
 				$(this).find('i').addClass('rotar');
 			}
-		})
+		});
 
+		// MUESTRA FOOTER AL FINAL
+		// var scrollBottom = $(window).scrollTop() + $(window).height();
+		// console.log(scrollBottom)
+
+		// $(window).scroll(function(){
+		// 	let positionWeb = $(this).scrollTop(),
+		// 		altoSitio = $(window).height(),
+		// 		scrollBottom = positionWeb + altoSitio;
+		// 	if(positionWeb > 32){
+		// 		menuInterior.addClass('menu-sticky');
+		// 	}else{
+		// 		menuInterior.removeClass('menu-sticky');
+		// 	}
+		// 	console.log(`Alto del sitio es:${altoSitio}, Posición en scroll es:${positionWeb}, El scroll al final es: ${scrollBottom}`);
+		// });
 	});
 
 

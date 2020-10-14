@@ -13,7 +13,7 @@
 <nav id="site-navbar" class="w-100">
   <div class="container-fluid px-5">
     <?php b4st_navbar_brand();?>
-    <i class="fas fa-bars text-white accion-menu"></i>
+    <i class="fas fa-bars text-white accion-menu text-servicio"></i>
   </div>
 </nav>
 
@@ -22,11 +22,11 @@
   <div class="contacto-menu col d-flex flex-wrap justify-content-center align-items-center p-2 p-md-1">
     <div class="seccion-datos">
       <p class="titulo-contacto">Contacto</p>
-      <p class="datos">Joaquín Montero #3000</p>
-      <p class="datos">Oficina 302, Vitacura.</p>
+      <p>Joaquín Montero 3000, Oficina 502,</p>
+      <p>Vitacura. Santiago, Chile.</p>
       <p class="datos">Santiago Chile.</p>
-      <p class="telefono-contacto"><a href="tel:+569123456789">+569123456789</a></p>
-      <p class="mail-contacto"><a href="mailto:rocket.mkt@tekpro.cl">rocket.mkt@tekpro.cl</a></p>
+      <p>+56 (2) 2869 9180</p>
+      <a href="mailto:contacto@rocketmkt.com">contacto@rocketmkt.com</a>
     </div>
     <div class="seccion-redes"></div>
   </div>

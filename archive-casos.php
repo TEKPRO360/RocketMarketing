@@ -9,7 +9,6 @@
   'order'           => 'ASC'
   ) ); ?>
 <main id="site-main" class="casos align-items-center">
-<p class="titulo col-12 text-center text-md-left d-none d-md-block">Casos de éxito</p>
   <section class="cabecera col-12 col-md-8 d-flex flex-column align-items-center justify-content-center text-center des">
     <h1 class="mt-2 mt-md-5">Casos de éxito</h1>
     <p>Empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.empoderamos tu marca a través de nuestras campañas de reconocimiento. logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
@@ -25,10 +24,10 @@
         <?php echo get_field('detalles_del_caso'); ?>
       </div>
       <p class="muestra-detalles text-center mt-3">Más <i class="fas fa-chevron-down text-center"></i></p>
-      <h3 class="nombre-caso text-center text-md-left" data-hash="<?php the_title();?>" data-link="<?php the_permalink();?>"><?php the_title();?></h3>
+      <h3 class="nombre-caso text-center" data-hash="<?php the_title();?>" data-link="<?php the_permalink();?>"><?php the_title();?></h3>
       <?php foreach ( $servicios_involucrados as $post ) : ?>
       <?php setup_postdata ( $post ); ?>
-      <p class="servicio-caso text-center text-md-left"><?php the_title(); ?></p>
+      <p class="servicio-caso text-center"><?php the_title(); ?></p>
       <?php endforeach; ?>
       <?php wp_reset_postdata(); ?>
     <?php endif; ?>
