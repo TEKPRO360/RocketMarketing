@@ -3,7 +3,7 @@
 <footer id="site-footer" class="py-4 w-100">
   <div class="col-12 d-flex flex-wrap py-md-4 m-auto bloques-footer">
     <div class="col-12 col-md text-center">
-      <img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo-blanco.png" alt="" class="mb-2 p-3">
+      <a href="<?php echo esc_url( home_url('/') ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/theme/img/logo-blanco.png" alt="" class="mb-2 p-3"></a>
     </div>
     <div class="col-12 col-md columna-3 mt-4 mt-md-0 d-flex flex-column">
       <h3 class="titulo-footer">Nosotros</h3>
@@ -20,8 +20,8 @@
     </div>
     <div class="col-12 col-md columna-4 mt-4 mt-md-0 redes">
       <h3 class="titulo-footer w-100">Social</h3>
-      <a href="#instagram" class="fab fa-instagram mr-3"></a>
-      <a href="#linkedin" class="fab fa-linkedin-in mr-3"></a>
+      <a href="https://www.instagram.com/rocketmarketing07/" class="fab fa-instagram mr-3"></a>
+      <a href="https://www.linkedin.com/company/rocket-marketing01/" class="fab fa-linkedin-in mr-3"></a>
     </div>
   </div>
 </footer>

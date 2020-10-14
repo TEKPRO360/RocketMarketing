@@ -291,13 +291,8 @@
 		let servicioActual = window.location.pathname,
 			menu = $('.menu');
 
-		menu.find(`[data-servicio="${servicioActual}"]`).addClass('active');
-		console.log(servicioActual);
-
-		// CALCULO DE FOOTER PARA MARGEN DE SE SECCIÓN CONTACTO
-		// let altoFooter = $('#site-footer').height(),
-		// 	divPrecioFooter = $('#site-footer').prev();
-		// divPrecioFooter.css('margin-bottom', altoFooter + 30);
+		menu.find(`[data-servicio="${home}${servicioActual}"]`).addClass('active');
+		// console.log(servicioActual);
 
 		//MENU STICKY EN INTERIOR DE SERVICIOS
 		let menuInterior = $('.contenedor-menu'),
@@ -311,7 +306,7 @@
 			}else{
 				menuInterior.removeClass('menu-sticky');
 			}
-			console.log(positionWeb)
+			// console.log(positionWeb)
 		});
 
 		// DENTRO DE CASOS DE ÉXITO
@@ -319,6 +314,7 @@
 		mostrarDetalles.click(function(){
 			if($(this).prev().hasClass('mostrando')){
 				$(this).prev().slideUp().removeClass('mostrando')
+				$(this).find('i').removeClass('rotar');
 			}else{
 				$('.mostrando').slideUp().removeClass('mostrando');
 				$('.mostrando').next().find('i').removeClass('rotar');
@@ -326,22 +322,6 @@
 				$(this).find('i').addClass('rotar');
 			}
 		});
-
-		// MUESTRA FOOTER AL FINAL
-		// var scrollBottom = $(window).scrollTop() + $(window).height();
-		// console.log(scrollBottom)
-
-		// $(window).scroll(function(){
-		// 	let positionWeb = $(this).scrollTop(),
-		// 		altoSitio = $(window).height(),
-		// 		scrollBottom = positionWeb + altoSitio;
-		// 	if(positionWeb > 32){
-		// 		menuInterior.addClass('menu-sticky');
-		// 	}else{
-		// 		menuInterior.removeClass('menu-sticky');
-		// 	}
-		// 	console.log(`Alto del sitio es:${altoSitio}, Posición en scroll es:${positionWeb}, El scroll al final es: ${scrollBottom}`);
-		// });
 	});
 
 

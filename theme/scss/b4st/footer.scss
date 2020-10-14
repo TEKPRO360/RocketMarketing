@@ -12,9 +12,9 @@ main {
 #site-footer {
   background-color: $color-morado;
   color: #ffffff;
-  // z-index: -2;
-  // position: fixed;
+  z-index: 2;
   bottom: 0;
+  box-shadow: 0px -9px 34px -20px #00000042;
   a, p{
     margin: 0;
     line-height: 1.3em;
