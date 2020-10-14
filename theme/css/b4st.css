@@ -1241,6 +1241,7 @@ main {
   color: #ffffff;
   bottom: 0; }
   #site-footer a, #site-footer p {
+    margin: 0;
     line-height: 1.3em;
     color: inherit;
     text-decoration: none; }
@@ -1260,10 +1261,7 @@ main {
     -o-transition: .4s ease all;
     transition: .4s ease all; }
     #site-footer .bloques-footer a:hover {
-      opacity: .6;
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1); }
+      opacity: .6; }
   #site-footer .bloques-footer .redes a :hover {
     font-size: 1.1rem; }
 

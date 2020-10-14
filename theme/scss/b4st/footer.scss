@@ -16,7 +16,7 @@ main {
   // position: fixed;
   bottom: 0;
   a, p{
-    // margin: .6em auto;
+    margin: 0;
     line-height: 1.3em;
     color: inherit;
     text-decoration: none;
@@ -39,7 +39,6 @@ main {
       transition: .4s ease all;
       &:hover{
         opacity: .6;
-        transform: scale(1.1);
       }
     }
     .redes{
