@@ -685,6 +685,10 @@ body {
     -webkit-transform: scale(1.04) rotateX(0deg);
     transform: scale(1.04) rotateX(0deg); } }
 
+.single-servicios #site-navbar {
+  -webkit-filter: contrast(1) hue-rotate(180deg);
+  filter: contrast(1) hue-rotate(180deg); }
+
 .servicios {
   overflow: hidden; }
   .servicios .full-width {
