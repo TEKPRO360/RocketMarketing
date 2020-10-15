@@ -29,8 +29,8 @@
   <!-- CONTENEDOR SECCIONES -->
   <div class="contenedor-secciones w-100">
     <!-- SECCIÓN 1 -->
-    <?php if ( have_rows( 'seccion_1' ) ) : ?>
-    <?php while ( have_rows( 'seccion_1' ) ) : the_row(); $imagenHorizontal = get_sub_field('imagen_horizontal'); $imagenVertical = get_sub_field('imagen_vertical');?>
+    <?php if ( have_rows( 'seccion_1' ) ) :
+      while ( have_rows( 'seccion_1' ) ) : the_row(); $imagenHorizontal = get_sub_field('imagen_horizontal'); $imagenVertical = get_sub_field('imagen_vertical');?>
     <section class="seccion-1 w-100 bg-seccion-1 text-seccion-1 pr-md-0 pt-5 pt-md-0">
       <div class="col-12 col-md-8 d-flex flex-wrap ml-auto px-0">
         <div class="titulo-detalle col-12 col-md-6">

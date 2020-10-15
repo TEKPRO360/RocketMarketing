@@ -85,8 +85,13 @@
         }
     }
     @include MQ(M){
+        .cabecera{
+            p{
+                margin: auto auto 3rem;
+            }
+        }
         .columnas{
-            margin: 40px auto 20px;
+            margin: 20px auto;
             .cabecera{
                 margin: 1rem auto 5rem;
             }
