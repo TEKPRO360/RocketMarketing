@@ -13,7 +13,7 @@ body{
         font-weight: bold;
         transition: .8s ease all;
         &:hover{
-            background-position: right;
+            background-position: left;
             transition: .3s ease all;
         }
         p{
@@ -25,6 +25,7 @@ body{
         }
     }
     .owl-theme{
+        
         .owl-dots .owl-dot{
             outline: none;
         }
@@ -42,7 +43,7 @@ body{
     }
     .btn-ver-mas{
         background: fn-url('fondo-btn.jpg');
-        background-position: left;
+        background-position: right;
         color: #fff;
         border-radius: 33.333rem;
         padding: 1rem 3rem;
@@ -53,12 +54,12 @@ body{
         transition: .3s ease all;
         &:hover{
             text-decoration: none;
-            background-position: right;
+            background-position: left;
         }
     }
 }
 .index{
-    overflow-x:hidden;
+   overflow-x:hidden;
     // background: fn-url('bg-sitio.png')fixed top / cover no-repeat;
     .intro{
         background: url('../img/logo-animado.gif')center center/cover no-repeat, fn-url('estrellas.png')fixed top / cover no-repeat;
@@ -339,23 +340,28 @@ body{
                     button{
                         height: 20px;
                         width: 20px;
-                        background: #e3e3e3;
                         color: #000;
                         border-radius: 0;
                         padding: 5px;
                         box-sizing: border-box;
                         position: absolute;
+                        &:hover{
+                            background-color: transparent;
+                        }
                         span{
                             text-align: center;
                             line-height: .1rem;
-                            font-size: 1.7rem;
+                            font-size: 4.7rem;
+                            &:hover{
+                                color: aqua;
+                            }
                         }
                     }
                     .owl-prev{
-                        left: -10%;
+                        left: -13%;
                     }
                     .owl-next{
-                        right: -10%;
+                        right: -13%;
                     }
                 }
                 img{
@@ -414,7 +420,7 @@ body{
     }
     #clientes{
         background: $color-morado;
-        pointer-events: none;
+      /*  pointer-events: none;*/
         .titulo{
             color: #ffffff;
             font-weight: bolder;
@@ -423,6 +429,50 @@ body{
             margin-bottom: 80px;
         }
         .owl-theme{
+            .owl-stage-outer{
+               overflow: visible;
+                .owl-stage{
+                    
+                    .owl-item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &:hover{
+                            &:after {
+                                content: "";
+                                height: 70px; 
+                                width:70px;
+                                background: fn-url('fondo-btn.jpg');
+                                background-position: right;
+                                border-radius: 50%;
+                                position: absolute; 
+                                transition: all 0.10s ease .6s; 
+                                -webkit-transition: all 0.10s ease .6s; 
+                                z-index: -1;
+                                animation-name: scale;
+                                animation-duration: .3s; 
+                                }
+                               
+                            }
+
+                            @keyframes scale {
+                                from{
+                                    transform: scale(0.3,0.3);
+                                }
+                                to{
+                                    transform: scale(.5, .5);
+                                    
+                                }
+                            }
+                           
+                            
+                        
+                    }
+                   
+                }
+               
+            }
+           
             @include MQ(M){
                 margin: 100px auto;
             }
@@ -430,7 +480,13 @@ body{
             img{
                 height: 43px;
                 width: 100%;
-                object-fit: contain;
+                object-fit: contain; 
+                transition: .3s all ease;
+
+                &:hover{
+                    transform: scale(1.2, 1.2)!important;
+
+                }
             }
         }
     }
@@ -453,6 +509,13 @@ body{
         }
         #formulario-contacto{
             box-sizing: border-box;
+            .wpcf7-form-control-wrap{
+                input, textarea{
+                    &:focus {
+                        background-color: #fff !important;
+                      }
+                }
+            }
             .wpcf7{
                 width: 100%;
                 input, textarea{
@@ -466,7 +529,7 @@ body{
                     max-width: 100%;
                     padding: 5px 10px;
                     resize: none;
-                    color: #fff;
+                    color: #000;
                     transition: .3s ease all;
                     &::placeholder{
                         color: #fff;
@@ -478,7 +541,6 @@ body{
                         background: rgba($color-morado, .4);
                         outline: none;
                         box-shadow: none;
-                        color: #fff;
                         background: rgba(#fff, .1);
                         ::placeholder{
                             position: absolute;

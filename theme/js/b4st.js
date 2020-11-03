@@ -204,7 +204,8 @@
 			autoplay : true,
 			URLhashListener:true,
 			autoplayHoverPause:true,
-			autoplayTimeout:5000,
+			autoplayTimeout:6000,
+			autoplaySpeed : 6000,
 			responsive:{
 				0:{
 					items:1
