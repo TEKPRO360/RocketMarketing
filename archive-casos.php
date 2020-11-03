@@ -11,7 +11,7 @@
 <main id="site-main" class="casos align-items-center">
   <section class="cabecera col-12 col-md-8 d-flex flex-column align-items-center justify-content-center text-center des">
     <h1 class="mt-2 mt-md-5">Casos de éxito</h1>
-    <p>Empoderamos tu marca a través de nuestras campañas de reconocimiento. Logramos el posicionamiento que deseas en tu público objetivo apuntando a lograr el mayor alcance al menor costo posible.</p>
+    <p>Apoyamos a nuestros clientes a cumplir sus objetivos digitales mediante una gran variedad servicios que apuntan a llegar al target objetivo optimizando la inversión publicitaría.</p>
   </section>
   <!-- SECCIÓN COLUMNAS -->
   <?php if ($casos->have_posts() ) :?>
