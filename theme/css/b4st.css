@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * b4st v3.0 | Unicence
  * http://simonpadbury.github.io/Codebase/
@@ -281,7 +282,8 @@ body .btn-ver-mas:hover {
   background: #fff;
   transition: 0.3s ease all;
 }
-.index #servicios .card-servicios h3, .index #servicios .card-servicios p {
+.index #servicios .card-servicios h3,
+.index #servicios .card-servicios p {
   padding: 0 20px;
   text-align: center;
 }
@@ -489,6 +491,7 @@ body .btn-ver-mas:hover {
   position: absolute;
   pointer-events: all;
   top: 40%;
+  left: -2.3%;
   width: 100%;
 }
 .index #casos-de-exito .computador .pantalla .owl-nav button {
@@ -499,6 +502,8 @@ body .btn-ver-mas:hover {
   padding: 5px;
   box-sizing: border-box;
   position: absolute;
+  /* CASOS DE ÉXITO */
+  /* Estilo de las flechas owl carrusel */
 }
 .index #casos-de-exito .computador .pantalla .owl-nav button:hover {
   background-color: transparent;
@@ -510,6 +515,50 @@ body .btn-ver-mas:hover {
 }
 .index #casos-de-exito .computador .pantalla .owl-nav button span:hover {
   color: aqua;
+}
+.index #casos-de-exito .computador .pantalla .owl-nav button svg {
+  width: 45px;
+  height: auto;
+  cursor: pointer;
+  overflow: visible;
+}
+.index #casos-de-exito .computador .pantalla .owl-nav button svg polygon,
+.index #casos-de-exito .computador .pantalla .owl-nav button svg path {
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.index #casos-de-exito .computador .pantalla .owl-nav button svg:hover polygon, .index #casos-de-exito .computador .pantalla .owl-nav button svg:hover path {
+  transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+  fill: #FF4136;
+}
+.index #casos-de-exito .computador .pantalla .owl-nav button svg:hover .arrow {
+  animation: arrow-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+}
+.index #casos-de-exito .computador .pantalla .owl-nav button svg:hover .arrow-fixed {
+  animation: arrow-fixed-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
+}
+@keyframes arrow-anim {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  5% {
+    transform: translateX(-0.1rem);
+  }
+  100% {
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+}
+@keyframes arrow-fixed-anim {
+  5% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .index #casos-de-exito .computador .pantalla .owl-nav .owl-prev {
   left: -13%;
@@ -644,13 +693,15 @@ body .btn-ver-mas:hover {
 .index #contacto #formulario-contacto {
   box-sizing: border-box;
 }
-.index #contacto #formulario-contacto .wpcf7-form-control-wrap input:focus, .index #contacto #formulario-contacto .wpcf7-form-control-wrap textarea:focus {
+.index #contacto #formulario-contacto .wpcf7-form-control-wrap input:focus,
+.index #contacto #formulario-contacto .wpcf7-form-control-wrap textarea:focus {
   background-color: #fff !important;
 }
 .index #contacto #formulario-contacto .wpcf7 {
   width: 100%;
 }
-.index #contacto #formulario-contacto .wpcf7 input, .index #contacto #formulario-contacto .wpcf7 textarea {
+.index #contacto #formulario-contacto .wpcf7 input,
+.index #contacto #formulario-contacto .wpcf7 textarea {
   background: transparent;
   border-radius: 0;
   border: none;
@@ -664,26 +715,31 @@ body .btn-ver-mas:hover {
   color: #000;
   transition: 0.3s ease all;
 }
-.index #contacto #formulario-contacto .wpcf7 input::placeholder, .index #contacto #formulario-contacto .wpcf7 textarea::placeholder {
+.index #contacto #formulario-contacto .wpcf7 input::placeholder,
+.index #contacto #formulario-contacto .wpcf7 textarea::placeholder {
   color: #fff;
   opacity: 0.6;
   position: absolute;
   top: -40px;
 }
-.index #contacto #formulario-contacto .wpcf7 input:focus, .index #contacto #formulario-contacto .wpcf7 textarea:focus {
+.index #contacto #formulario-contacto .wpcf7 input:focus,
+.index #contacto #formulario-contacto .wpcf7 textarea:focus {
   background: rgba(45, 43, 139, 0.4);
   outline: none;
   box-shadow: none;
   background: rgba(255, 255, 255, 0.1);
 }
-.index #contacto #formulario-contacto .wpcf7 input:focus ::placeholder, .index #contacto #formulario-contacto .wpcf7 textarea:focus ::placeholder {
+.index #contacto #formulario-contacto .wpcf7 input:focus ::placeholder,
+.index #contacto #formulario-contacto .wpcf7 textarea:focus ::placeholder {
   position: absolute;
   top: -30px;
 }
-.index #contacto #formulario-contacto .wpcf7 input:hover, .index #contacto #formulario-contacto .wpcf7 textarea:hover {
+.index #contacto #formulario-contacto .wpcf7 input:hover,
+.index #contacto #formulario-contacto .wpcf7 textarea:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.index #contacto #formulario-contacto .wpcf7 p, .index #contacto #formulario-contacto .wpcf7 span {
+.index #contacto #formulario-contacto .wpcf7 p,
+.index #contacto #formulario-contacto .wpcf7 span {
   margin: 0;
   text-align: center;
 }
@@ -731,7 +787,8 @@ body .btn-ver-mas:hover {
     flex-flow: wrap;
     justify-content: space-between;
   }
-  .index #contacto #formulario-contacto .formulario-contacto p, .index #contacto #formulario-contacto .formulario-contacto span {
+  .index #contacto #formulario-contacto .formulario-contacto p,
+.index #contacto #formulario-contacto .formulario-contacto span {
     width: 100%;
   }
   .index #contacto #formulario-contacto .formulario-contacto .wpcf7-not-valid-tip {
