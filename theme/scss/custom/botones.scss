@@ -1,6 +1,6 @@
 .btn-rocket{
     background: fn-url('fondo-btn.jpg');
-    background-position: left;
+    background-position: right;
     background-size: 200% 100%;
     color: #ffffff !important;
     border: none;
@@ -34,6 +34,7 @@ select:-webkit-autofill:focus {
   border: 1px solid #ffffff;
   -webkit-text-fill-color: #ffffff;
   -webkit-box-shadow: 0 0 0px 1000px #2d2b8b inset;
+  box-shadow: 0 0 0px 1000px #2d2b8b inset;
   background: transparent !important;
   transition: background-color 5000s ease-in-out 0s;
 
