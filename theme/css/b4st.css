@@ -528,7 +528,7 @@ body .btn-ver-mas:hover {
 }
 .index #casos-de-exito .computador .pantalla .owl-nav button svg:hover polygon, .index #casos-de-exito .computador .pantalla .owl-nav button svg:hover path {
   transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
-  fill: #FF4136;
+  fill: #00ffff;
 }
 .index #casos-de-exito .computador .pantalla .owl-nav button svg:hover .arrow {
   animation: arrow-anim 2.5s cubic-bezier(0.2, 1, 0.3, 1) infinite;
