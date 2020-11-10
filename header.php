@@ -13,6 +13,8 @@
    gtag('js', new Date());
    gtag('config', 'UA-180760021-1');
   </script>
+  <!--Libreria de animación de textos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 
 <body <?php body_class(); ?>>

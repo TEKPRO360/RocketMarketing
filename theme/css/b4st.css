@@ -1084,6 +1084,15 @@ body .btn-ver-mas:hover {
   }
 }
 
+.ml2 {
+  font-size: 0.8em;
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
 .author-bio,
 .comments-wrap {
   margin: 36px auto;
