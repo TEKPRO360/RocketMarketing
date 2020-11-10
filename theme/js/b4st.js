@@ -317,27 +317,28 @@
 
 		// DENTRO DE CASOS DE ÉXITO
 		let mostrarDetalles = $('.muestra-detalles');
-		mostrarDetalles.click(function(){
-			if($(this).prev().hasClass('mostrando')){
+		mostrarDetalles.click( function(){
+			if($(this).prev().hasClass('mostrando' )&& $(this).prev().hasClass('ml2')){
 				$(this).prev().slideUp().removeClass('mostrando');
 				$(this).prev().removeClass('ml2');
 				$(this).find('i').removeClass('rotar');
 			}else{
 				$('.mostrando').slideUp().removeClass('mostrando');
 				$('.mostrando').next().find('i').removeClass('rotar');
+				$('.ml2').slideUp().removeClass('ml2');
 				$(this).prev().slideToggle('slow').addClass('mostrando');
 				$(this).prev().addClass('ml2');
-				animateText();
+				 animateText();
 				$(this).find('i').addClass('rotar');
 			}
 		});
 
 		//ANIMACIÓN TEXTO CASOS DE EXITO.
-		const animateText = () => {	
+		const animateText = () => {
 			var textWrapper = document.querySelector('.ml2');
 			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 			
-			var animation = anime.timeline({loop: true, autoplay: false})
+			var animation = anime.timeline({loop: true, autoplay: true})
 			  .add({
 				targets: '.ml2 .letter',
 				scale: [4,1],
@@ -359,11 +360,6 @@
 					}
 				  }
 			  });
-
-			  animation.play();
-			 
-
-
 		}
 		
 
