@@ -319,15 +319,43 @@
 		let mostrarDetalles = $('.muestra-detalles');
 		mostrarDetalles.click(function(){
 			if($(this).prev().hasClass('mostrando')){
-				$(this).prev().slideUp().removeClass('mostrando')
+				$(this).prev().slideUp().removeClass('mostrando');
+				$(this).prev().removeClass('ml2');
 				$(this).find('i').removeClass('rotar');
 			}else{
 				$('.mostrando').slideUp().removeClass('mostrando');
 				$('.mostrando').next().find('i').removeClass('rotar');
 				$(this).prev().slideToggle('slow').addClass('mostrando');
+				$(this).prev().addClass('ml2');
+				animateText();
 				$(this).find('i').addClass('rotar');
 			}
 		});
+
+		//ANIMACIÓN TEXTO CASOS DE EXITO.
+		const animateText = () => {	
+			var textWrapper = document.querySelector('.ml2');
+			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+			
+			anime.timeline({loop: true})
+			  .add({
+				targets: '.ml2 .letter',
+				scale: [4,1],
+				opacity: [0,1],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 950,
+				delay: (el, i) => 70*i
+			  }).add({
+				targets: '.ml2',
+				opacity: 0,
+				duration: 1000,
+				easing: "easeOutExpo",
+				delay: 1000
+			  });
+		}
+		
+
 	});
 
 
