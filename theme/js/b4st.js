@@ -337,7 +337,7 @@
 			var textWrapper = document.querySelector('.ml2');
 			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 			
-			anime.timeline({loop: true})
+			var animation = anime.timeline({loop: true, autoplay: false})
 			  .add({
 				targets: '.ml2 .letter',
 				scale: [4,1],
@@ -351,8 +351,19 @@
 				opacity: 0,
 				duration: 1000,
 				easing: "easeOutExpo",
-				delay: 1000
+				delay: 1000,
+				update: function(anim) {
+					const progressLogEl = Math.round(anim.progress);
+					if(progressLogEl>0){
+						animation.pause();
+					}
+				  }
 			  });
+
+			  animation.play();
+			 
+
+
 		}
 		
 
