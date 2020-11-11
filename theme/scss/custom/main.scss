@@ -402,6 +402,11 @@ body {
                     left: -2.3%;
                     width: 100%;
 
+                    @media only screen and (max-width: 600px) {
+                        top: 37%;
+                        left: -0.3%;
+                    }
+
                     button {
                         height: 20px;
                         width: 20px;
@@ -434,6 +439,10 @@ body {
                             height: auto;
                             cursor: pointer;
                             overflow: visible;
+
+                            @media only screen and (max-width: 600px) {
+                                width: 25px;
+                            }
 
                             polygon,
                             path {
@@ -489,10 +498,16 @@ body {
 
                     .owl-prev {
                         left: -13%;
+                        @media only screen and (max-width: 600px) {
+                            left: -15%; 
+                        }
                     }
 
                     .owl-next {
                         right: -13%;
+                        @media only screen and (max-width: 600px) {
+                            right: -14%; 
+                        }
                     }
                 }
 
