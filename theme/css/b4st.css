@@ -650,15 +650,15 @@ body .btn-ver-mas:hover {
 .index #clientes .owl-theme {
   margin: 20px auto;
 }
-.index #clientes .owl-theme .owl-stage-outer {
-  overflow: visible;
-}
-.index #clientes .owl-theme .owl-stage-outer .owl-stage .owl-item {
+.index #clientes .owl-theme .owl-item {
+  width: 23%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0.5em;
+  padding: 0.5em;
 }
-.index #clientes .owl-theme .owl-stage-outer .owl-stage .owl-item:hover:after {
+.index #clientes .owl-theme .owl-item:hover:after {
   content: "";
   height: 70px;
   width: 70px;
@@ -668,7 +668,7 @@ body .btn-ver-mas:hover {
   position: absolute;
   transition: all 0.1s ease 0.6s;
   -webkit-transition: all 0.1s ease 0.6s;
-  z-index: -1;
+  z-index: 1;
   animation-name: scale;
   animation-duration: 0.3s;
 }
@@ -686,10 +686,10 @@ body .btn-ver-mas:hover {
   }
 }
 .index #clientes .owl-theme img {
-  height: 43px;
-  width: 100%;
   object-fit: contain;
   transition: 0.3s all ease;
+  position: relative;
+  z-index: 2;
 }
 .index #clientes .owl-theme img:hover {
   transform: scale(1.2, 1.2) !important;
@@ -785,7 +785,7 @@ body .btn-ver-mas:hover {
 }
 .index #contacto #formulario-contacto .wpcf7 form .btn {
   background: url("../img/fondo-btn.jpg");
-  background-position: left;
+  background-position: right;
   color: #fff;
   width: 15%;
   min-width: 180px;
@@ -797,7 +797,7 @@ body .btn-ver-mas:hover {
 }
 .index #contacto #formulario-contacto .wpcf7 form .btn:hover {
   text-decoration: none;
-  background-position: right;
+  background-position: left;
 }
 @media screen and (min-width: 768px) {
   .index #contacto #formulario-contacto {

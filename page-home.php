@@ -91,7 +91,7 @@
           'order'           => 'DESC'
           ) ); ?>
   <?php if ($casos->have_posts() ) :?>
-  <section id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">
+  <section data-pagina="test" id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">
     <div class="w-100 d-flex flex-wrap px-1 px-md-5" data-aos="fade-up">
       <div class="titulo-casos col-12 col-md-3  d-flex">
         <p class="d-none d-md-block">Casos<br>de éxito</p>
@@ -142,46 +142,25 @@
   <?php endif;wp_reset_postdata();?>
   <!-- FIN SECCIÓN CASOS DE ÉXITO -->
 
-  <!-- SECCIÓN CLIENTES -->
-  <?php $clientes = new WP_Query( array( 
+ <!-- SECCIÓN CLIENTES -->
+ <?php $clientes = new WP_Query( array( 
           'post_type'       => 'clientes',
           'posts_per_page'  => -1,
-          'cat'             => 4,
+          'cat'             => 'current',
           'order_by'        => 'date',
           'order'           => 'ASC'
           ) ); ?>
   <?php if ($clientes->have_posts() ) :?>
   <section id="clientes" class="py-5">
     <h2 class="titulo" data-aos="fade-up">Clientes</h2>
-    <div class="owl-theme owl-carousel owl-logos-1">
+    <div class="container owl-theme d-flex flex-wrap justify-content-around" >
       <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
-      <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
+      <div class="owl-item">
+       <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="img-logo">
+      </div>
       <?php endwhile; wp_reset_postdata();?>
     </div>
-  <?php $clientes = new WP_Query( array( 
-          'post_type'       => 'clientes',
-          'posts_per_page'  => -1,
-          'cat'             => 5,
-          'order_by'        => 'date',
-          'order'           => 'ASC'
-          ) ); ?>
-    <div class="owl-theme owl-carousel owl-logos-2">
-      <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
-      <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
-      <?php endwhile; wp_reset_postdata();?>
-    </div>
-  <?php $clientes = new WP_Query( array( 
-          'post_type'       => 'clientes',
-          'posts_per_page'  => -1,
-          'cat'             => 6,
-          'order_by'        => 'date',
-          'order'           => 'ASC'
-          ) ); ?>
-    <div class="owl-theme owl-carousel owl-logos-3">
-      <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
-      <img src="<?php echo $logo; ?>" alt="<?php the_title();?> en Tekpro" class="">
-      <?php endwhile; wp_reset_postdata();?>
-    </div>
+  
   </section>
   <?php endif;wp_reset_postdata();?>
   <!-- FIN SECCIÓN CLIENTES -->

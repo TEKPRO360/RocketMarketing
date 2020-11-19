@@ -589,15 +589,14 @@ body {
         }
 
         .owl-theme {
-            .owl-stage-outer {
-                overflow: visible;
-
-                .owl-stage {
 
                     .owl-item {
+                        width: 23%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        margin: 0.5em;
+                        padding: 0.5em;
 
                         &:hover {
                             &:after {
@@ -610,7 +609,7 @@ body {
                                 position: absolute;
                                 transition: all 0.10s ease .6s;
                                 -webkit-transition: all 0.10s ease .6s;
-                                z-index: -1;
+                                z-index: 1;
                                 animation-name: scale;
                                 animation-duration: .3s;
                             }
@@ -629,12 +628,10 @@ body {
                         }
 
 
-
                     }
 
-                }
 
-            }
+            
 
             @include MQ(M) {
                 margin: 100px auto;
@@ -643,11 +640,10 @@ body {
             margin: 20px auto;
 
             img {
-                height: 43px;
-                width: 100%;
                 object-fit: contain;
                 transition: .3s all ease;
-
+                position: relative;
+                z-index: 2;
                 &:hover {
                     transform: scale(1.2, 1.2) !important;
 
@@ -764,7 +760,7 @@ body {
 
                     .btn {
                         background: fn-url('fondo-btn.jpg');
-                        background-position: left;
+                        background-position: right;
                         color: #fff;
                         width: 15%;
                         min-width: 180px;
@@ -776,7 +772,7 @@ body {
 
                         &:hover {
                             text-decoration: none;
-                            background-position: right;
+                            background-position: left;
                         }
                     }
                 }

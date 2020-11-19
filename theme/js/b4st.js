@@ -120,10 +120,10 @@
 	
 		
 		$('.owl-logos-1').owlCarousel({
-			loop:true,
+			loop:false,
 			nav:false,
 			dots:false,
-			autoplay : true,
+			autoplay : false,
 			slideTransition: 'linear',
 			autoplayTimeout : 4000,
 			autoplayHoverPause : false,
@@ -145,10 +145,10 @@
 		});
 		
 		$('.owl-logos-2').owlCarousel({
-			loop:true,
+			loop:false,
 			nav:false,
 			dots:false,
-			autoplay : true,
+			autoplay : false,
 			slideTransition: 'linear',
 			autoplayTimeout : 2000,
 			autoplayHoverPause : false,
@@ -170,13 +170,13 @@
 		});
 		
 		$('.owl-logos-3').owlCarousel({
-			loop:true,
+			loop:false,
 			nav:false,
 			dots:false,
-			autoplay : true,
+			autoplay : false,
 			slideTransition: 'linear',
 			autoplayTimeout : 6000,
-			autoplayHoverPause : false,
+			autoplayHoverPause : true,
 			autoplaySpeed : 6000,
 			responsive:{
 				0:{
@@ -336,7 +336,7 @@
 		//ANIMACIÓN TEXTO CASOS DE EXITO.
 		const animateText = () => {
 			var textWrapper = document.querySelector('.ml2');
-			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+			textWrapper.innerHTML = textWrapper.textContent.replace(/\S+/g, "<span class='letter'>$&</span>");
 			
 			var animation = anime.timeline({loop: true, autoplay: true})
 			  .add({
@@ -345,12 +345,12 @@
 				opacity: [0,1],
 				translateZ: 0,
 				easing: "easeOutExpo",
-				duration: 950,
+				duration: 0.50,
 				delay: (el, i) => 70*i
 			  }).add({
 				targets: '.ml2',
 				opacity: 0,
-				duration: 1000,
+				duration: 0.50,
 				easing: "easeOutExpo",
 				delay: 1000,
 				update: function(anim) {
