@@ -764,7 +764,7 @@ body {
 
                     .btn {
                         background: fn-url('fondo-btn.jpg');
-                        background-position: left;
+                        background-position: right;
                         color: #fff;
                         width: 15%;
                         min-width: 180px;
@@ -776,7 +776,7 @@ body {
 
                         &:hover {
                             text-decoration: none;
-                            background-position: right;
+                            background-position: left;
                         }
                     }
                 }
