@@ -151,7 +151,7 @@
           'order'           => 'ASC'
           ) ); ?>
   <?php if ($clientes->have_posts() ) :?>
-  <section id="clientes" class="py-5">
+  <section data-pagina="test" id="clientes" class="py-5">
     <h2 class="titulo" data-aos="fade-up">Clientes</h2>
     <div class="owl-theme owl-carousel owl-logos-1">
       <?php while ($clientes->have_posts() ) : $clientes->the_post(); $logo = get_field('logo_blanco');?>
