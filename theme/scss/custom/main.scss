@@ -77,6 +77,11 @@ body {
     .intro {
         background: url('../img/logo-animado.gif')center center/cover no-repeat, fn-url('estrellas.png')fixed top / cover no-repeat;
         background-blend-mode: hard-light;
+
+        @media only screen and (max-width: 600px) {
+            background: url('../img/RM-GIF-MOB.gif')center center/cover no-repeat, fn-url('estrellas.png')fixed top / cover no-repeat;
+            
+        }
     }
 
     .titulo {
@@ -597,6 +602,10 @@ body {
                         justify-content: center;
                         margin: 0.5em;
                         padding: 0.5em;
+
+                        @media only screen and (max-width: 600px) {
+                            width: 27%;
+                        }
 
                         &:hover {
                             &:after {
