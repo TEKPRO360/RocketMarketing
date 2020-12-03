@@ -1,135 +1,45 @@
 .single-servicios{
-    #site-navbar{
-        filter: contrast(1) hue-rotate(180deg);
-    }
-}
-.servicios{
-    overflow: hidden;
-    .full-width {
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-    }
-    .menu-sticky{
-        top: -90px !important;
-        transition: .3s ease all;
-    }
-    .contenedor-menu{
-        position: fixed;
-        height: auto;
-        top: 2rem;
-        transition: .3s ease all;
-        .menu{
-            z-index: 1;
-            color: #ffffff;
-            a{
-                text-decoration: none;
-                color: inherit;
-            }
-            .servicio{
-                opacity: 1;
-                transition: .3s ease all;
-                margin: 10px auto;
-                .numero-menu{
-                    border-radius: 50%;
-                    height: 40px;
-                    width: 40px;
-                    transition: .3s ease-in all;
-                    padding: 4px;
-                    box-sizing: border-box;
-                    vertical-align: center;
-                    font-size: .7rem;
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
-                    margin: 0;
-                    line-height: 1.8rem;
-                }
-                .titulo-numero{
-                    text-transform: uppercase;
-                    line-height: normal;
-                    font-size: .8rem;
-                    letter-spacing: 0.2em;
-                }
-                &:hover{
-                    opacity: 1;
-                    cursor: pointer;
-                    filter: blur(0px);
-                    .numero{
-                        color: $color-primario;
-                        background: #ffffff !important;
-                    }
-                    .titulo-numero{
-                        font-weight: 700;
-                    }
-                }
-                &.active{
-                    opacity: 1;
-                    filter: blur(0px);
-                    font-weight: bold;
-                    .numero{
-                        color: $color-primario;
-                        font-weight: 800;
-                        font-size: .8rem;
-                        background: #ffffff !important;
-                        box-shadow: rgba($color: #000000, $alpha: .6) 0px 10px 10px -5px;
-                    }
-                    .titulo-numero{
-                        font-weight: 700;
-                    }
-                }
+    .servicios{
+        display: flex;
+        flex-flow: wrap;
+        padding: 90px 0 30px;
+        box-sizing: border-box;
+        .contenedor-menu{
+            width: 30vw;
+            padding: 15px;
+            box-sizing: border-box;
+            .menu{
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                display: none;
             }
         }
-    }
-    .contenedor-secciones{
-        margin-top: 10%;
-        letter-spacing: .1rem;
-        section{
-            min-height: auto;
-        }
-        .seccion-1{
-            .titulo-detalle{
-                h1{
-                    font-size: 2em;
-                    line-height: 1em;
-                    letter-spacing: 2px;
-                    text-transform: uppercase;
-                    font-weight: bolder;
-                }
-            }
-            .contenedor-fotos{
-                overflow: hidden;
-                img{
-                    object-fit: contain;
-                }
-                @include MQ(M){
-                    .img-horizontal{
-                        width: 63%;
-                        z-index: 2;
-                        max-width: inherit;
+        .contenedor-servicios{
+            left: 0;
+            position: relative;
+            width: 100vw;
+            left: 0;
+            margin-left: -30%;
+            box-sizing: border-box;
+            section{
+                display: flex;
+                flex-flow: wrap;
+                justify-content: flex-end;
+                .contenido-seccion{
+                    width: 90vw;
+                    margin: auto;
+                    @include MQ(M){
+                        width: 70vw;
+                        margin: 0;
+                    }
+                    dl,
+                    ol,
+                    ul{
+                        text-align: left;
                     }
                 }
-                .img-vertical{
-                    position: absolute;
-                    width: 50%;
-                    right: -20px;
-                    bottom: 10%;
-                    max-height: 850px;
-                }
             }
-        }
-        .seccion-2{
-            p{
-                margin: 0;
-            }
-        }
-        .seccion-3{
-            // .detalles-3{
-            //     margin: 0 0 -10%;
-            // }
         }
         .links-servicios{
             padding: 20px 10px;
@@ -152,30 +62,128 @@
                 margin: 10px;
                 text-transform: uppercase;
                 padding: 10px 30px;
-                &:first-child{
-                }
-                &:last-child{
-                    text-align: end;
-                    padding: 10px 30px;
-                }
+                text-align: center;
             }
         }
-        .owl-servicios{
-            .owl-item{
-                text-align: left;
+    }
+    @include MQ(M){
+        .servicios{
+            flex-flow: row;
+            .contenedor-menu{
+                .menu{
+                    display: block;
+                    .servicio{
+                        opacity: 1;
+                        transition: .3s ease all;
+                        margin: 10px auto;
+                        &.active{
+                            font-weight: bold;
+                            .numero{
+                                font-weight: 800;
+                                font-size: .8rem;
+                                background: #fff;
+                                box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 10px -5px;
+                                color: #000;
+                            }
+                        }
+                        &:hover{
+                            cursor: pointer;
+                            font-weight: bold;
+                            transition: .3s ease all;
+                            .numero{
+                                color: inherit;
+                                font-weight: bold;
+                                background: rgba($color: #fff, $alpha: .4);
+                            }
+                        }
+                        .numero-menu{
+                            border-radius: 50%;
+                            height: 40px;
+                            width: 40px;
+                            transition: 0.3s ease-in all;
+                            padding: 4px;
+                            box-sizing: border-box;
+                            vertical-align: center;
+                            font-size: 0.7rem;
+                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            margin: 0;
+                            line-height: 1.8rem;
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                }
             }
-            .owl-nav{
-                position: absolute;
-                margin: -10px 0 auto auto;
-                right: 0;
-                width: 100px;
-                align-items: center;
-                justify-content: space-around;
-                pointer-events: all;
-                font-size: 1.4em;
-                button{
-                    &:hover{
-                        background: transparent;
+            .contenedor-servicios{
+                section{
+                    .contenido-seccion{
+                        dl,
+                        ol,
+                        ul{
+                          list-style: inside;  
+                          text-align: center;
+                        }
+                    }
+                }
+            }
+            .seccion-1{
+                .contenido-seccion{
+                    overflow: hidden;
+                    .titulo-detalle{
+                        h1{
+                            font-size: 2em;
+                            line-height: 1em;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                            font-weight: bolder; 
+                        }
+                        p{
+                            margin:0 auto 1rem 0;
+                        }
+                    }
+                    .contenedor-fotos{
+                        .img{
+                            &-horizontal{
+                                width: 63%;
+                                z-index: 2;
+                                max-width: inherit;
+                                position: relative;
+                                border-radius: 10px 10px 0 0;
+                            }
+                            &-vertical{
+                                position: absolute;
+                                width: 60%;
+                                left: 50%;
+                                bottom: 20px;
+                                max-height: 850px;
+                                object-fit: contain;
+                                object-position: left top;
+                            }
+                        }
+                        img{
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+            .seccion-2{
+                .contenido-seccion{
+                    padding: 10px;
+                    box-sizing: border-box;
+                }
+            }
+            .seccion-3{
+                .contenido-seccion{
+                    .contenedor-imagen{
+                        width: 100%;
+                        text-align: center;
+                        img{
+                            margin: auto;
+                        }
                     }
                 }
             }
