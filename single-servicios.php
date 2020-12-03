@@ -40,7 +40,7 @@
           <h1 class=""><?php the_title();?></h1>
           <p><?php the_sub_field( 'detalles_de_servicio' ); ?></p>
         </div>
-        <div class="contenedor-fotos col-10 col-md-12 m-auto d-flex flex-wrap">
+        <div class="contenedor-fotos col-10 col-md-12 m-auto d-flex flex-wrap p-0">
           <img src="<?php echo $imagenHorizontal; ?>" alt="" class="img-horizontal">
           <img src="<?php echo $imagenVertical; ?>" alt="" class="img-vertical d-none d-md-block">
         </div>

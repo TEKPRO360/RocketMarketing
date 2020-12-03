@@ -881,6 +881,10 @@ body {
           .single-servicios .servicios .contenedor-servicios section .contenido-seccion {
             width: 70vw;
             margin: 0; } }
+        .single-servicios .servicios .contenedor-servicios section .contenido-seccion dl,
+        .single-servicios .servicios .contenedor-servicios section .contenido-seccion ol,
+        .single-servicios .servicios .contenedor-servicios section .contenido-seccion ul {
+          text-align: left; }
   .single-servicios .servicios .links-servicios {
     padding: 20px 10px;
     display: -webkit-box;
@@ -969,6 +973,11 @@ body {
       .single-servicios .servicios .contenedor-menu .menu a {
         text-decoration: none;
         color: inherit; }
+    .single-servicios .servicios .contenedor-servicios section .contenido-seccion dl,
+    .single-servicios .servicios .contenedor-servicios section .contenido-seccion ol,
+    .single-servicios .servicios .contenedor-servicios section .contenido-seccion ul {
+      list-style: inside;
+      text-align: center; }
     .single-servicios .servicios .seccion-1 .contenido-seccion .titulo-detalle h1 {
       font-size: 2em;
       line-height: 1em;
@@ -982,18 +991,22 @@ body {
       z-index: 2;
       max-width: inherit;
       position: relative;
-      border-radius: 10px 10px 0 0;
-      -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px -5px;
-      box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 10px -5px; }
+      border-radius: 10px 10px 0 0; }
     .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos .img-vertical {
       position: absolute;
       width: 60%;
       right: 0;
       top: -220px;
-      max-height: 850px; }
-    .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos img {
+      max-height: 850px;
       -o-object-fit: contain;
       object-fit: contain; }
+    .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos img {
+      -o-object-fit: cover;
+      object-fit: cover; }
+    .single-servicios .servicios .seccion-2 .contenido-seccion {
+      padding: 10px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
     .single-servicios .servicios .seccion-3 .contenido-seccion .contenedor-imagen {
       width: 100%;
       text-align: center; }
