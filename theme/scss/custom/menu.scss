@@ -12,14 +12,16 @@
     }
 }
 
-.text-white.accion-menu{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 20px 20px 0 0;
-    cursor: pointer;
-    font-size: 3em !important;
-    z-index: 2;
+.text-white{
+    &.accion-menu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 20px 20px 0 0;
+        cursor: pointer;
+        font-size: 3em !important;
+        z-index: 2;
+    }
 }
 
 .menu-custom{
@@ -35,9 +37,6 @@
     transition: .3s ease all;
     display: flex;
     flex-flow: column-reverse;
-    @include MQ(L){
-        flex-flow:wrap;
-    }
     p,a,ul,li{
         color: #ffffff;
         list-style: none;
@@ -71,11 +70,6 @@
         font-size: 2em;
         text-align: center;
         padding: 60px 0;
-        @include MQ (L){
-            font-size: 3em;
-            text-align: left;
-            padding: 0 0 0 20%;
-        }
         a{
             width: 100%;
             transition: .3s ease all;
@@ -84,6 +78,14 @@
             &:hover{
                 background: rgba($color: #ffffff, $alpha: .3);
             }
+        }
+    }
+    @include MQ (L){
+        flex-flow: wrap;
+        .opciones-menu{
+            font-size: 3em;
+            text-align: left;
+            padding: 0 0 0 20%;
         }
     }
 }
