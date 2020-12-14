@@ -7,7 +7,7 @@
     </div>
     <div class="col-12 col-md columna-3 mt-4 mt-md-0 d-flex flex-column">
       <h3 class="titulo-footer">Nosotros</h3>
-      <a href="<?php echo esc_url( home_url('/servicios') ); ?>">Servicios</a>
+      <a href="<?php echo esc_url( home_url('/servicios/posicionamiento-en-buscadores') ); ?>">Servicios</a>
       <a href="<?php echo esc_url( home_url('/casos') ); ?>">Casos de éxito</a>
       <a href="<?php echo esc_url( home_url('/#clientes') ); ?>">Clientes</a>
       <a href="<?php echo esc_url( home_url('/#contacto') ); ?>">Escríbenos</a>
