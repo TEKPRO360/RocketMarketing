@@ -133,14 +133,15 @@
             .seccion-1{
                 .contenido-seccion{
                     overflow: hidden;
+                    background-color: red;
                     .titulo-detalle{
-                        h1{
-                            font-size: 2em;
-                            line-height: 1em;
-                            letter-spacing: 2px;
-                            text-transform: uppercase;
-                            font-weight: bolder; 
-                        }
+                        // h1{
+                        //     font-size: 2em;
+                        //     line-height: 1em;
+                        //     letter-spacing: 2px;
+                        //     text-transform: uppercase;
+                        //     font-weight: bolder; 
+                        // }
                         p{
                             margin:0 auto 1rem 0;
                         }
@@ -153,11 +154,17 @@
                                 max-width: inherit;
                                 position: relative;
                                 border-radius: 10px 10px 0 0;
+
+                                @media only screen and (max-width: 600px) {
+                                    object-fit: contain;
+                                }
                             }
                             &-vertical{
                                 position: absolute;
-                                width: 60%;
-                                left: 50%;
+                                //width: 60%;
+                                width: 36%;
+                                //left: 50%;
+                                left: 56%;
                                 bottom: 20px;
                                 max-height: 850px;
                                 object-fit: contain;
