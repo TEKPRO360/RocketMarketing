@@ -38,6 +38,21 @@
                     ul{
                         text-align: left;
                     }
+
+                    .titulo-detalle {
+                        .title-services{
+                            font-size: 2em;
+                            line-height: 1em;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                            font-weight: bolder; 
+                            @media only screen and (max-width: 600px) {
+                                font-size: 1.3em;
+                            } 
+                        }
+                    }
+
+
                 }
             }
         }
@@ -133,15 +148,15 @@
             .seccion-1{
                 .contenido-seccion{
                     overflow: hidden;
-                    background-color: red;
-                    .titulo-detalle{
-                        // h1{
-                        //     font-size: 2em;
-                        //     line-height: 1em;
-                        //     letter-spacing: 2px;
-                        //     text-transform: uppercase;
-                        //     font-weight: bolder; 
-                        // }
+                    .titulo-detalle {
+                        .title-services{
+                            font-size: 1em;
+                            line-height: 1em;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                            font-weight: bolder;  
+                        }
+                        
                         p{
                             margin:0 auto 1rem 0;
                         }

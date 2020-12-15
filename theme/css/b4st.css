@@ -915,6 +915,18 @@ body .btn-ver-mas:hover {
 .single-servicios .servicios .contenedor-servicios section .contenido-seccion ul {
   text-align: left;
 }
+.single-servicios .servicios .contenedor-servicios section .contenido-seccion .titulo-detalle .title-services {
+  font-size: 2em;
+  line-height: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+@media only screen and (max-width: 600px) {
+  .single-servicios .servicios .contenedor-servicios section .contenido-seccion .titulo-detalle .title-services {
+    font-size: 1.3em;
+  }
+}
 .single-servicios .servicios .links-servicios {
   padding: 20px 10px;
   display: flex;
@@ -998,7 +1010,13 @@ body .btn-ver-mas:hover {
   }
   .single-servicios .servicios .seccion-1 .contenido-seccion {
     overflow: hidden;
-    background-color: red;
+  }
+  .single-servicios .servicios .seccion-1 .contenido-seccion .titulo-detalle .title-services {
+    font-size: 1em;
+    line-height: 1em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bolder;
   }
   .single-servicios .servicios .seccion-1 .contenido-seccion .titulo-detalle p {
     margin: 0 auto 1rem 0;
