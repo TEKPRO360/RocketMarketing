@@ -275,6 +275,11 @@ body .btn-ver-mas:hover {
   line-height: 3rem;
   margin: 0 auto 10px auto;
 }
+@media only screen and (max-width: 600px) {
+  .index #servicios .titulo {
+    font-size: 1.5em;
+  }
+}
 .index #servicios .card-servicios {
   background: #2d2b8b;
   border-radius: 15px;
@@ -292,11 +297,23 @@ body .btn-ver-mas:hover {
   padding: 0 20px;
   text-align: center;
 }
+@media only screen and (max-width: 600px) {
+  .index #servicios .card-servicios h3,
+.index #servicios .card-servicios p {
+    font-size: 0.7em;
+    padding: 0 10px;
+  }
+}
 .index #servicios .card-servicios .titulo {
   font-size: 1em;
   font-weight: bolder;
   letter-spacing: 0.1rem;
   line-height: normal;
+}
+@media only screen and (max-width: 600px) {
+  .index #servicios .card-servicios .titulo {
+    font-size: 0.7em;
+  }
 }
 .index #servicios .card-servicios p {
   font-weight: lighter;
@@ -462,6 +479,11 @@ body .btn-ver-mas:hover {
   color: #000;
   pointer-events: none;
 }
+@media only screen and (max-width: 600px) {
+  .index #casos-de-exito {
+    pointer-events: initial;
+  }
+}
 .index #casos-de-exito .titulo-casos p {
   width: 100%;
   margin: 0;
@@ -471,6 +493,11 @@ body .btn-ver-mas:hover {
   text-align: center;
   letter-spacing: normal;
   line-height: 1em;
+}
+@media only screen and (max-width: 600px) {
+  .index #casos-de-exito .titulo-casos p {
+    font-size: 2em;
+  }
 }
 @media screen and (min-width: 768px) {
   .index #casos-de-exito .titulo-casos p {
@@ -501,8 +528,7 @@ body .btn-ver-mas:hover {
 }
 @media only screen and (max-width: 600px) {
   .index #casos-de-exito .computador .pantalla .owl-nav {
-    top: 37%;
-    left: -0.3%;
+    display: none;
   }
 }
 .index #casos-de-exito .computador .pantalla .owl-nav button {
@@ -631,6 +657,11 @@ body .btn-ver-mas:hover {
 }
 .index #casos-de-exito .owl-detalle-texto {
   pointer-events: none;
+}
+@media only screen and (max-width: 600px) {
+  .index #casos-de-exito .owl-detalle-texto {
+    pointer-events: auto;
+  }
 }
 .index #casos-de-exito .owl-detalle-texto .contenedor-detalle {
   text-align: center;
@@ -884,6 +915,18 @@ body .btn-ver-mas:hover {
 .single-servicios .servicios .contenedor-servicios section .contenido-seccion ul {
   text-align: left;
 }
+.single-servicios .servicios .contenedor-servicios section .contenido-seccion .titulo-detalle .title-services {
+  font-size: 2em;
+  line-height: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+@media only screen and (max-width: 600px) {
+  .single-servicios .servicios .contenedor-servicios section .contenido-seccion .titulo-detalle .title-services {
+    font-size: 1.3em;
+  }
+}
 .single-servicios .servicios .links-servicios {
   padding: 20px 10px;
   display: flex;
@@ -968,8 +1011,8 @@ body .btn-ver-mas:hover {
   .single-servicios .servicios .seccion-1 .contenido-seccion {
     overflow: hidden;
   }
-  .single-servicios .servicios .seccion-1 .contenido-seccion .titulo-detalle h1 {
-    font-size: 2em;
+  .single-servicios .servicios .seccion-1 .contenido-seccion .titulo-detalle .title-services {
+    font-size: 1em;
     line-height: 1em;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -985,22 +1028,35 @@ body .btn-ver-mas:hover {
     position: relative;
     border-radius: 10px 10px 0 0;
   }
+}
+@media only screen and (min-width: 768px) and (max-width: 600px) {
+  .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos .img-horizontal {
+    object-fit: contain;
+  }
+}
+@media screen and (min-width: 768px) {
   .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos .img-vertical {
     position: absolute;
-    width: 60%;
-    left: 50%;
+    width: 36%;
+    left: 56%;
     bottom: 20px;
     max-height: 850px;
     object-fit: contain;
     object-position: left top;
   }
+}
+@media screen and (min-width: 768px) {
   .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos img {
     object-fit: cover;
   }
+}
+@media screen and (min-width: 768px) {
   .single-servicios .servicios .seccion-2 .contenido-seccion {
     padding: 10px;
     box-sizing: border-box;
   }
+}
+@media screen and (min-width: 768px) {
   .single-servicios .servicios .seccion-3 .contenido-seccion .contenedor-imagen {
     width: 100%;
     text-align: center;
@@ -1053,9 +1109,16 @@ body .btn-ver-mas:hover {
 }
 .casos .columnas .caso .textos-single-caso .nombre-caso {
   order: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .casos .columnas .caso .textos-single-caso .servicio-caso {
   order: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: 600;
 }
 .casos .columnas .caso .textos-single-caso .detalles-caso {
   padding: 30px 0px 10px;
@@ -1070,6 +1133,7 @@ body .btn-ver-mas:hover {
 }
 .casos .columnas .caso .textos-single-caso .muestra-detalles {
   order: 4;
+  color: rgba(0, 0, 0, 0.47);
 }
 .casos .columnas .caso .muestra-detalles {
   text-transform: uppercase;
@@ -1086,12 +1150,11 @@ body .btn-ver-mas:hover {
   transition: 0.3s ease all;
 }
 .casos .columnas .nombre-caso, .casos .columnas .servicio-caso {
-  color: rgba(0, 0, 0, 0.47);
   text-transform: uppercase;
 }
 .casos .columnas .nombre-caso {
   font-size: 1.2em;
-  font-weight: bolder;
+  font-weight: 800;
 }
 .casos .columnas .servicio-caso {
   line-height: 1.3em;

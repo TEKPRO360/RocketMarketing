@@ -37,7 +37,7 @@
     <section class="seccion-1 bg-seccion-1 text-seccion-1">
       <div class="contenido-seccion ">
         <div class="titulo-detalle col-12 col-md-6">
-          <h1 class=""><?php the_title();?></h1>
+          <h1 class="title-services"><?php the_title();?></h1>
           <p><?php the_sub_field( 'detalles_de_servicio' ); ?></p>
         </div>
         <div class="contenedor-fotos col-10 col-md-12 m-auto d-flex flex-wrap p-0">
