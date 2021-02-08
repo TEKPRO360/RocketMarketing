@@ -887,6 +887,9 @@ body {
         .single-servicios .servicios .contenedor-servicios section .contenido-seccion ol,
         .single-servicios .servicios .contenedor-servicios section .contenido-seccion ul {
           text-align: left; }
+  .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos .img-horizontal {
+    width: 100vw;
+    height: 55vw; }
   .single-servicios .servicios .links-servicios {
     padding: 20px 10px;
     display: -webkit-box;
@@ -996,7 +999,9 @@ body {
         z-index: 2;
         max-width: inherit;
         position: relative;
-        border-radius: 10px 10px 0 0; }
+        border-radius: 10px 10px 0 0;
+        -o-object-fit: cover;
+        object-fit: cover; }
       .single-servicios .servicios .seccion-1 .contenido-seccion .contenedor-fotos .img-vertical {
         position: absolute;
         width: 60%;
