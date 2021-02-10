@@ -11,6 +11,7 @@
       <a href="<?php echo esc_url( home_url('/casos') ); ?>">Casos de éxito</a>
       <a href="<?php echo esc_url( home_url('/#clientes') ); ?>">Clientes</a>
       <a href="<?php echo esc_url( home_url('/#contacto') ); ?>">Escríbenos</a>
+      <a href="<?php echo esc_url( home_url('/politica-privacidad') ); ?>">Políticas de Privacidad</a>
     </div>
     <div class="col-12 col-md columna-3 mt-4 mt-md-0 d-flex flex-column">
       <h3 class="titulo-footer">Contacto</h3>
