@@ -736,12 +736,10 @@ body {
                     resize: none;
                     color: #000;
                     transition: .3s ease all;
-
                     &::placeholder {
                         color: #fff;
                         opacity: .6;
                         position: absolute;
-                        top: -40px;
                     }
 
                     &:focus {

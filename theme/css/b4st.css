@@ -782,7 +782,6 @@ body .btn-ver-mas:hover {
   color: #fff;
   opacity: 0.6;
   position: absolute;
-  top: -40px;
 }
 .index #contacto #formulario-contacto .wpcf7 input:focus,
 .index #contacto #formulario-contacto .wpcf7 textarea:focus {
