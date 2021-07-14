@@ -208,7 +208,7 @@
   <script>
   document.addEventListener( 'wpcf7mailsent', function( event ) {
     console.log('enviado');
-    // ga( 'send', 'event', 'Contact Form', 'submit' );
+    ga( 'send', 'event', 'Contact Form', 'submit' );
   }, false );
   </script>
   <!-- FIN SECCIÓN CONTACTO -->
