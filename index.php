@@ -187,7 +187,7 @@
   <!-- FIN SECCIÓN CLIENTES -->
 
   <!-- SECCIÓN CONTACTO -->
-  <section id="contacto" class="shadow w-100">
+  <section id="contacto" class="w-100">
     <div class="pb-5 d-flex flex-wrap container align-items-center container">
       <h2 class="titulo mb-3 col-12">Contacto</h2>
       <div id="directo" class="col-12 col-md-4">
