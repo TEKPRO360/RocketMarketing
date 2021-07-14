@@ -8,9 +8,10 @@
     <div class="col-12 col-md columna-3 mt-4 mt-md-0 d-flex flex-column">
       <h3 class="titulo-footer">Nosotros</h3>
       <a href="<?php echo esc_url( home_url('/servicios/posicionamiento-en-buscadores') ); ?>">Servicios</a>
-      <a href="<?php echo esc_url( home_url('/casos-de-exito') ); ?>">Casos de éxito</a>
+      <a href="<?php echo esc_url( home_url('/casos') ); ?>">Casos de éxito</a>
       <a href="<?php echo esc_url( home_url('/#clientes') ); ?>">Clientes</a>
       <a href="<?php echo esc_url( home_url('/#contacto') ); ?>">Escríbenos</a>
+      <a href="<?php echo esc_url( home_url('/politica-privacidad') ); ?>">Políticas de Privacidad</a>
     </div>
     <div class="col-12 col-md columna-3 mt-4 mt-md-0 d-flex flex-column">
       <h3 class="titulo-footer">Contacto</h3>
@@ -20,8 +21,8 @@
     </div>
     <div class="col-12 col-md columna-4 mt-4 mt-md-0 redes">
       <h3 class="titulo-footer w-100">Social</h3>
-      <a href="https://www.instagram.com/rocketmarketing07/" class="fab fa-instagram mr-3"></a>
-      <a href="https://www.linkedin.com/company/rocket-marketing01/" class="fab fa-linkedin-in mr-3"></a>
+      <a href="https://www.instagram.com/rocketmarketing07/" target="_blank" class="fab fa-instagram mr-3"></a>
+      <a href="https://www.linkedin.com/company/rocket-marketing01/" target="_blank" class="fab fa-linkedin-in mr-3"></a>
     </div>
   </div>
 </footer>

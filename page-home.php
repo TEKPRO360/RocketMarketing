@@ -91,7 +91,7 @@
           'order'           => 'DESC'
           ) ); ?>
   <?php if ($casos->have_posts() ) :?>
-  <section data-pagina="test" id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">
+  <section id="casos-de-exito" class="d-flex flex-wrap justify-content-center align-items-center px-0 py-5 ">
     <div class="w-100 d-flex flex-wrap px-1 px-md-5" data-aos="fade-up">
       <div class="titulo-casos col-12 col-md-3  d-flex">
         <p class="d-none d-md-block">Casos<br>de éxito</p>
@@ -127,7 +127,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt-5 owl-theme owl-carousel owl-detalle-texto" data-aos="fade-up">
+    <div class="container mt-1 owl-theme owl-carousel owl-detalle-texto" data-aos="fade-up">
     <?php while ($casos->have_posts() ) : $casos->the_post();
           $detalles_caso = get_field('detalles_del_caso');
           $titulo = get_the_title();
