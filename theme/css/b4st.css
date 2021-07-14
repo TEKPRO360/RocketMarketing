@@ -881,7 +881,6 @@ body .btn-ver-mas:hover {
   box-sizing: border-box;
 }
 .single-servicios .servicios .contenedor-menu .menu {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
